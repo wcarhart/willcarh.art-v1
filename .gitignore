@@ -1,4 +1,4 @@
-db.sqlite3
+*.pyc
 
 easel/__pycache__/
 projects/__pycache__/
