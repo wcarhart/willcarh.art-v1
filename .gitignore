@@ -1,0 +1,4 @@
+db.sqlite3
+
+easel/__pycache__/
+hello_world/__pycache__/
