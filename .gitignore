@@ -1,4 +1,5 @@
 *.pyc
 
 easel/__pycache__/
+home/__pycache__/
 projects/__pycache__/
