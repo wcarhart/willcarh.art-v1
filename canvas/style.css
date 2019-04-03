@@ -208,6 +208,11 @@ hr.socket {
 	border-top: .2rem solid var(--n2dark);
 	margin-top: 3rem;
 }
+.love {
+	padding-top: 0.5rem;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
 /*-- end contact --*/
 
 /*-- styling for mobile --*/
