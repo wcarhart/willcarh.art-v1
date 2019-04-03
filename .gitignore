@@ -1,4 +1,5 @@
 *.pyc
+content.json
 
 easel/__pycache__/
 home/__pycache__/
