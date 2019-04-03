@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
 
 :root {
 	--c1: #e27d60; /*red-orange*/
@@ -66,7 +67,8 @@ body {
 	top: 38%;
 	z-index: 1;
 	color: var(--n2);
-	text-transform: uppercase;
+	font-family: 'Source Code Pro', monospace;
+	/*text-transform: uppercase;*/
 }
 .caption h1 {
 	font-size: 3.8rem;
@@ -81,6 +83,7 @@ body {
 	padding-bottom: 1.6rem;
 }
 .btn-lg {
+	font-family: 'Lato', sans-serif;
 	border-width: medium;
 	border-radius: 0;
 	padding: .6rem 1.3rem;
