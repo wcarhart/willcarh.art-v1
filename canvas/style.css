@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
-@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300');
 
 :root {
 	--c1: #e27d60; /*red-orange*/
 	--c1dark: #AF4A2D;
 	--c2: #85dcbf; /*light-teal*/
 	--c2dark: #52A98C;
-	--c3: #e8a87c; /*peach*/
-	--c3dark: #B57549;
+	--c5: #e8a87c; /*peach*/
+	--c5dark: #B57549;
 	--c4: #c38d9e; /*mid-purple*/
 	--c4dark: #905A6B;
-	--c5: #41b3a3; /*dark-teal*/
-	--c5dark: #0E8070;
+	--c3: #41b3a3; /*dark-teal*/
+	--c3dark: #0E8070;
 
 	--n1: #2c3840; /*charcoal*/
 	--n1dark: #00050D;
@@ -58,7 +58,7 @@ body {
 
 /*-- landing page --*/
 .home-inner {
-	background-image: url(img/computers.png);
+	background-image: url(img/background.png);
 }
 .caption {
 	width: 100%;
@@ -67,8 +67,7 @@ body {
 	top: 38%;
 	z-index: 1;
 	color: var(--n2);
-	font-family: 'Source Code Pro', monospace;
-	/*text-transform: uppercase;*/
+	font-family: 'Montserrat', sans-serif;
 }
 .caption h1 {
 	font-size: 3.8rem;
@@ -153,7 +152,7 @@ h3.heading {
 
 /*-- passions --*/
 .fixed {
-	background-image: url(img/apple.png);
+	background-image: url(img/background2.png);
 	z-index: -1;
 }
 .dark {
