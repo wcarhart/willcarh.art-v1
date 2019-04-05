@@ -32,6 +32,10 @@ body {
 	margin-top: -4rem;
 }
 
+[class*="col-"] {
+	padding: 1rem;
+}
+
 /*-- navigation --*/
 .navbar {
 	text-transform: uppercase;
@@ -57,8 +61,14 @@ body {
 /*-- end navigation --*/
 
 /*-- landing page --*/
+.home-wrap {
+	background-color: rgba(0, 0, 0, 0.6);
+	color: var(--n2);
+	padding: 7rem 2rem;
+}
 .home-inner {
 	background-image: url(img/background.png);
+	z-index: -1;
 }
 .caption {
 	width: 100%;
