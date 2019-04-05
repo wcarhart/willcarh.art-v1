@@ -23,6 +23,7 @@ body {
 	overflow-x: hidden;
 	font-family: 'Lato', sans-serif;
 	color: var(--n1);
+	background-color: var(--n1)
 }
 
 .offset:before {
@@ -38,219 +39,69 @@ body {
 
 /*-- navigation --*/
 .navbar {
+	padding: .7rem 1rem;
 	text-transform: uppercase;
-	font-weight: 700;
 	font-size: .9rem;
+	font-weight: 700;
 	letter-spacing: .1rem;
-	background-color: rgba(0, 0, 0, 0.6)!important;
+	transition: background-color .5s ease 0s;
 }
-.navbar-brand img {
-	height: 2rem;
+.navbar-brand {
+	color: var(--n2);
+}
+.svg-inline--fa.fa-w-14 {
+	color: var(--n2);
+	font-size: 1.6rem;
+}
+#blog-nav-item {
+	color: var(--c2);
 }
 .navbar-nav li {
-	padding-right: .7rem;
+	padding-right: .8rem;
 }
-.navbar-dark .navbar-nav .nav-link {
+.navbar-nav .nav-link {
 	color: var(--n2);
-	padding: .8rem;
 }
-.navbar-dark .navbar-nav .nav-link.active,
-.navbar-dark .navbar-nav .nav-link:hover {
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
 	color: var(--c5);
+}
+.navbar-brand:hover {
+	color: var(--c5);
+}
+.navbar.solid {
+	background: rgba(0, 0, 0, 0.7)!important;
+	transition: background-color 1s ease 0s;
 }
 /*-- end navigation --*/
 
 /*-- landing page --*/
-.home-wrap {
-	background-color: rgba(0, 0, 0, 0.6);
-	color: var(--n2);
-	padding: 7rem 2rem;
-}
-.home-inner {
-	background-image: url(img/background.png);
-	z-index: -1;
-}
-.caption {
-	width: 100%;
-	max-height: 100%;
-	position: absolute;
-	top: 38%;
-	z-index: 1;
-	color: var(--n2);
-	font-family: 'Montserrat', sans-serif;
-}
-.caption h1 {
-	font-size: 3.8rem;
-	font-weight: 700;
-	letter-spacing: .3rem;
-	text-shadow: .1rem .1rem .8rem black;
-	padding-bottom: 1rem;
-}
-.caption h3 {
-	font-size: 2rem;
-	text-shadow: .1rem .1rem .5rem black;
-	padding-bottom: 1.6rem;
-}
-.btn-lg {
-	font-family: 'Lato', sans-serif;
-	border-width: medium;
-	border-radius: 0;
-	padding: .6rem 1.3rem;
-	font-size: 1.1rem;
-}
+
 /*-- end landing page --*/
 
 /*-- skills --*/
-.narrow {
-	width: 75%;
-	margin: 1.5rem auto;
-	padding-top: 2rem;
-}
-.narrow h1 {
-	font-size: 2.4rem;
-	font-weight: 700;
-	text-transform: uppercase;
-}
-.btn-secondary {
-	border-width: medium;
-	border-radius: 0;
-	text-transform: uppercase;
-	font-size: 1.2rem;
-	padding: .6rem, 1.2rem;
-	margin: 1rem;
-	color: var(--n2);
-	background-color: var(--c5);
-	border-color: var(--c5);
-}
 
-.btn-secondary:hover {
-	background-color: var(--c5dark);
-	border-color: var(--c5dark);
-}
 /*-- end skills --*/
 
 /*-- projects --*/
-.jumbotron {
-	margin-bottom: 0;
-	padding: 2rem 0 3.5rem;
-	border-radius: 0;
-}
-h3.heading {
-	font-size: 1.9rem;
-	font-weight: 700;
-	text-transform: uppercase;
-	margin-bottom: 1.9rem;
-}
-.heading-underline {
-	width: 3rem;
-	height: .2rem;
-	background-color: var(--c5);
-	margin: 0 auto 2rem;
-}
-.feature svg.svg-inline--fa {
-	color: var(--c5);
-}
-.feature h3 {
-	font-size: 1.3rem;
-	text-transform: uppercase;
-	padding-bottom: .4rem
-}
-.feature p {
-	font-size: 1.1rem;
-}
+
 /*-- end projects --*/
 
 /*-- passions --*/
-.fixed {
-	background-image: url(img/background2.png);
-	z-index: -1;
-}
-.dark {
-	background-color: rgba(0, 0, 0, 0.75);
-	color: var(--n2);
-	padding: 7rem 2rem;
-}
-.fixed-background h3 {
-	margin-bottom: 2rem;
-}
-.fixed-background p {
-	margin-top: 1.5rem;
-}
+
 /*-- end passions --*/
 
 /*-- quotes --*/
-.quotes img {
-	width: 100%;
-	border-radius: 50%;
-}
-blockquote .svg-inline--fa {
-	color: var(--c5);
-	margin: 1rem;
-}
-.quotes-hr {
-	border-top: .05rem solid var(--c5);
-}
+
 /*-- end quotes --*/
 
 /*-- contact --*/
-footer {
-	background-color: var(--n1);
-	color: var(--n2);
-	padding: 2rem 0 2rem;
-	margin-top: 1rem;
-}
-footer img {
-	height: 3rem;
-	margin: 1.5rem 0;
-}
-footer a {
-	color: var(--n2);
-}
-footer svg.svg-inline--fa {
-	font-size: 1.6rem;
-	margin: 1.2rem .5rem 0 0;
-}
-footer svg.svg-inline--fa:hover {
-	font-size: 1.6rem;
-	margin: 1.2rem .5rem 0 0;
-	color: var(--c5)!important;
-}
-hr.socket {
-	width: 100%;
-	border-top: .2rem solid var(--n2dark);
-	margin-top: 3rem;
-}
-.love {
-	padding-top: 0.5rem;
-	margin-bottom: 0;
-	padding-bottom: 0;
-}
+
 /*-- end contact --*/
 
 /*-- styling for mobile --*/
-@media (max-width: 767px) {
-	.caption h1 {
-	font-size: 2.3rem;
-	letter-spacing: .15rem;
-	padding-bottom: .5rem;
-	}
-	.caption h3 {
-		font-size: 1.2rem;
-		padding-bottom: 1.2rem;
-	}
-	.btn-lg {
-		padding: .5rem 1rem;
-		font-size: 1rem;
-	}
-	.narrow h1 {
-	font-size: 1.5rem;
-	}
-	.quotes img {
-		max-width: 50%;
-		display: block;
-		margin: 0 auto;
-	}
-}
+
+/*-- end styling for mobile --*/
 
 
 
