@@ -110,6 +110,70 @@ body {
 }
 /*-- end landing page --*/
 
+/*-- about --*/
+.narrow {
+	width: 75%;
+	margin: 0 auto;
+	padding-top: 2rem;
+}
+.btn-sm {
+	border-width: medium;
+	border-radius: 0;
+	padding: .5rem 1.1rem;
+	font-size: .9rem;
+	text-transform: uppercase;
+	margin: 1rem;
+}
+.btn-color {
+	border-color: var(--c5);
+	background-color: var(--c5);
+	color: var(--n2);
+}
+.btn-color:hover,
+.btn-color:focus {
+	border-color: var(--c5dark);
+	background-color: var(--c5dark);
+	color: var(--n2);
+}
+.jumbotron {
+	margin-bottom: 0;
+	border-radius: 0;
+	padding: 1rem 0 3rem;
+}
+h1.heading {
+	font-size: 1.9rem;
+	text-align: center;
+	margin-bottom: 1.9rem;
+}
+.heading-underline {
+	width: 3rem;
+	height: .2rem;
+	background-color: var(--c5);
+	margin: 0 auto 2rem;
+}
+.about {
+	padding-bottom: 1.2rem;
+}
+/*-- end about --*/
+
+/*-- skills --*/
+.skill {
+	text-align: center;
+}
+.skill .fa-layers {
+	color: var(--c5);
+	height: 6rem;
+	margin: 0 auto;
+	width: 3.9rem;
+}
+.feature h3 {
+	font-size: 1.3rem;
+	padding-bottom: .4rem;
+}
+.feature p {
+	font-size: 1.1rem;
+}
+/*-- end skills --*/
 
 
 
