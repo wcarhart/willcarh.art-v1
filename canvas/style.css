@@ -76,7 +76,7 @@ body {
 
 /*-- landing page --*/
 .home-inner {
-	background-image: url(img/background.png);
+	background-image: url('img/background.png');
 }
 .caption {
 	width: 100%;
@@ -166,16 +166,31 @@ h1.heading {
 	margin: 0 auto;
 	width: 3.9rem;
 }
-.feature h3 {
+.skill h3 {
 	font-size: 1.3rem;
 	padding-bottom: .4rem;
 }
-.feature p {
+.skill p {
 	font-size: 1.1rem;
 }
 /*-- end skills --*/
 
-
+/*-- passions --*/
+#fixed {
+	background-image: url(img/background.png);
+	z-index: -1;
+	background-size: cover;
+}
+.dark {
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 7rem 2rem;
+  text-align: center;
+  z-index: 1000!important;
+}
+.dark h1, .dark h3, .dark p {
+  color: var(--n2);
+}
+/*-- passions --*/
 
 
 
