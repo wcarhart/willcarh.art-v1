@@ -11,7 +11,7 @@
 
 
 /*--- TURN OFF ANIMATION ON MOBILE *
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 .animated, .os-animation {
 	-webkit-animation: none;
 	-moz-animation: none;
