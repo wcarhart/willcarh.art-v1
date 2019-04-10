@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+{% load static %}
 
 :root {
 	--c1: #e27d60; /*red-orange*/
@@ -177,9 +178,8 @@ h1.heading {
 
 /*-- passions --*/
 #fixed {
-	background-image: url(img/background.png);
+	background-image: url('img/background2.png');
 	z-index: -1;
-	background-size: cover;
 }
 .dark {
   background-color: rgba(0, 0, 0, 0.75);

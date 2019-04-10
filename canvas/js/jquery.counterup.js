@@ -19,14 +19,15 @@
 
     return this.each(function(){
 
-        // Store the object
+ // Store the object
         var $this = $(this);
         var $settings = settings;
+        var origValue = $this.text();
 
         var counterUpper = function() {
             var nums = [];
             var divisions = $settings.time / $settings.delay;
-            var num = $this.text();
+            var num = origValue;
             var isComma = /[0-9]+,[0-9]+/.test(num);
             num = num.replace(/,/g, '');
             var isInt = /^[0-9]+$/.test(num);
