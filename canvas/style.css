@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
 {% load static %}
 
 :root {
@@ -78,6 +79,10 @@ body {
 /*-- landing page --*/
 .home-inner {
 	background-image: url('img/background.png');
+	z-index: -1;
+}
+.home-wrap {
+	background-color: rgba(0, 0, 0, 0.1);
 }
 .caption {
 	width: 100%;
@@ -90,7 +95,8 @@ body {
 	color: var(--n2);
 	font-size: 4.5rem;
 	/* TODO: fix font here! */
-	font-weight: 700;
+	font-family: 'Shadows Into Light', cursive;
+	/*font-weight: 700;*/
 	letter-spacing: .3rem;
 	text-shadow: .1rem .1rem .8rem var(--n1);
 	padding-bottom: 1rem;
@@ -99,6 +105,7 @@ body {
 	color: var(--n2);
 	font-size: 2.5rem;
 	/* TODO: fix font here! */
+	font-family: 'Shadows Into Light', cursive;
 	text-shadow: .1rem .1rem .5rem var(--n1);
 	padding-bottom: 2rem;
 }
@@ -326,6 +333,55 @@ hr.socket {
 }
 /*-- end contact --*/
 
+/*-- media queries --*/
+/* Devices under 992px (lg) */
+@media(max-width: 991px) {
+	.caption h1 {
+		font-size: 3.5rem;
+		letter-spacing: 0.2rem;
+		padding-bottom: 0.8rem;
+	}
+	.caption h3 {
+		font-size: 2.2rem;
+		padding-bottom: 1.7rem;
+	}
+	.btn-lg {
+		padding: 0.7rem 1.2rem;
+		font-size: 1rem;
+	}
+	.narrow h1 {
+		font-size: 2.1rem;
+	}
+}
+/* Devices under 768px (md) */
+@media(max-width: 767px) {
+	.caption h1 {
+		font-size: 2.7rem;
+		letter-spacing: 0.15rem;
+		padding-bottom: 0.5rem;
+	}
+	.caption h3 {
+		font-size: 1.7rem;
+		padding-bottom: 1.2rem;
+	}
+	.btn-lg {
+		padding: 0.6rem 1.1rem;
+		font-size: 1rem;
+	}
+	.narrow h1 {
+		font-size: 1.8rem;
+	}
+	footer {
+	background-image: url('img/footer-mobile.png');
+	background-repeat: no-repeat;
+	}
+}
+/* Devices under 576px (sm) */
+@media(max-width: 575px) {
+	.narrow {
+		width: 85%;
+	}
+}
 
 /*============ BOOTSTRAP BREAK POINTS:
 
