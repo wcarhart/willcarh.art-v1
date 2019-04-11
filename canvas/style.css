@@ -188,7 +188,6 @@ img.example-image {
 }
 .project-item img:hover {
 	transform: scale(1.3);
-	cursor: zoom-in;
 }
 .project-item img {
 	transition: transform .4s ease;
@@ -223,6 +222,40 @@ img.example-image {
 }
 /*-- end lightbox project backgrounds --*/
 /*-- end projects --*/
+
+/*-- experience --*/
+.experience-column {
+	background-color: var(--n2);
+	padding: 2rem;
+	border-top: .2rem solid var(--c5);
+	box-shadow: 0 0 .8rem rgba(0, 0, 0, 0.075);
+	transition: transform .7s ease;
+}
+.experience-column:hover {
+	transform: scale(1.1);
+}
+.experience-column img {
+	max-width: 100%;
+}
+.experience-column h3 {
+	padding: 1rem;
+	border-bottom: .1rem solid rgba(0, 0, 0, 0.1);
+}
+.experience-column p {
+	opacity: 0.8;
+	margin-top: 1.3rem;
+}
+.experience-column h4 {
+	font-size: 1.1rem;
+	padding: .4rem;
+}
+.experience-column .item {
+	font-weight: 700;
+}
+.experience-column h1 {
+	padding: .8rem 0;
+}
+/*-- end experience --*/
 
 /*-- passions --*/
 #fixed {
