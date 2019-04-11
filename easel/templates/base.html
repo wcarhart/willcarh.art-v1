@@ -1,34 +1,59 @@
+<!DOCTYPE html>
 <html lang="en">
-	<!-- CSS -->
-	<head>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	</head>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>willcarh.art</title>
+	<meta name="description" content="willcarh.art is a website for Will Carhart's personal portfolio.">
 
-	<!-- Nav bar -->
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	    <div class="container">
-	        <a class="navbar-brand" href="{% url 'home' %}">Will Carhart</a>
-	        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	          <span class="navbar-toggler-icon"></span>
-	        </button>
+	<!-- Bootstrap CDN -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-	        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-	          <ul class="navbar-nav mr-auto">
-	            <li class="nav-item active">
-	              <a class="nav-link" href="{% url 'project_index' %}">Projects</a>
-	            </li>
-	          </ul>
-	        </div>
-	    </div>
+	<!-- static CSS -->
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'base.css' %}">
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+	<link rel="stylesheet" href="{% static 'css/waypoints.css' %}">
+
+	<!-- icons, because I'm extra -->
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'ico/apple-touch-icon.png' %}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{% static 'ico/favicon-32x32.png' %}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{% static 'ico/favicon-16x16.png' %}">
+	<link rel="manifest" href="{% static 'ico/site.webmanifest' %}">
+
+	<!-- Bootstrap to make page load faster -->
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<!-- navigation-->
+	<nav class="navbar navbar-expand-sm fixed-top">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="{% url 'home' %}">Will Carhart</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+				<span class="custom-toggler-icon"><i class="fas fa-bars"></i></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'project_index' %}">Projects</a>
+					</li>
+				</ul>
+			</div>
+		</div>
 	</nav>
+	<!-- end navigation -->
 
 	<!-- page content -->
-	<div class="container">
+	<div class="container-fluid projects-wrapper">
 		{% block page_content %}{% endblock %}
 	</div>
 
-	<!-- Bootstrap to make page load faster -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+	<script src="{% static 'js/projects-waypoints.js' %}"></script>
+</body>
 </html>
+
