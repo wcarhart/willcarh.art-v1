@@ -1,8 +1,3 @@
-/*--- Extra Bootstrap Column Padding --*/
-[class*="col-"] {
-  padding: 1rem;
-}
-
 /*--- Bootstrap Mobile Gutter Fix --*/
 .row, .container-fluid {
 margin-left: 0px!important;
@@ -18,7 +13,7 @@ margin-right: 0px!important;
 .landing {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100vh; /* Change height of landing page image. */
   display: table;
   z-index: -1;
 }
@@ -31,7 +26,7 @@ margin-right: 0px!important;
   height: 100%;
 }
 .home-inner {
-  position: fixed;
+  position: fixed; /* Change to relative to remove fixed style. */
   display: table;
   top: 0;
   left: 0;
@@ -58,7 +53,8 @@ margin-right: 0px!important;
   height: 100%;
   z-index: -999!important;
 }
-.fixed {
+/*--- Features Dark Background Image --*/
+#fixed {
   position: fixed;
   display: block;
   top: 0;
@@ -70,4 +66,26 @@ margin-right: 0px!important;
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
   will-change: transform;
+}
+/*--- Team Light Background Image --*/
+#fixed-2 {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  will-change: transform;
+}
+/*--- Prevent WayPoints from Browser Window Scrolling On Mobile --*/
+/* Devices under 768px (md) */
+@media (max-width: 767px) {
+  .row {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
 }

@@ -1,6 +1,8 @@
 *.pyc
 content.json
 
+**/.DS_Store
+
 easel/__pycache__/
 home/__pycache__/
 projects/__pycache__/
