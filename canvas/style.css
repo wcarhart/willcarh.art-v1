@@ -271,9 +271,60 @@ img.example-image {
 .dark h1, .dark h3, .dark p {
   color: var(--n2);
 }
-/*-- passions --*/
+/*-- end passions --*/
 
-
+/*-- contact --*/
+footer {
+	background-image: url('img/footer.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: var(--n2);
+}
+footer .row {
+	background-color: rgba(57, 63, 70, 0.85);
+	padding: 1rem 2rem 3rem;
+}
+footer h2 {
+	height: 2rem;
+	margin: 1.5rem 0;
+}
+footer a {
+	color: var(--n2);
+}
+footer a:hover,
+footer a:focus,
+footer a:active {
+	color: var(--c5)!important;
+}
+footer svg.svg-inline--fa {
+	font-size: 1.1rem;
+	margin: 1.2rem 1rem 0 0;
+}
+footer svg.svg-inline--fa:hover,
+footer svg.svg-inline--fa:focus,
+footer svg.svg-inline--fa:active {
+	color: var(--c5)!important;
+}
+/*-- contact form --*/
+.form-group {
+	margin-bottom: 1.3rem;
+}
+.form-control, .form-control:focus {
+	background-color: var(--n1);
+	border-radius: 0;
+	border: 0.15rem solid #666b71;
+	color: var(--n2);
+	font-size: 1.1rem;
+}
+input.btn {
+	cursor: pointer;
+}
+/*-- end contact form --*/
+hr.socket {
+	border-top: .2rem solid #666b71;
+	width: 100%;
+}
+/*-- end contact --*/
 
 
 /*============ BOOTSTRAP BREAK POINTS:
