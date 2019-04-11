@@ -82,7 +82,7 @@ body {
 	z-index: -1;
 }
 .home-wrap {
-	background-color: rgba(0, 0, 0, 0.1);
+	background-color: rgba(0, 0, 0, 0.2);
 }
 .caption {
 	width: 100%;
@@ -94,9 +94,7 @@ body {
 .caption h1 {
 	color: var(--n2);
 	font-size: 4.5rem;
-	/* TODO: fix font here! */
 	font-family: 'Shadows Into Light', cursive;
-	/*font-weight: 700;*/
 	letter-spacing: .3rem;
 	text-shadow: .1rem .1rem .8rem var(--n1);
 	padding-bottom: 1rem;
@@ -104,7 +102,6 @@ body {
 .caption h3 {
 	color: var(--n2);
 	font-size: 2.5rem;
-	/* TODO: fix font here! */
 	font-family: 'Shadows Into Light', cursive;
 	text-shadow: .1rem .1rem .5rem var(--n1);
 	padding-bottom: 2rem;
@@ -382,6 +379,7 @@ hr.socket {
 		width: 85%;
 	}
 }
+/*-- end media queries --*/
 
 /*============ BOOTSTRAP BREAK POINTS:
 
