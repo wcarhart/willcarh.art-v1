@@ -74,5 +74,16 @@ body {
 .project-item:hover {
 	transform: scale(1.1);
 }
+.project-item a {
+	background-color: var(--c5);
+	border-color: var(--c5);
+	border-radius: 0;
+}
+.project-item a:active,
+.project-item a:hover,
+.project-item a:focus {
+	border-color: var(--c5dark)!important;
+	background-color: var(--c5dark)!important;
+}
 /*-- end project container --*/
 
