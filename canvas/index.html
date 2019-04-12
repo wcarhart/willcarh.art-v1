@@ -318,7 +318,7 @@
 			<div class="narrow text-center">
 				<div class="col-12">
 					<p class="lead">Not only is coding part of my career, <i>it's my passion.</i> I love starting new side projects and spend a lot of my free time coding. My GitHub will always have my most recent code samples.</p>
-					<a class="btn btn-secondary btn-sm" href="#">See All Projects</a>
+					<a class="btn btn-secondary btn-sm" href="{% url 'project_index' %}">See All Projects</a>
 					<a class="btn btn-color btn-sm" href="https://github.com/wcarhart" target="_blank">
 						View My Github <i class="fab fa-github"></i>
 					</a>
@@ -472,27 +472,29 @@
 				<!-- contact form -->
 				<div class="col-md-7">
 					<h2>Say Hello!</h2>
-					<form id="contact-form" method="post">
+					<form action="#contact" id="contact-form" method="post">
 						<div class="messages">
 							<div class="controls">
 
-								<div class="form-group">
-									<input id="form_name" type="text" name="name" class="form-control" placeholder="What's your name?" required="required">
-								</div>
+						        {% csrf_token %}
 
-								<div class="form-group">
-									<input id="form_email" type="email" name="email" class="form-control" placeholder="What's your email?" required="required">
-								</div>
+						        <div class="form-group">
+						            {{ form.name }}
+						        </div>
 
-								<div class="form-group">
-									<textarea id="form_message" name="message" class="form-control" placeholder="What's up?" rows="4" required="required"></textarea>
-								</div>
+						        <div class="form-group">
+						            {{ form.email }}
+						        </div>
 
-								<input type="submit" class="btn btn-outline-light btn-sm" value="Say hello!">
+						        <div class="form-group">
+						        	{{ form.message }}
+						        </div>
 
-							</div>
-						</div>
-					</form>
+						        <input type="submit" class="btn btn-outline-light btn-sm" value="Say hello!">
+
+						    </div>
+					    </div>
+				    </form>
 				</div>
 				<!-- end contact form -->
 
@@ -507,15 +509,9 @@
 
 	<!-- script source files -->
 	<script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
-	<script src="{% static 'js/contact.js' %}"></script>
 	<script src="{% static 'js/custom.js' %}"></script>
-	<script src="{% static 'js/jquery.counterup.js' %}"></script>
 	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
-	<script src="{% static 'js/lightbox.js' %}"></script>
-	<script src="{% static 'js/owl.carousel.js' %}"></script>
-	<script src="{% static 'js/validator.js' %}"></script>
 	<script src="{% static 'js/waypoints.js' %}"></script>
-	<!-- end script source files -->
 
 </body>
 </html>

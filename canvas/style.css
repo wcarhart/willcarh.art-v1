@@ -20,6 +20,10 @@
 	--n2dark: #CBCCCC;
 }
 
+/* uncomment this line for debugging
+* { outline: solid 0.25rem hsla(210, 100%, 100%, 0.5); }
+*/
+
 body {
 	overflow-x: hidden;
 	font-family: 'Lato', sans-serif;
