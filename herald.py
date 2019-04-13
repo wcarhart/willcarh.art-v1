@@ -15,6 +15,7 @@ def build_parser():
 	"""
 	parser = argparse.ArgumentParser(description=__doc__, formatter_class = argparse.ArgumentDefaultsHelpFormatter)
 	parser.add_argument('message', type=str, help="the message to put in the body of the email")
+	parser.add_argument('-t', '--target', type=str, required=False, default="", help="if included, the receiver's email")
 	parser.add_argument('-s', '--subject', type=str, required=False, default="", help="if included, will be the subject line of the email")
 	return parser
 
@@ -141,7 +142,9 @@ def main():
 	parser = build_parser()
 	args = parser.parse_args()
 
-	status, smtpcode, message = send_email((args.message, ""), subject=args.subject)
+	target = None if args.target == '' else args.target
+
+	status, smtpcode, message = send_email((args.message, ""), subject=args.subject, target=target)
 	print(message)
 
 if __name__ == '__main__':
