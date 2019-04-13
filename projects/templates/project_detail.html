@@ -11,14 +11,14 @@
 
 	<!-- content -->
 	<div class="row">
-		<div class="col-md-7">
+		<div class="col-lg-7 col-md-12">
 			<div class="os-animation" data-animation="fadeInLeft">
 				<div style="background-color: {{ project.color }}">
 					<img src="{% static project.cover %}" alt="Project image" width="100%">
 				</div>
 			</div>
 		</div>
-		<div class="col-md-5">
+		<div class="col-lg-5 col-md-12">
 			<div class="os-animation" data-animation="fadeInRight">
 				<p class="lead blurb"><i>{{ project.blurb }}</i></p>
 				<h3>About the project:</h3>
@@ -28,6 +28,12 @@
 				<br>
 				<h3>Technology used:</h3>
 				<p>{{ project.technology }}</p>
+				{% if not github == '' %}
+					<a class="btn btn-primary btn-md" href="{{ github }}" target="_blank">View on GitHub <i class="fab fa-github" data-fa-transform="right-2"></i></a>
+				{% endif %}
+				{% if not pypi == '' %}
+					<a class="btn btn-primary btn-md" href="{{ pypi }}" target="_blank">View on PyPI <i class="fab fa-python" data-fa-transform="shrink-4 down-1 right-1"></i></a>
+				{% endif %}
 			</div>
 		</div>
 	</div>
