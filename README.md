@@ -1,14 +1,51 @@
 # willcarh.art
-Porfolio (WIP)
+Full-stack web application for my portfolio! Will eventually be deployed to [willcarh.art]()...
 
-## Technologies
+Track development progress here: https://trello.com/b/glDTHpCJ/willcarhart
+
+## Utilities
+### `Scribe`
+The `scribe` writes content to the database from a JSON file. Checkout the code --> [`scribe.py`](https://github.com/wcarhart/willcarh.art/blob/master/scribe.py)
+
+**Usage**:
+```
+# read from default 'contents.json'
+$ python3 scribe.py
+# read from custom 'custom.json'
+$ python3 -f scribe.py custom.json
+```
+### `Herald`
+The `herald` sends emails. Checkout the code --> [`herald.py`](https://github.com/wcarhart/willcarh.art/blob/master/herald.py)
+
+**Usage**:
+```
+# send an email with the subject "News Flash!" to "you@email.com" describing the news
+$ python3 herald.py -s "News Flash!" -t "you@email.com" "willcarh.art is a sick website!"
+```
+### `Locksmith`
+The `locksmith` encrypts project secrets so nefarious individuals can't see them when my code's stored in GitHub. Checkout the code --> [`locksmith`](https://github.com/wcarhart/locksmith)
+
+**Usage**:
+See linked repository: [`locksmith`](https://github.com/wcarhart/locksmith)
+### `Maid`
+The `maid` cleans and refreshes the database for updates. Checkout the code --> [`maid.py`](https://github.com/wcarhart/willcarh.art/blob/master/maid.py)
+
+**Usage**:
+```
+# clean the database
+$ python3 maid.py
+# clean the database and update using Scribe
+$ python3 maid.py -u
+```
+
+## Technologies Used
 ### Front-end
  * HTML5
  * CSS3
- * Bootstrap4
+ * Bootstrap 4
+ * Javascript
 ### Back-end
  * Python 3.7
  * Django 2.1.5
 ### Database
  * PostgreSQL 11.2
- 
