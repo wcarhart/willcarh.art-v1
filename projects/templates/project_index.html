@@ -10,7 +10,7 @@
 		<div class="project-item col-md-4">
 			<div class="os-animation" data-animation="fadeInUp" data-delay="{{ forloop.counter|multiply:0.1 }}s">
 				<div class="card mb-2">
-					<img class="card-img-top" src="{% static project.cover %}">
+					<img class="card-img-top" src="{% static project.cover %}" style="background-color: {{ project.color }};">
 					<div class="card-body">
 						<h5 class="card-title">{{ project.title }}</h5>
 						<p class="card-text">{{ project.blurb }}</p>

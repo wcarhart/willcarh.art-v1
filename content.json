@@ -1,0 +1,170 @@
+[
+	{
+		"class": "Project",
+		"content": {
+			"title": "Cheers",
+			"blurb": "iOS app for finding ongoing happy hours",
+			"description": "Cheers started as a concept while I attended the University of San Diego. The goal was to develop an iOS app that would show nearby bars and restaurants with ongoing happy hours. Our team observed that often in San Diego there are many fun bars to explore, but sometimes it's hard to know where to look. That's where Cheers comes in!<br>During the project's development, we wrote a proof-of-concept iOS app, which did all processing on the client. The app uses the Yelp Fusion API to acquire its restaurant data and Firebase as a data store. Given that I had the original idea for the app and I had written more than half the code base, I decided to continue the project after my time at USD.<br>The complete version of the app is still a work in progress, but I plan on publishing it soon. The client is written entirely in Swift + iOS, while the backend is an API written in Flask and Python, using the SQLAlchemy adapter for the PostgreSQL database.",
+			"technology": "iOS, Swift, Firebase, Flask, Python, PostgreSQL, SQLAlchemy",
+			"links": "{'GitHub': 'https://github.com/usd-cs/comp495-sp18-happy-hour'}",
+			"cover": "img/beer.png",
+			"demo": "",
+			"color": "#9B59B6",
+			"democontent": "demo/cheers.html"
+		}
+	},
+	{
+		"class": "Project",
+		"content": {
+			"title": "beaver",
+			"blurb": "CLI for parsing log files",
+			"description": "",
+			"technology": "Python",
+			"links": "{'GitHub': 'https://github.com/wcarhart/beaver'}",
+			"cover": "img/beaver.png",
+			"demo": "",
+			"color": "#1ABC9C",
+			"democontent": "demo/beaver.html"
+		}
+	},
+	{
+		"class": "Project",
+		"content": {
+			"title": "locksmith",
+			"blurb": "API between repository secrets and nefarious individuals",
+			"description": "",
+			"technology": "Python",
+			"links": "{'GitHub': 'https://github.com/wcarhart/locksmith'}",
+			"cover": "img/lock.png",
+			"demo": "",
+			"color": "#3498DB",
+			"democontent": "demo/locksmith.html"
+		}
+	},
+	{
+		"class": "Project",
+		"content": {
+			"title": "willcarh.art",
+			"blurb": "Personal portfolio, fullstack web app",
+			"description": "",
+			"technology": "HTML5, CSS3, Bootstrap 4, Javascript, jQuery, Django, PostgreSQL, Python",
+			"links": "{'GitHub': 'https://github.com/wcarhart/willcarh.art'}",
+			"cover": "img/internet.png",
+			"demo": "",
+			"color": "#E74C3C",
+			"democontent": "demo/willcarhart.html"
+		}
+	},
+	{
+		"class": "Project",
+		"content": {
+			"title": "smoosh",
+			"blurb": "News article summarizer",
+			"description": "",
+			"technology": "Python",
+			"links": "{'GitHub': 'https://github.com/wcarhart/smoosh'}",
+			"cover": "img/news.png",
+			"demo": "",
+			"color": "#34495E",
+			"democontent": "demo/smoosh.html"
+		}
+	},
+	{
+		"class": "Project",
+		"content": {
+			"title": "Chordpanion",
+			"blurb": "iOS app that writes chord progressions",
+			"description": "",
+			"technology": "iOS, Swift",
+			"links": "{'GitHub': 'https://github.com/wcarhart/Chordpanion'}",
+			"cover": "img/musical-notes.png",
+			"demo": "",
+			"color": "#2ECC71",
+			"democontent": "demo/chordpanion.html"
+		}
+	},
+	{
+		"class": "Project",
+		"content": {
+			"title": "othello",
+			"blurb": "CLI implementation of the board game Othello",
+			"description": "",
+			"technology": "Python",
+			"links": "{'GitHub': 'https://github.com/wcarhart/othello'}",
+			"cover": "img/checkers.png",
+			"demo": "",
+			"color": "#F1C40F",
+			"democontent": "demo/othello.html"
+		}
+	},
+	{
+		"class": "Project",
+		"content": {
+			"title": "sudoku",
+			"blurb": "CLI that solves a Sudoku puzzle",
+			"description": "",
+			"technology": "Python",
+			"links": "{'GitHub': 'https://github.com/wcarhart/Sudoku'}",
+			"cover": "img/square-with-numbers.png",
+			"demo": "",
+			"color": "#E67E22",
+			"democontent": "demo/sudoku.html"
+		}
+	},
+	{
+		"class": "Project",
+		"content": {
+			"title": "Konphig",
+			"blurb": "Quirky bash functions and configuration files",
+			"description": "",
+			"technology": "Bash",
+			"links": "{'GitHub': 'https://github.com/wcarhart/Konphig'}",
+			"cover": "img/settings.png",
+			"demo": "",
+			"color": "#34495E",
+			"democontent": "demo/knophig.html"
+		}
+	},
+	{
+		"class": "Project",
+		"content": {
+			"title": "cheqit",
+			"blurb": "Website status indicator",
+			"description": "",
+			"technology": "Python",
+			"links": "{'GitHub': 'https://github.com/wcarhart/cheqit'}",
+			"cover": "img/checkmark.png",
+			"demo": "",
+			"color": "#9B59B6",
+			"democontent": "demo/cheqit.html"
+		}
+	},
+	{
+		"class": "Project",
+		"content": {
+			"title": "Despicable",
+			"blurb": "Lightweight CLI for multithreading",
+			"description": "",
+			"technology": "Python, Bash",
+			"links": "{'GitHub': 'https://github.com/wcarhart/Despicable'}",
+			"cover": "img/minion.png",
+			"demo": "",
+			"color": "#E74C3C",
+			"democontent": "demo/despicable.html"
+		}
+	},
+	{
+		"class": "Project",
+		"content": {
+			"title": "NASA APOD",
+			"blurb": "iOS app to display NASA's Astronomy Picture of the Day",
+			"description": "",
+			"technology": "iOS, Swift",
+			"links": "{'GitHub': 'https://github.com/wcarhart/NASA_APOD'}",
+			"cover": "img/telescope.png",
+			"demo": "",
+			"color": "#1ABC9C",
+			"democontent": "nasa_apod.html"
+		}
+	}
+]

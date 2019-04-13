@@ -14,7 +14,10 @@ def home(request):
 			from_message = form.cleaned_data['message']
 
 			host_message = build_host_message(from_name, from_email, from_message)
-			status, smtpcode, message = send_email((host_message, ""))
+			status, smtpcode, message = send_email(
+				(host_message, ""),
+				subject=f"willcarh.art: New email from {from_name}"
+			)
 			print(f"Email to host:{message}")
 
 			client_message = build_client_message(from_name, from_email, from_message)
