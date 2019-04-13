@@ -56,7 +56,7 @@ Hi {from_name}!
 
 Nice to meet you! Thanks so much for checking out my website! I'm excited to read your note, and I'll get back to you as soon as I can.
 
-In the meantime, willcarh.art's bot, the Herald, is sending you this email to confirm your note's delivery. If you're interested in 
+In the meantime, willcarh.art's email bot, the Herald, is sending you this email to confirm your note's delivery. If you're interested in 
 seeing how the Herald sends emails, please check out its code here: https://github.com/wcarhart/willcarh.art/blob/master/herald.py
 
 Take care,
@@ -109,10 +109,12 @@ def send_email(message, subject="", target=None, email=None, password=None):
 			receiver_email = target
 			draft = MIMEMultipart("alternative")
 
+
+
 			if not subject == "":
 				draft["Subject"] = subject
 			else:
-				draft["Subject"] = f"willcarh.art: New email from {email}"
+				draft["Subject"] = f"willcarh.art email notification"
 			draft["From"] = sender_email
 			draft["To"] = receiver_email
 

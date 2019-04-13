@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
 {% load static %}
 
 :root {
@@ -58,7 +58,7 @@ body {
 }
 /*-- end navigation --*/
 
-/*-- project container --*/
+/*-- project container, index --*/
 .projects-wrapper {
 	background-image: url('img/footer.png');
 	background-color: rgb(0, 0, 0, 0.2);
@@ -85,5 +85,30 @@ body {
 	border-color: var(--c5dark)!important;
 	background-color: var(--c5dark)!important;
 }
-/*-- end project container --*/
+/*-- end project container, index--*/
+
+/*-- project container, detail --*/
+.narrow {
+	width: 75%;
+	margin: 0 auto;
+}
+h1.heading {
+	font-size: 3.5rem;
+	padding: 2rem 0;
+}
+.blurb {
+	font-size: 1.5rem;
+	font-weight: 300;
+	padding: 0.5rem 0 1.1rem;
+}
+/*-- end project container, detail --*/
+
+/*-- demo --*/
+.demo h2 {
+	font-size: 2rem;
+}
+.demo-content {
+	padding: 2rem;
+}
+/*-- end demo --*/
 

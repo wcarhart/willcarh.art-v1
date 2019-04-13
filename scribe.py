@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+"""
+Writes new entries to the database
+"""
 import argparse
 import json
 import sys

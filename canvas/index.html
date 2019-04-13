@@ -234,14 +234,17 @@
 		<!-- grid -->
 		<div class="container-fluid">
 			<div class="row no-padding">
+				{% load custom_filters %}
 
 				<!--  grid content -->
 				<div class="col-sm-6 col-md-3">
 					<div class="os-animation" data-animation="bounceInLeft" data-delay=".2s">
 						<div id="beaver-proj" class="project-item">
-							<a href="#" target="_blank">
+							{% with proj='' %}
+							<a href="{% url 'project_detail' proj|resolve:'beaver' %}" target="_blank">
 								<img class="example-image" src="{% static 'img/beaver.png' %}" alt="beaver icon">
 							</a>
+							{% endwith %}
 						</div>
 					</div>
 				</div>

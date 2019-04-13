@@ -9,6 +9,8 @@ class Project(models.Model):
 	links = models.TextField(default='', null=True, blank=True)
 	cover = models.FilePathField(path='/img', default='', null=True, blank=True)
 	demo = models.FilePathField(path='/img', default='', null=True, blank=True)
+	color = models.CharField(max_length=10, default='', null=True, blank=True)
+	democontent = models.FilePathField(path='/demo', default='', null=True, blank=True)
 
 	def __str__(self):
 		return str(self.title)

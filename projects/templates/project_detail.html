@@ -2,17 +2,51 @@
 {% load static %}
 
 {% block page_content %}
-<h1>{{ project.title }}</h1>
-<div class="row">
-	<div class="col-md-8">
-		<img src="{% static project.cover %}" alt="Project image" width="100%">
+<div class="project-detail narrow">
+	<!-- heading -->
+	<div class="os-animation" data-animation="fadeInUp">
+		<h1 class="heading">{{ project.title }}</h1>
 	</div>
-	<div class="col-md-4">
-		<h5>About the project:</h5>
-		<p>{{ project.description }}</p>
-		<br>
-		<h5>Technology used:</h5>
-		<p>{{ project.technology }}</p>
+	<!-- end heading -->
+
+	<!-- content -->
+	<div class="row">
+		<div class="col-md-7">
+			<div class="os-animation" data-animation="fadeInLeft">
+				<div style="background-color: {{ project.color }}">
+					<img src="{% static project.cover %}" alt="Project image" width="100%">
+				</div>
+			</div>
+		</div>
+		<div class="col-md-5">
+			<div class="os-animation" data-animation="fadeInRight">
+				<p class="lead blurb"><i>{{ project.blurb }}</i></p>
+				<h3>About the project:</h3>
+				{% for section in description_sections %}
+					<p>{{ section }}</p>
+				{% endfor %}
+				<br>
+				<h3>Technology used:</h3>
+				<p>{{ project.technology }}</p>
+			</div>
+		</div>
 	</div>
+	<!-- end content -->
+
+	<!-- demo -->
+	<div class="container-fluid demo">
+		<div class="demo-content os-animation" data-animation="fadeInUp">
+			<h2>Demo</h2>
+			{% include project.democontent %}
+			{% block demo %}{% endblock %}
+		</div>
+	</div>
+	<!-- end demo -->
+
+	<!-- footer -->
+	<footer>
+		<br><br><br><br><br><br><br><br><br><br><br><br>
+	</footer>
+	<!-- end footer -->
 </div>
 {% endblock %}
