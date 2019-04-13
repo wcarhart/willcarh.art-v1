@@ -37,6 +37,18 @@ $ python3 maid.py
 # clean the database and update using Scribe
 $ python3 maid.py -u
 ```
+### `Chronicler`
+The `chronicler` updates, records, and manages the app's manifest file (which contains version, etc.). Checkout the code --> [`chronicler.py`](https://github.com/wcarhart/willcarh.art/blob/master/chronicler.py)
+
+**Usage**:
+```bash
+# update manifest.json to reflect changes
+$ python3 chronicler.py
+# bump major version for app
+$ python3 chronicler.py -M
+# bump minor version for app
+$ python3 chronicler.py -m
+```
 
 ## Technologies Used
 ### Front-end
