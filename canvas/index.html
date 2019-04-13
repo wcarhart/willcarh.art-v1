@@ -91,7 +91,7 @@
 				<h1>hi there</h1>
 			</div>
 			<div class="os-animation" data-animation="fadeInUp" data-delay="1.2s">
-				<h3>my name's will</h3>
+				<h3>my name's Will</h3>
 			</div>
 			<div class="os-animation" data-animation="fadeInUp" data-delay="1.8s">
 				<a class="btn btn-outline-light btn-lg" href=#about>Explore</a>
@@ -240,18 +240,16 @@
 				<div class="col-sm-6 col-md-3">
 					<div class="os-animation" data-animation="bounceInLeft" data-delay=".2s">
 						<div id="beaver-proj" class="project-item">
-							{% with proj='' %}
-							<a href="{% url 'project_detail' proj|resolve:'beaver' %}" target="_blank">
+							<a href="{% url 'project_detail' ''|resolve:'beaver' %}">
 								<img class="example-image" src="{% static 'img/beaver.png' %}" alt="beaver icon">
 							</a>
-							{% endwith %}
 						</div>
 					</div>
 				</div>
 				<div class="col-sm-6 col-md-3">
 					<div class="os-animation" data-animation="bounceInLeft">
 						<div id="locksmith-proj" class="project-item">
-							<a href="#" target="_blank">
+							<a href="{% url 'project_detail' ''|resolve:'locksmith' %}">
 								<img class="example-image" src="{% static 'img/lock.png' %}" alt="locksmith icon">
 							</a>
 						</div>
@@ -260,7 +258,7 @@
 				<div class="col-sm-6 col-md-3">
 					<div class="os-animation" data-animation="bounceInRight">
 						<div id="othello-proj" class="project-item">
-							<a href="#" target="_blank">
+							<a href="{% url 'project_detail' ''|resolve:'othello' %}">
 								<img class="example-image" src="{% static 'img/checkers.png' %}" alt="othello icon">
 							</a>
 						</div>
@@ -269,7 +267,7 @@
 				<div class="col-sm-6 col-md-3">
 					<div class="os-animation" data-animation="bounceInRight" data-delay=".2s">
 						<div id="cheers-proj" class="project-item">
-							<a href="#" target="_blank">
+							<a href="{% url 'project_detail' ''|resolve:'Cheers' %}">
 								<img class="example-image" src="{% static 'img/beer.png' %}" alt="Cheers icon">
 							</a>
 						</div>
@@ -278,7 +276,7 @@
 				<div class="col-sm-6 col-md-3">
 					<div class="os-animation" data-animation="bounceInLeft" data-delay=".2s">
 						<div id="willcarhart-proj" class="project-item">
-							<a href="#" target="_blank">
+							<a href="{% url 'project_detail' ''|resolve:'willcarh.art' %}">
 								<img class="example-image" src="{% static 'img/internet.png' %}" alt="willcarh.art icon">
 							</a>
 						</div>
@@ -287,7 +285,7 @@
 				<div class="col-sm-6 col-md-3">
 					<div class="os-animation" data-animation="bounceInLeft">
 						<div id="chordpanion-proj" class="project-item">
-							<a href="#" target="_blank">
+							<a href="{% url 'project_detail' ''|resolve:'Chordpanion' %}">
 								<img class="example-image" src="{% static 'img/musical-notes.png' %}" alt="Chordpanion icon">
 							</a>
 						</div>
@@ -296,7 +294,7 @@
 				<div class="col-sm-6 col-md-3">
 					<div class="os-animation" data-animation="bounceInRight">
 						<div id="sudoku-proj" class="project-item">
-							<a href="#" target="_blank">
+							<a href="{% url 'project_detail' ''|resolve:'sudoku' %}">
 								<img class="example-image" src="{% static 'img/square-with-numbers.png' %}" alt="sudoku icon">
 							</a>
 						</div>
@@ -305,7 +303,7 @@
 				<div class="col-sm-6 col-md-3">
 					<div class="os-animation" data-animation="bounceInRight" data-delay=".2s">
 						<div id="smoosh-proj" class="project-item">
-							<a href="#" target="_blank">
+							<a href="{% url 'project_detail' ''|resolve:'smoosh' %}">
 								<img class="example-image" src="{% static 'img/news.png' %}" alt="smoosh icon">
 							</a>
 						</div>
