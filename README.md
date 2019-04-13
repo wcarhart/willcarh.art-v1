@@ -8,17 +8,17 @@ Track development progress here: https://trello.com/b/glDTHpCJ/willcarhart
 The `scribe` writes content to the database from a JSON file. Checkout the code --> [`scribe.py`](https://github.com/wcarhart/willcarh.art/blob/master/scribe.py)
 
 **Usage**:
-```
-# read from default 'contents.json'
+```bash
+# read from default file 'contents.json'
 $ python3 scribe.py
-# read from custom 'custom.json'
+# read from custom file 'custom.json'
 $ python3 scribe.py -f custom.json
 ```
 ### `Herald`
 The `herald` sends emails. Checkout the code --> [`herald.py`](https://github.com/wcarhart/willcarh.art/blob/master/herald.py)
 
 **Usage**:
-```
+```bash
 # send an email with the subject "News Flash!" to "you@email.com" describing the news
 $ python3 herald.py -s "News Flash!" -t "you@email.com" "willcarh.art is a sick website!"
 ```
@@ -31,7 +31,7 @@ See linked repository: [`locksmith`](https://github.com/wcarhart/locksmith)
 The `maid` cleans and refreshes the database for updates. Checkout the code --> [`maid.py`](https://github.com/wcarhart/willcarh.art/blob/master/maid.py)
 
 **Usage**:
-```
+```bash
 # clean the database
 $ python3 maid.py
 # clean the database and update using Scribe
