@@ -15,6 +15,11 @@ from pprint import pprint
 from subprocess import Popen, PIPE
 
 def bump_version(major, minor):
+	"""
+	Updates the app version based on commit count
+		:major: (bool) if true, bump the major version, reset commit, update lastupdated
+		:minor: (bool) if true, bump the minor version, reset commit, update lastupdated
+	"""
 	assert os.path.isfile('manifest.json')
 	with open('manifest.json', 'r') as manifest:
 		contents = json.load(manifest)
@@ -40,6 +45,17 @@ def bump_version(major, minor):
 	contents['version'] = f'{major_version}.{minor_version}.{commits}'
 	with open('manifest.json', 'w') as manifest:
 		json.dump(contents, manifest)
+
+def get_version():
+	"""
+	Get the app version
+		returns (str) the app version
+	"""
+	assert os.path.isfile('manifest.json')
+	with open('manifest.json', 'r') as manifest:
+		contents = json.load(manifest)
+	assert 'version' in contents.keys()
+	return contents['version']
 
 def build_parser():
 	"""
