@@ -12,7 +12,7 @@ The `scribe` writes content to the database from a JSON file. Checkout the code 
 # read from default 'contents.json'
 $ python3 scribe.py
 # read from custom 'custom.json'
-$ python3 -f scribe.py custom.json
+$ python3 scribe.py -f custom.json
 ```
 ### `Herald`
 The `herald` sends emails. Checkout the code --> [`herald.py`](https://github.com/wcarhart/willcarh.art/blob/master/herald.py)
