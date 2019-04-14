@@ -45,9 +45,9 @@
 		"class": "Project",
 		"content": {
 			"title": "willcarh.art",
-			"blurb": "Personal portfolio, fullstack web app",
-			"description": "",
-			"technology": "HTML5, CSS3, Bootstrap 4, Javascript, jQuery, Django, PostgreSQL, Python",
+			"blurb": "Personal portfolio, full stack web app",
+			"description": "willcarh.art, as you can see, is my personal website. I use it to host my porfolio, as well as my blog.<br>The front end of willcarh.art is written with the usual HTML, CSS, and Javascript, and utilizes Bootstrap 4 and some jQuery to make it look nice.<br>The back end, which I generally enjoy writing more, is a Django app (Python), which accesses a PostgreSQL database. The website is deployed via Heroku.",
+			"technology": "HTML5, CSS3, Bootstrap 4, Javascript, jQuery, Django, PostgreSQL, Python, Heroku",
 			"links": "{'GitHub': 'https://github.com/wcarhart/willcarh.art'}",
 			"cover": "img/internet.png",
 			"demo": "",
@@ -60,7 +60,7 @@
 		"content": {
 			"title": "smoosh",
 			"blurb": "News article summarizer",
-			"description": "",
+			"description": "Smoosh is a text summarizer. It works on articles, books, or any text content. Smoosh currently exists as a CLI, but will hopefully be deployed as a web service or API in the future!<br>Smoosh's algorithm calculates the importance of each word in a given text, and attempts to summarize the text by printing only the sentences that it deems necessary to understand the text's meaning. It defaults to summarizing content into 7 sentences, but it can return as many as desired.<br>Smoosh can take either a .txt file or a URL to a website containing a news article. Don't waste time reading long news articles any more!",
 			"technology": "Python",
 			"links": "{'GitHub': 'https://github.com/wcarhart/smoosh'}",
 			"cover": "img/news.png",
@@ -74,7 +74,7 @@
 		"content": {
 			"title": "Chordpanion",
 			"blurb": "iOS app that writes chord progressions",
-			"description": "",
+			"description": "Did you know that music is more like <i>code</i> than most people realize? Notes and chords can be abstracted into numbers and relationships, just like code.<br>Given my musical background, I wanted an iOS application that could write chord progressions for me and help me tranpose music easily. Given a starting key, Chordpanion generates a set of commonly used progressions in such a key, and provides formulaic progressions to change to another key.<br>Chorpanion is not currently published to the App Store, but I hope to finish and publish it at some point in the future!",
 			"technology": "iOS, Swift",
 			"links": "{'GitHub': 'https://github.com/wcarhart/Chordpanion'}",
 			"cover": "img/musical-notes.png",
@@ -88,7 +88,7 @@
 		"content": {
 			"title": "othello",
 			"blurb": "CLI implementation of the board game Othello",
-			"description": "",
+			"description": "Othello is a command line implementation of the popular board game <i>Othello</i> (also known as <i>Reversi</i>).<br>Othello has a lot of cool features, as it can be played with one <i>or</i> two players via the command line. In addition, players can customize colors and names to make the game more personal.<br>However, the coolest part of othello is the AI. There are four AI players of increasing difficulty: Euclid, Lovelace, Dijkstra, and Turing. The smartest of the four AI players, Turing, utilizes game theory techniques to calculate the most optimal move at any given point.",
 			"technology": "Python",
 			"links": "{'GitHub': 'https://github.com/wcarhart/othello'}",
 			"cover": "img/checkers.png",
@@ -102,8 +102,8 @@
 		"content": {
 			"title": "sudoku",
 			"blurb": "CLI that solves a Sudoku puzzle",
-			"description": "",
-			"technology": "Python",
+			"description": "Given a Sudoku board, sudoku can produce the solved output, if it exists.<br>This project only exists as a CLI, but I hope to eventually rewrite it in Swift and use ARKit to allow the program to use pictures of Sudoku boards as input. This way, all you have to do is take a picture of the board, rather than entering in all of those pesky numbers! Future plans also include returning specific cells of the solved board, so if you only want a hint on how to solve a Sudoku board it won't give you the whole solution 😉",
+			"technology": "Java",
 			"links": "{'GitHub': 'https://github.com/wcarhart/Sudoku'}",
 			"cover": "img/square-with-numbers.png",
 			"demo": "",
@@ -116,13 +116,13 @@
 		"content": {
 			"title": "Konphig",
 			"blurb": "Quirky bash functions and configuration files",
-			"description": "",
+			"description": "Konphig (pronounced 'config') is the result of my laziness. Over time I've written little Bash functions to automate boring command line tasks. I eventually realized I had written more than 50 functions, so I combined them with the rest of my configuration files for other command line utilities (Vim, tmux, etc.) and threw them in a repository for safe keeping.<br>The special parts of Konphig are in the .bash_functions file, which include functions for automation, metaprogramming, location services, and even rickrolling!",
 			"technology": "Bash",
 			"links": "{'GitHub': 'https://github.com/wcarhart/Konphig'}",
 			"cover": "img/settings.png",
 			"demo": "",
 			"color": "#34495E",
-			"democontent": "demo/knophig.html"
+			"democontent": "demo/konphig.html"
 		}
 	},
 	{
@@ -130,7 +130,7 @@
 		"content": {
 			"title": "cheqit",
 			"blurb": "Website status indicator",
-			"description": "",
+			"description": "Cheqit (pronounced 'check it') is a simple command line utility for checking the status of a website or IP address.<br>Cheqit was inspired by <a href=\"https://downdetector.com/\", target=\"_blank\">downdetector</a>, which is a website of the same functionality as cheqit. I got the idea when one day I went to use downdetector and it itself was down 🙃",
 			"technology": "Python",
 			"links": "{'GitHub': 'https://github.com/wcarhart/cheqit'}",
 			"cover": "img/checkmark.png",
@@ -144,7 +144,7 @@
 		"content": {
 			"title": "Despicable",
 			"blurb": "Lightweight CLI for multithreading",
-			"description": "",
+			"description": "Despicable is a lightweight CLI for multithreading shell commands. Consider the case where you have to <i>scp</i> many large files across a network. Despicable provides an easy-to-use CLI to run the commands in parallel. The framework can either run commands from a file, or can take commands typed out on the command line.<br>In addition, Despicable distinguishes itself by providing a progress bar and indicator for how many tasks have been completed.<br>Despicable got its name from its worker threads, which I dubbed <i>minions</i> during development. The naming scheme continues in the vein <a href=\"https://www.imdb.com/title/tt1323594/\" target=\"_blank\">Despicable Me</a>, as the manager of the minions is called <i>Gru</i>, while the spawner of the minion threads is called <i>Nefario</i>.",
 			"technology": "Python, Bash",
 			"links": "{'GitHub': 'https://github.com/wcarhart/Despicable'}",
 			"cover": "img/minion.png",
@@ -158,13 +158,13 @@
 		"content": {
 			"title": "NASA APOD",
 			"blurb": "iOS app to display NASA's Astronomy Picture of the Day",
-			"description": "",
+			"description": "NASA APoD stands for <a href=\"https://apod.nasa.gov/apod/astropix.html\" target=\"_blank\">NASA's Astronomy Picture of the Day.</a> I wrote a simple iOS app to pull down the APoD using NASA's public API and then display it within the app. The app can display any APoD between June 16th, 1995, when the program started, and now.<br>This application has not been published on the App Store.",
 			"technology": "iOS, Swift",
 			"links": "{'GitHub': 'https://github.com/wcarhart/NASA_APOD'}",
 			"cover": "img/telescope.png",
 			"demo": "",
 			"color": "#1ABC9C",
-			"democontent": "nasa_apod.html"
+			"democontent": "demo/nasa_apod.html"
 		}
 	}
 ]
