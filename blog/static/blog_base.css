@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+{% load static %}
+
+:root {
+	--c1: #e27d60; /*red-orange*/
+	--c1dark: #AF4A2D;
+	--c2: #85dcbf; /*light-teal*/
+	--c2dark: #52A98C;
+	--c5: #e8a87c; /*peach*/
+	--c5dark: #B57549;
+	--c4: #c38d9e; /*mid-purple*/
+	--c4dark: #905A6B;
+	--c3: #41b3a3; /*dark-teal*/
+	--c3dark: #0E8070;
+
+	--n1: #2c3840; /*charcoal*/
+	--n1dark: #00050D;
+	--n2: #feffff; /*off-white*/
+	--n2dark: #CBCCCC;
+}
+
+body {
+	overflow-x: hidden;
+	font-family: 'Lato', sans-serif;
+	color: var(--n1);
+	padding-top: 4rem;
+}
+
+/*-- navigation --*/
+.navbar {
+	padding: .7rem 1rem;
+	text-transform: uppercase;
+	font-size: .9rem;
+	font-weight: 700;
+	letter-spacing: .1rem;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+.navbar-brand {
+	color: var(--n2);
+}
+.svg-inline--fa.fa-w-14 {
+	color: var(--n2);
+	font-size: 1.6rem;
+}
+.navbar-nav li {
+	padding-right: .8rem;
+}
+.navbar-nav .nav-link {
+	color: var(--n2);
+	padding-top: .8rem;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+	color: var(--c5);
+}
+.navbar-brand:hover {
+	color: var(--c5);
+}
+/*-- end navigation --*/
+
+/*-- project container, index --*/
+.projects-wrapper {
+	background-image: url('img/footer.png');
+	background-color: rgb(0, 0, 0, 0.2);
+	height: 150%;
+}
+.projects-container h1 {
+	padding: 2rem 0;
+}
+.project-item {
+	padding-bottom: 1rem;
+	transition: transform .4s ease;
+}
+.project-item:hover {
+	transform: scale(1.1);
+}
+.project-item a {
+	background-color: var(--c5);
+	border-color: var(--c5);
+	border-radius: 0;
+}
+.project-item a:active,
+.project-item a:hover,
+.project-item a:focus {
+	border-color: var(--c5dark)!important;
+	background-color: var(--c5dark)!important;
+}
+/*-- end project container, index--*/
+
+/*-- project container, detail --*/
+.narrow {
+	width: 75%;
+	margin: 0 auto;
+}
+h1.heading {
+	font-size: 3.5rem;
+	padding: 2rem 0;
+}
+.blurb {
+	font-size: 1.5rem;
+	font-weight: 300;
+	padding: 0.5rem 0 1.1rem;
+}
+.btn-primary {
+	font-size: 1.3rem;
+	border-radius: 0;
+	margin: 0.5rem;
+	background-color: var(--c5);
+	border-color: var(--c5);
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+	border-color: var(--c5dark)!important;
+	background-color: var(--c5dark)!important;
+}
+/*-- end project container, detail --*/
+
+/*-- demo --*/
+.demo h2 {
+	font-size: 2rem;
+}
+.demo-content {
+	padding: 2rem;
+}
+/*-- end demo --*/
+
