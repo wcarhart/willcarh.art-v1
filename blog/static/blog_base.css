@@ -19,10 +19,15 @@
 	--n2dark: #CBCCCC;
 }
 
+/*uncomment this line for debugging*/
+/*{ outline: solid 0.25rem hsla(210, 100%, 100%, 0.5); }*/
+
 body {
 	overflow-x: hidden;
 	font-family: 'Lato', sans-serif;
 	color: var(--n1);
+}
+#content {
 	padding-top: 4rem;
 }
 
@@ -51,77 +56,85 @@ body {
 }
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link:hover {
-	color: var(--c5);
+	color: var(--c2);
 }
 .navbar-brand:hover {
 	color: var(--c5);
 }
 /*-- end navigation --*/
 
-/*-- project container, index --*/
-.projects-wrapper {
-	background-image: url('img/footer.png');
+/*-- landing page --*/
+#landing {
+	height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    background-image: url('img/footer.png');
 	background-color: rgb(0, 0, 0, 0.2);
 	height: 150%;
+	z-index: -1;
 }
-.projects-container h1 {
+/*-- end landing page --*/
+
+/*-- blog container, index --*/
+.blog-container h1 {
 	padding: 2rem 0;
 }
-.project-item {
+.blog-item {
 	padding-bottom: 1rem;
+}
+.card {
 	transition: transform .4s ease;
 }
-.project-item:hover {
+.card:hover {
 	transform: scale(1.1);
 }
-.project-item a {
-	background-color: var(--c5);
-	border-color: var(--c5);
+.card:hover img {
+	transform: scale(1.1);
+}
+.card img {
+	height: 300px;
+	max-height: 300px;
+	width: 100%;
+	background-size: cover;
+	object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    transition: transform .4s ease;
+}
+.card-head {
+	overflow: hidden;
+}
+.blog-item a {
+	background-color: var(--c2);
+	border-color: var(--c2);
 	border-radius: 0;
+	margin-bottom: 0.5rem;
 }
-.project-item a:active,
-.project-item a:hover,
-.project-item a:focus {
-	border-color: var(--c5dark)!important;
-	background-color: var(--c5dark)!important;
+.blog-item a:active,
+.blog-item a:hover,
+.blog-item a:focus {
+	border-color: var(--c2dark)!important;
+	background-color: var(--c2dark)!important;
 }
-/*-- end project container, index--*/
+i.subtitle {
+	font-size: 1rem;
+	position: relative;
+	bottom: 0.1rem;
+}
+/*-- end blog container, index--*/
 
-/*-- project container, detail --*/
+/*-- blog container, detail --*/
 .narrow {
 	width: 75%;
 	margin: 0 auto;
 }
-h1.heading {
-	font-size: 3.5rem;
-	padding: 2rem 0;
-}
-.blurb {
-	font-size: 1.5rem;
-	font-weight: 300;
-	padding: 0.5rem 0 1.1rem;
-}
-.btn-primary {
-	font-size: 1.3rem;
-	border-radius: 0;
-	margin: 0.5rem;
-	background-color: var(--c5);
-	border-color: var(--c5);
-}
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active {
-	border-color: var(--c5dark)!important;
-	background-color: var(--c5dark)!important;
-}
-/*-- end project container, detail --*/
+/*-- end blog container, detail --*/
 
-/*-- demo --*/
-.demo h2 {
-	font-size: 2rem;
+/* Devices under 768px (md) */
+@media(max-width: 767px) {
+	.narrow {
+		width: 95%;
+	}
 }
-.demo-content {
-	padding: 2rem;
-}
-/*-- end demo --*/
-

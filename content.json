@@ -166,5 +166,49 @@
 			"color": "#1ABC9C",
 			"democontent": "demo/nasa_apod.html"
 		}
+	},
+	{
+		"class": "Blog",
+		"content": {
+			"article_number": "1",
+			"title": "Test Blog Title",
+			"subtitle": "Text Blog Subtitle",
+			"cover": "img/background.png",
+			"content": "This is some dummy content for testing.",
+			"published": "2019-04-14 11:48:50.120174"
+		}
+	},
+	{
+		"class": "Blog",
+		"content": {
+			"article_number": "2",
+			"title": "Test Blog Title",
+			"subtitle": "Text Blog Subtitle",
+			"cover": "img/background.png",
+			"content": "This is some dummy content for testing.",
+			"published": "2019-04-14 11:48:50.120174"
+		}
+	},
+	{
+		"class": "Blog",
+		"content": {
+			"article_number": "3",
+			"title": "Test Blog Title",
+			"subtitle": "Text Blog Subtitle",
+			"cover": "img/background.png",
+			"content": "This is some dummy content for testing.",
+			"published": "2019-04-14 11:48:50.120174"
+		}
+	},
+	{
+		"class": "Blog",
+		"content": {
+			"article_number": "4",
+			"title": "Test Blog Title",
+			"subtitle": "Text Blog Subtitle",
+			"cover": "img/background.png",
+			"content": "This is some dummy content for testing.",
+			"published": "2019-04-14 11:48:50.120174"
+		}
 	}
 ]
