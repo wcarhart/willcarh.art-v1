@@ -18,7 +18,7 @@
 		"content": {
 			"title": "beaver",
 			"blurb": "CLI for parsing log files",
-			"description": "",
+			"description": "Beaver is a cool command line utility that parses log files. Super exciting, right??<br>When modern applications run, they generate a plethora of logging content, and it is often cumbersome to find the small tidbit of information that's actually useful.<br>Beaver uses an English-like syntax, where the user can essentially specify <i>show me the logs from yesterday to today.</i> Beaver is smart enough to understand what the user is looking for and automatically searches for .log files in the project directory, and then prints all logs whose timestamps are between yesterday and today.<br>It's called <i>beaver</i> because beavers eat logs 😉",
 			"technology": "Python",
 			"links": "{'GitHub': 'https://github.com/wcarhart/beaver', 'PyPI': 'https://pypi.org/project/beavr/'}",
 			"cover": "img/beaver.png",
@@ -32,7 +32,7 @@
 		"content": {
 			"title": "locksmith",
 			"blurb": "API between repository secrets and nefarious individuals",
-			"description": "",
+			"description": "Locksmith acts as a liaison between precious client secrets and public version control. Locksmith uses GPG to encrypt secrets (API keys, database passwords, etc.). Rather than storing plaintext passwords as hardcoded values in your code, locksmith exposes a simple API for decrypting your passwords and running your app.<br>To keep development unencumbered, locksmith only requires your password when you run your app, not every time you access a secret. In addition, tools like <i>pinentry</i> enable you to cache your password locally, so you only ever have to enter your password once, if you desire.<br>This is one of my favorite projects, I use it all over willcarh.art 🤗",
 			"technology": "Python",
 			"links": "{'GitHub': 'https://github.com/wcarhart/locksmith', 'PyPI': 'https://pypi.org/project/locksmith/'}",
 			"cover": "img/lock.png",
