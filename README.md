@@ -4,6 +4,8 @@ Full-stack web application for my portfolio! Will eventually be deployed to [wil
 Track development progress here: https://trello.com/b/glDTHpCJ/willcarhart
 
 ## Utilities
+The following are custom utilities I've written in Python to facilitate the microservices of willcarh.art.
+
 ### `Scribe`
 The `scribe` writes content to the database from a JSON file. Checkout the code --> [`scribe.py`](https://github.com/wcarhart/willcarh.art/blob/master/scribe.py)
 
