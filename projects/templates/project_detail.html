@@ -23,7 +23,9 @@
 				<p class="lead blurb"><i>{{ project.blurb }}</i></p>
 				<h3>About the project:</h3>
 				{% for section in description_sections %}
+					{% autoescape off %}
 					<p>{{ section }}</p>
+					{% endautoescape %}
 				{% endfor %}
 				<br>
 				<h3>Technology used:</h3>

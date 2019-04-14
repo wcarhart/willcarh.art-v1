@@ -9,8 +9,8 @@ def project_index(request):
 	}
 	return render(request, 'project_index.html', context)
 
-def project_detail(request, id):
-	project = Project.objects.get(pk=id)
+def project_detail(request, title):
+	project = Project.objects.get(title=title)
 
 	description_sections = project.description.split('<br>')
 	links_dictionary = json.loads(project.links.replace("'", '"'))
