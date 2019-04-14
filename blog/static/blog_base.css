@@ -17,6 +17,8 @@
 	--n1dark: #00050D;
 	--n2: #feffff; /*off-white*/
 	--n2dark: #CBCCCC;
+	--n3: #ffe29d; /*creme*/
+	--n3dark: #ffcb51;
 }
 
 /*uncomment this line for debugging*/
@@ -130,12 +132,43 @@ i.subtitle {
 /*-- end blog container, index--*/
 
 /*-- blog container, detail --*/
+.article {
+	background-color: var(--n2);
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	border-radius: 0.5rem;
+	padding: 1rem;
+}
+.heading-title {
+	margin: 1rem 0;
+}
+h1.heading {
+	font-size: 3.5rem;
+	margin-bottom: 0.5rem;
+	padding: 0;
+}
+i.larger {
+	font-size: 1.1rem;
+}
 .cover-photo {
 	width: 100%;
 	max-width: 100%;
 	padding-bottom: 1rem;
 }
+.post-subtitle {
+	font-size: 1.2rem;
+	padding-bottom: 1rem;
+}
 /*-- end blog container, detail --*/
+
+/* post content comes from content.json and uses custom classes */
+/*-- post content --*/
+.attention {
+	background-color: var(--n3);
+	border-radius: 0.5rem;
+	padding: 1rem;
+}
+/*-- end post content --*/
 
 /* Devices under 768px (md) */
 @media(max-width: 767px) {

@@ -3,32 +3,44 @@
 
 {% block page_content %}
 <div class="container blog-container">
-	<div class="narrow">
-		<!-- header -->
-		<div class="os-animation" data-animation="fadeInUp">
-			<h1 class="heading">{{ post.title }}</h1>
+	<div class="os-animation" data-animation="fadeInUp">
+		<div class="narrow article">
+			<!-- header -->
+			<div class="container-fluid heading-title">
+				<div class="os-animation" data-animation="fadeInUp">
+					<h1 class="heading">{{ post.title }}</h1>
+					<i class="text-muted larger">{{ post.author }}</i>
+					<br>
+					<i class="text-muted">Published on {{ post.published }}</i>
+				</div>
+			</div>
+			<!-- end header -->
+
+			<!-- content -->
+			<div class="os-animation" data-animation="fadeInUp">
+				<div class="container-fluid cover-photo">
+					<img class="cover-photo" src="{% static post.cover %}" alt="{{ post.title }} cover photo">
+				</div>
+				<div class="container-fluid text-center post-subtitle">
+					<i>{{ post.subtitle }}</i>
+				</div>
+				<div class="container-fluid post-content">
+					{% for section in sections %}
+					{% autoescape off %}
+					<p>{{ section }}</p>
+					{% endautoescape %}
+					{% endfor %}
+					<div class="attention">hello</div>
+				</div>
+			</div>
+			<!-- end content -->
+
+			<!-- footer -->
+			<footer>
+				<br><br><br><br><br><br><br><br>
+			</footer>
+			<!-- end footer -->
 		</div>
-		<!-- end header -->
-
-		<!-- content -->
-		<div class="os-animation" data-animation="fadeInUp">
-			<div class="container-fluid cover-photo">
-				<img class="cover-photo" src="{% static post.cover %}" alt="{{ post.title }} cover photo">
-			</div>
-			<div class="container-fluid text-center post-subtitle">
-				<i>{{ post.subtitle }}</i>
-			</div>
-			<div class="container-fluid post-content">
-
-			</div>
-		</div>
-		<!-- end content -->
-
-		<!-- footer -->
-		<footer>
-			<br><br><br><br><br><br><br><br>
-		</footer>
-		<!-- end footer -->
 	</div>
 </div>
 {% endblock %}

@@ -4,7 +4,7 @@
 		"content": {
 			"title": "Cheers",
 			"blurb": "iOS app for finding ongoing happy hours",
-			"description": "Cheers started as a concept while I attended the University of San Diego. The goal was to develop an iOS app that would show nearby bars and restaurants with ongoing happy hours. Our team observed that often in San Diego there are many fun bars to explore, but sometimes it's hard to know where to look. That's where Cheers comes in!<br>During the project's development, we wrote a proof-of-concept iOS app, which did all processing on the client. The app uses the Yelp Fusion API to acquire its restaurant data and Firebase as a data store. Given that I had the original idea for the app and I had written more than half the code base, I decided to continue the project after my time at USD.<br>The complete version of the app is still a work in progress, but I plan on publishing it soon. The client is written entirely in Swift + iOS, while the backend is an API written in Flask and Python, using the SQLAlchemy adapter for the PostgreSQL database.",
+			"description": "Cheers started as a concept while I attended the University of San Diego. The goal was to develop an iOS app that would show nearby bars and restaurants with ongoing happy hours. Our team observed that often in San Diego there are many fun bars to explore, but sometimes it's hard to know where to look. That's where Cheers comes in!<section>During the project's development, we wrote a proof-of-concept iOS app, which did all processing on the client. The app uses the Yelp Fusion API to acquire its restaurant data and Firebase as a data store. Given that I had the original idea for the app and I had written more than half the code base, I decided to continue the project after my time at USD.<section>The complete version of the app is still a work in progress, but I plan on publishing it soon. The client is written entirely in Swift + iOS, while the backend is an API written in Flask and Python, using the SQLAlchemy adapter for the PostgreSQL database.",
 			"technology": "iOS, Swift, Firebase, Flask, Python, PostgreSQL, SQLAlchemy",
 			"links": "{'GitHub': 'https://github.com/usd-cs/comp495-sp18-happy-hour'}",
 			"cover": "img/beer.png",
@@ -18,7 +18,7 @@
 		"content": {
 			"title": "beaver",
 			"blurb": "CLI for parsing log files",
-			"description": "Beaver is a cool command line utility that parses log files. Super exciting, right??<br>When modern applications run, they generate a plethora of logging content, and it is often cumbersome to find the small tidbit of information that's actually useful.<br>Beaver uses an English-like syntax, where the user can essentially specify <i>show me the logs from yesterday to today.</i> Beaver is smart enough to understand what the user is looking for and automatically searches for .log files in the project directory, and then prints all logs whose timestamps are between yesterday and today.<br>It's called <i>beaver</i> because beavers eat logs 😉",
+			"description": "Beaver is a cool command line utility that parses log files. Super exciting, right??<section>When modern applications run, they generate a plethora of logging content, and it is often cumbersome to find the small tidbit of information that's actually useful.<section>Beaver uses an English-like syntax, where the user can essentially specify <i>show me the logs from yesterday to today.</i> Beaver is smart enough to understand what the user is looking for and automatically searches for .log files in the project directory, and then prints all logs whose timestamps are between yesterday and today.<section>It's called <i>beaver</i> because beavers eat logs 😉",
 			"technology": "Python",
 			"links": "{'GitHub': 'https://github.com/wcarhart/beaver', 'PyPI': 'https://pypi.org/project/beavr/'}",
 			"cover": "img/beaver.png",
@@ -32,7 +32,7 @@
 		"content": {
 			"title": "locksmith",
 			"blurb": "API between repository secrets and nefarious individuals",
-			"description": "Locksmith acts as a liaison between precious client secrets and public version control. Locksmith uses GPG to encrypt secrets (API keys, database passwords, etc.). Rather than storing plaintext passwords as hardcoded values in your code, locksmith exposes a simple API for decrypting your passwords and running your app.<br>To keep development unencumbered, locksmith only requires your password when you run your app, not every time you access a secret. In addition, tools like <i>pinentry</i> enable you to cache your password locally, so you only ever have to enter your password once, if you desire.<br>This is one of my favorite projects, I use it all over willcarh.art 🤗",
+			"description": "Locksmith acts as a liaison between precious client secrets and public version control. Locksmith uses GPG to encrypt secrets (API keys, database passwords, etc.). Rather than storing plaintext passwords as hardcoded values in your code, locksmith exposes a simple API for decrypting your passwords and running your app.<section>To keep development unencumbered, locksmith only requires your password when you run your app, not every time you access a secret. In addition, tools like <i>pinentry</i> enable you to cache your password locally, so you only ever have to enter your password once, if you desire.<section>This is one of my favorite projects, I use it all over willcarh.art 🤗",
 			"technology": "Python",
 			"links": "{'GitHub': 'https://github.com/wcarhart/locksmith', 'PyPI': 'https://pypi.org/project/locksmith/'}",
 			"cover": "img/lock.png",
@@ -46,7 +46,7 @@
 		"content": {
 			"title": "willcarh.art",
 			"blurb": "Personal portfolio, full stack web app",
-			"description": "willcarh.art, as you can see, is my personal website. I use it to host my porfolio, as well as my blog.<br>The front end of willcarh.art is written with the usual HTML, CSS, and Javascript, and utilizes Bootstrap 4 and some jQuery to make it look nice.<br>The back end, which I generally enjoy writing more, is a Django app (Python), which accesses a PostgreSQL database. The website is deployed via Heroku.",
+			"description": "willcarh.art, as you can see, is my personal website. I use it to host my porfolio, as well as my blog.<section>The front end of willcarh.art is written with the usual HTML, CSS, and Javascript, and utilizes Bootstrap 4 and some jQuery to make it look nice.<section>The back end, which I generally enjoy writing more, is a Django app (Python), which accesses a PostgreSQL database. The website is deployed via Heroku.",
 			"technology": "HTML5, CSS3, Bootstrap 4, Javascript, jQuery, Django, PostgreSQL, Python, Heroku",
 			"links": "{'GitHub': 'https://github.com/wcarhart/willcarh.art'}",
 			"cover": "img/internet.png",
@@ -60,7 +60,7 @@
 		"content": {
 			"title": "smoosh",
 			"blurb": "News article summarizer",
-			"description": "Smoosh is a text summarizer. It works on articles, books, or any text content. Smoosh currently exists as a CLI, but will hopefully be deployed as a web service or API in the future!<br>Smoosh's algorithm calculates the importance of each word in a given text, and attempts to summarize the text by printing only the sentences that it deems necessary to understand the text's meaning. It defaults to summarizing content into 7 sentences, but it can return as many as desired.<br>Smoosh can take either a .txt file or a URL to a website containing a news article. Don't waste time reading long news articles any more!",
+			"description": "Smoosh is a text summarizer. It works on articles, books, or any text content. Smoosh currently exists as a CLI, but will hopefully be deployed as a web service or API in the future!<section>Smoosh's algorithm calculates the importance of each word in a given text, and attempts to summarize the text by printing only the sentences that it deems necessary to understand the text's meaning. It defaults to summarizing content into 7 sentences, but it can return as many as desired.<section>Smoosh can take either a .txt file or a URL to a website containing a news article. Don't waste time reading long news articles any more!",
 			"technology": "Python",
 			"links": "{'GitHub': 'https://github.com/wcarhart/smoosh'}",
 			"cover": "img/news.png",
@@ -74,7 +74,7 @@
 		"content": {
 			"title": "Chordpanion",
 			"blurb": "iOS app that writes chord progressions",
-			"description": "Did you know that music is more like <i>code</i> than most people realize? Notes and chords can be abstracted into numbers and relationships, just like code.<br>Given my musical background, I wanted an iOS application that could write chord progressions for me and help me tranpose music easily. Given a starting key, Chordpanion generates a set of commonly used progressions in such a key, and provides formulaic progressions to change to another key.<br>Chorpanion is not currently published to the App Store, but I hope to finish and publish it at some point in the future!",
+			"description": "Did you know that music is more like <i>code</i> than most people realize? Notes and chords can be abstracted into numbers and relationships, just like code.<section>Given my musical background, I wanted an iOS application that could write chord progressions for me and help me tranpose music easily. Given a starting key, Chordpanion generates a set of commonly used progressions in such a key, and provides formulaic progressions to change to another key.<section>Chorpanion is not currently published to the App Store, but I hope to finish and publish it at some point in the future!",
 			"technology": "iOS, Swift",
 			"links": "{'GitHub': 'https://github.com/wcarhart/Chordpanion'}",
 			"cover": "img/musical-notes.png",
@@ -88,7 +88,7 @@
 		"content": {
 			"title": "othello",
 			"blurb": "CLI implementation of the board game Othello",
-			"description": "Othello is a command line implementation of the popular board game <i>Othello</i> (also known as <i>Reversi</i>).<br>Othello has a lot of cool features, as it can be played with one <i>or</i> two players via the command line. In addition, players can customize colors and names to make the game more personal.<br>However, the coolest part of othello is the AI. There are four AI players of increasing difficulty: Euclid, Lovelace, Dijkstra, and Turing. The smartest of the four AI players, Turing, utilizes game theory techniques to calculate the most optimal move at any given point.",
+			"description": "Othello is a command line implementation of the popular board game <i>Othello</i> (also known as <i>Reversi</i>).<section>Othello has a lot of cool features, as it can be played with one <i>or</i> two players via the command line. In addition, players can customize colors and names to make the game more personal.<section>However, the coolest part of othello is the AI. There are four AI players of increasing difficulty: Euclid, Lovelace, Dijkstra, and Turing. The smartest of the four AI players, Turing, utilizes game theory techniques to calculate the most optimal move at any given point.",
 			"technology": "Python",
 			"links": "{'GitHub': 'https://github.com/wcarhart/othello'}",
 			"cover": "img/checkers.png",
@@ -102,7 +102,7 @@
 		"content": {
 			"title": "sudoku",
 			"blurb": "CLI that solves a Sudoku puzzle",
-			"description": "Given a Sudoku board, sudoku can produce the solved output, if it exists.<br>This project only exists as a CLI, but I hope to eventually rewrite it in Swift and use ARKit to allow the program to use pictures of Sudoku boards as input. This way, all you have to do is take a picture of the board, rather than entering in all of those pesky numbers! Future plans also include returning specific cells of the solved board, so if you only want a hint on how to solve a Sudoku board it won't give you the whole solution 😉",
+			"description": "Given a Sudoku board, sudoku can produce the solved output, if it exists.<section>This project only exists as a CLI, but I hope to eventually rewrite it in Swift and use ARKit to allow the program to use pictures of Sudoku boards as input. This way, all you have to do is take a picture of the board, rather than entering in all of those pesky numbers! Future plans also include returning specific cells of the solved board, so if you only want a hint on how to solve a Sudoku board it won't give you the whole solution 😉",
 			"technology": "Java",
 			"links": "{'GitHub': 'https://github.com/wcarhart/Sudoku'}",
 			"cover": "img/square-with-numbers.png",
@@ -116,7 +116,7 @@
 		"content": {
 			"title": "Konphig",
 			"blurb": "Quirky bash functions and configuration files",
-			"description": "Konphig (pronounced 'config') is the result of my laziness. Over time I've written little Bash functions to automate boring command line tasks. I eventually realized I had written more than 50 functions, so I combined them with the rest of my configuration files for other command line utilities (Vim, tmux, etc.) and threw them in a repository for safe keeping.<br>The special parts of Konphig are in the .bash_functions file, which include functions for automation, metaprogramming, location services, and even rickrolling!",
+			"description": "Konphig (pronounced 'config') is the result of my laziness. Over time I've written little Bash functions to automate boring command line tasks. I eventually realized I had written more than 50 functions, so I combined them with the rest of my configuration files for other command line utilities (Vim, tmux, etc.) and threw them in a repository for safe keeping.<section>The special parts of Konphig are in the .bash_functions file, which include functions for automation, metaprogramming, location services, and even rickrolling!",
 			"technology": "Bash",
 			"links": "{'GitHub': 'https://github.com/wcarhart/Konphig'}",
 			"cover": "img/settings.png",
@@ -130,7 +130,7 @@
 		"content": {
 			"title": "cheqit",
 			"blurb": "Website status indicator",
-			"description": "Cheqit (pronounced 'check it') is a simple command line utility for checking the status of a website or IP address.<br>Cheqit was inspired by <a href=\"https://downdetector.com/\", target=\"_blank\">downdetector</a>, which is a website of the same functionality as cheqit. I got the idea when one day I went to use downdetector and it itself was down 🙃",
+			"description": "Cheqit (pronounced 'check it') is a simple command line utility for checking the status of a website or IP address.<section>Cheqit was inspired by <a href=\"https://downdetector.com/\", target=\"_blank\">downdetector</a>, which is a website of the same functionality as cheqit. I got the idea when one day I went to use downdetector and it itself was down 🙃",
 			"technology": "Python",
 			"links": "{'GitHub': 'https://github.com/wcarhart/cheqit'}",
 			"cover": "img/checkmark.png",
@@ -144,7 +144,7 @@
 		"content": {
 			"title": "Despicable",
 			"blurb": "Lightweight CLI for multithreading",
-			"description": "Despicable is a lightweight CLI for multithreading shell commands. Consider the case where you have to <i>scp</i> many large files across a network. Despicable provides an easy-to-use CLI to run the commands in parallel. The framework can either run commands from a file, or can take commands typed out on the command line.<br>In addition, Despicable distinguishes itself by providing a progress bar and indicator for how many tasks have been completed.<br>Despicable got its name from its worker threads, which I dubbed <i>minions</i> during development. The naming scheme continues in the vein <a href=\"https://www.imdb.com/title/tt1323594/\" target=\"_blank\">Despicable Me</a>, as the manager of the minions is called <i>Gru</i>, while the spawner of the minion threads is called <i>Nefario</i>.",
+			"description": "Despicable is a lightweight CLI for multithreading shell commands. Consider the case where you have to <i>scp</i> many large files across a network. Despicable provides an easy-to-use CLI to run the commands in parallel. The framework can either run commands from a file, or can take commands typed out on the command line.<section>In addition, Despicable distinguishes itself by providing a progress bar and indicator for how many tasks have been completed.<section>Despicable got its name from its worker threads, which I dubbed <i>minions</i> during development. The naming scheme continues in the vein <a href=\"https://www.imdb.com/title/tt1323594/\" target=\"_blank\">Despicable Me</a>, as the manager of the minions is called <i>Gru</i>, while the spawner of the minion threads is called <i>Nefario</i>.",
 			"technology": "Python, Bash",
 			"links": "{'GitHub': 'https://github.com/wcarhart/Despicable'}",
 			"cover": "img/minion.png",
@@ -158,7 +158,7 @@
 		"content": {
 			"title": "NASA APOD",
 			"blurb": "iOS app to display NASA's Astronomy Picture of the Day",
-			"description": "NASA APoD stands for <a href=\"https://apod.nasa.gov/apod/astropix.html\" target=\"_blank\">NASA's Astronomy Picture of the Day.</a> I wrote a simple iOS app to pull down the APoD using NASA's public API and then display it within the app. The app can display any APoD between June 16th, 1995, when the program started, and now.<br>This application has not been published on the App Store.",
+			"description": "NASA APoD stands for <a href=\"https://apod.nasa.gov/apod/astropix.html\" target=\"_blank\">NASA's Astronomy Picture of the Day.</a> I wrote a simple iOS app to pull down the APoD using NASA's public API and then display it within the app. The app can display any APoD between June 16th, 1995, when the program started, and now.<section>This application has not been published on the App Store.",
 			"technology": "iOS, Swift",
 			"links": "{'GitHub': 'https://github.com/wcarhart/NASA_APOD'}",
 			"cover": "img/telescope.png",
@@ -176,7 +176,8 @@
 			"blurb": "This is a dummy blurb",
 			"cover": "img/firewatch.jpg",
 			"content": "This is some dummy content for testing.",
-			"published": "2019-04-14 11:48:50.120174"
+			"published": "2019-04-14 11:48:50.120174",
+			"author": "Will Carhart"
 		}
 	},
 	{
@@ -188,7 +189,8 @@
 			"blurb": "This is a longer dummy blurb hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue",
 			"cover": "img/img1.png",
 			"content": "This is some dummy content for testing.",
-			"published": "2019-04-14 11:48:50.120174"
+			"published": "2019-04-14 11:48:50.120174",
+			"author": "Will Carhart"
 		}
 	},
 	{
@@ -200,7 +202,8 @@
 			"blurb": "This is a dummy blurb",
 			"cover": "img/img2.png",
 			"content": "This is some dummy content for testing.",
-			"published": "2019-04-14 11:48:50.120174"
+			"published": "2019-04-14 11:48:50.120174",
+			"author": "Will Carhart"
 		}
 	},
 	{
@@ -212,7 +215,8 @@
 			"blurb": "This is a dummy blurb",
 			"cover": "img/img3.png",
 			"content": "This is some dummy content for testing.",
-			"published": "2019-04-14 11:48:50.120174"
+			"published": "2019-04-14 11:48:50.120174",
+			"author": "Will Carhart"
 		}
 	}
 ]

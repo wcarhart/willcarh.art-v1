@@ -68,7 +68,7 @@ body {
 	padding: 2rem 0;
 }
 .project-item {
-	padding-bottom: 1rem;
+	padding-bottom: 2rem;
 	transition: transform .4s ease;
 }
 .project-item:hover {

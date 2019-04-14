@@ -9,6 +9,7 @@ class Post(models.Model):
 	cover = models.FilePathField(path='/img', default='', null=True, blank=True)
 	content = models.TextField(default='', null=True, blank=True)
 	published = models.DateTimeField(default=datetime.datetime.now, null=True, blank=True)
+	author = models.CharField(max_length=100, default='', null=True, blank=True)
 
 	def __str__(self):
 		return str(self.title)
