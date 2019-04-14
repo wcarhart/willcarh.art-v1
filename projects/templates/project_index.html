@@ -8,7 +8,8 @@
 	<div class="row">
 		{% for project in projects %}
 		<div class="project-item col-md-4">
-			<div class="os-animation" data-animation="fadeInUp" data-delay="{{ forloop.counter|multiply:0.1 }}s">
+			{% with forloop.counter|mod:3 as proj_index %}
+			<div class="os-animation" data-animation="fadeInUp" data-delay="{{ proj_index|multiply:0.1 }}s">
 				<div class="card mb-2">
 					<img class="card-img-top" src="{% static project.cover %}" style="background-color: {{ project.color }};">
 					<div class="card-body">
@@ -18,6 +19,7 @@
 					</div>
 				</div>
 			</div>
+			{% endwith %}
 		</div>
 		{% endfor %}
 	</div>
