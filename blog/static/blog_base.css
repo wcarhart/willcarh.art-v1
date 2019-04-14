@@ -30,6 +30,10 @@ body {
 #content {
 	padding-top: 4rem;
 }
+.narrow {
+	width: 75%;
+	margin: 0 auto;
+}
 
 /*-- navigation --*/
 .navbar {
@@ -126,9 +130,10 @@ i.subtitle {
 /*-- end blog container, index--*/
 
 /*-- blog container, detail --*/
-.narrow {
-	width: 75%;
-	margin: 0 auto;
+.cover-photo {
+	width: 100%;
+	max-width: 100%;
+	padding-bottom: 1rem;
 }
 /*-- end blog container, detail --*/
 
