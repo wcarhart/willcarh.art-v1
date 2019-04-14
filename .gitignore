@@ -1,9 +1,5 @@
-*.pyc
+*.py[cod]
 
 **/.DS_Store
 
 __pycache__/
-easel/__pycache__/
-home/__pycache__/
-projects/__pycache__/
-blog/__pycache__/

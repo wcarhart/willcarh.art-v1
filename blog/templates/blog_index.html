@@ -13,14 +13,14 @@
 		{% for blog in blogs %}
 		<div class="blog-item col-12">
 			<div class="os-animation" data-animation="fadeInUp">
-				<div class="card mb-3" onclick="location.href='{% url 'blog_detail' blog.title %}';" style="cursor:pointer;">
+				<div class="card mb-3" onclick="location.href='{% url 'blog_detail' blog.title|urlify:blog.article_number %}';" style="cursor:pointer;">
 					<div class="card-head">
 						<img class="card-img-top" src="{% static blog.cover %}" alt="{{ blog.title }} cover photo">
 					</div>
 					<div class="card-body">
 						<h4 class="card-title">{{ blog.title }} | <i class="subtitle text-muted">{{ blog.subtitle }}</i></h4>
-						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-						<a class="btn btn-primary btn-md" href="{% url 'blog_detail' blog.title %}">Read</a>
+						<p class="card-text">{{ blog.blurb }}</p>
+						<a class="btn btn-primary btn-md" href="{% url 'blog_detail' blog.title|urlify:blog.article_number %}">Read</a>
 						<p class="card-text"><small class="text-muted">Published on {{ blog.published }}</small></p>
 					</div>
 				</div>
