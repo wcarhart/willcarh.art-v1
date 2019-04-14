@@ -168,49 +168,49 @@
 		}
 	},
 	{
-		"class": "Blog",
+		"class": "Post",
 		"content": {
-			"article_number": "1",
+			"index": "1",
 			"title": "Test Blog Title 1",
 			"subtitle": "Text Blog Subtitle",
 			"blurb": "This is a dummy blurb",
-			"cover": "img/background.png",
+			"cover": "img/firewatch.jpg",
 			"content": "This is some dummy content for testing.",
 			"published": "2019-04-14 11:48:50.120174"
 		}
 	},
 	{
-		"class": "Blog",
+		"class": "Post",
 		"content": {
-			"article_number": "2",
+			"index": "2",
 			"title": "Test Blog Title 2",
 			"subtitle": "Text Blog Subtitle",
 			"blurb": "This is a longer dummy blurb hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue",
-			"cover": "img/background.png",
+			"cover": "img/img1.png",
 			"content": "This is some dummy content for testing.",
 			"published": "2019-04-14 11:48:50.120174"
 		}
 	},
 	{
-		"class": "Blog",
+		"class": "Post",
 		"content": {
-			"article_number": "3",
+			"index": "3",
 			"title": "Test Blog Title 3",
 			"subtitle": "Text Blog Subtitle",
 			"blurb": "This is a dummy blurb",
-			"cover": "img/background.png",
+			"cover": "img/img2.png",
 			"content": "This is some dummy content for testing.",
 			"published": "2019-04-14 11:48:50.120174"
 		}
 	},
 	{
-		"class": "Blog",
+		"class": "Post",
 		"content": {
-			"article_number": "4",
+			"index": "4",
 			"title": "Test Blog Title 4",
 			"subtitle": "Text Blog Subtitle",
 			"blurb": "This is a dummy blurb",
-			"cover": "img/background.png",
+			"cover": "img/img3.png",
 			"content": "This is some dummy content for testing.",
 			"published": "2019-04-14 11:48:50.120174"
 		}

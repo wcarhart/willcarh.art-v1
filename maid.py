@@ -13,14 +13,14 @@ settings.configure(DATABASES=DATABASES, INSTALLED_APPS=INSTALLED_APPS)
 django.setup()
 
 from projects.models import Project
-from blog.models import Blog
+from blog.models import Post
 
 def clean():
 	"""Erase all records in database for repopulating"""
 	for project in Project.objects.all():
 		project.delete()
-	for blog in Blog.objects.all():
-		blog.delete()
+	for post in Post.objects.all():
+		post.delete()
 
 def build_parser():
 	"""Build command line parser"""
