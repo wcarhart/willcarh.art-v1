@@ -2,15 +2,33 @@
 {% load static %}
 
 {% block page_content %}
-<div class="project-detail narrow">
-	<!-- heading -->
-	<div class="os-animation" data-animation="fadeInUp">
-		<h1 class="heading">{{ post.title }}</h1>
-	</div>
-	<!-- end heading -->
+<div class="container blog-container">
+	<div class="narrow">
+		<!-- header -->
+		<div class="os-animation" data-animation="fadeInUp">
+			<h1 class="heading">{{ post.title }}</h1>
+		</div>
+		<!-- end header -->
 
-	<!-- content -->
-	
-	<!-- end content -->
+		<!-- content -->
+		<div class="os-animation" data-animation="fadeInUp">
+			<div class="container-fluid cover-photo">
+				<img class="cover-photo" src="{% static post.cover %}" alt="{{ post.title }} cover photo">
+			</div>
+			<div class="container-fluid text-center post-subtitle">
+				<i>{{ post.subtitle }}</i>
+			</div>
+			<div class="container-fluid post-content">
+
+			</div>
+		</div>
+		<!-- end content -->
+
+		<!-- footer -->
+		<footer>
+			<br><br><br><br><br><br><br><br>
+		</footer>
+		<!-- end footer -->
+	</div>
 </div>
 {% endblock %}
