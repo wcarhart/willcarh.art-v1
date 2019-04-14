@@ -27,6 +27,7 @@ SECRET_KEY = 'z@fj932$_(6^*zvsn+qae1-bv=9xc)$$g0y&ig88pmpoho9oq)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# ALLOWED_HOSTS = ['*']
 ALLOWED_HOSTS = []
 
 
