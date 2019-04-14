@@ -10,18 +10,18 @@
 		</div>
 	</div>
 	<div class="row narrow">
-		{% for blog in blogs %}
+		{% for post in posts %}
 		<div class="blog-item col-12">
 			<div class="os-animation" data-animation="fadeInUp">
-				<div class="card mb-3" onclick="location.href='{% url 'blog_detail' blog.title|urlify:blog.article_number %}';" style="cursor:pointer;">
+				<div class="card mb-3" onclick="location.href='{% url 'blog_detail' post.title|urlify %}';" style="cursor:pointer;">
 					<div class="card-head">
-						<img class="card-img-top" src="{% static blog.cover %}" alt="{{ blog.title }} cover photo">
+						<img class="card-img-top" src="{% static post.cover %}" alt="{{ post.title }} cover photo">
 					</div>
 					<div class="card-body">
-						<h4 class="card-title">{{ blog.title }} | <i class="subtitle text-muted">{{ blog.subtitle }}</i></h4>
-						<p class="card-text">{{ blog.blurb }}</p>
-						<a class="btn btn-primary btn-md" href="{% url 'blog_detail' blog.title|urlify:blog.article_number %}">Read</a>
-						<p class="card-text"><small class="text-muted">Published on {{ blog.published }}</small></p>
+						<h4 class="card-title">{{ post.title }} | <i class="subtitle text-muted">{{ post.subtitle }}</i></h4>
+						<p class="card-text">{{ post.blurb }}</p>
+						<a class="btn btn-primary btn-md" href="{% url 'blog_detail' post.title|urlify %}">Read</a>
+						<p class="card-text"><small class="text-muted">Published on {{ post.published }}</small></p>
 					</div>
 				</div>
 			</div>

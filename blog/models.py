@@ -1,8 +1,8 @@
 from django.db import models
 import datetime
 
-class Blog(models.Model):
-	article_number = models.IntegerField(default=0, blank=True, null=True)
+class Post(models.Model):
+	index = models.IntegerField(default=0, blank=True, null=True)
 	title = models.CharField(max_length=100, default='', null=True, blank=True)
 	subtitle = models.CharField(max_length=100, default='', null=True, blank=True)
 	blurb = models.CharField(max_length=250, default='', null=True, blank=True)
