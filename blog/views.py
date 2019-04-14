@@ -9,7 +9,8 @@ def blog_index(request):
 	return render(request, 'blog_index.html', context)
 
 def blog_detail(request, title):
-	blog_entry = Blog.objects.get(title=title)
+	blog_title = title.replace('--', '%20').replace('-', ' ').replace('%20', ' ')
+	blog_entry = Blog.objects.get(title=blog_title)
 	context = {
 		'blog': blog_entry
 	}
