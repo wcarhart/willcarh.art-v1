@@ -23,8 +23,24 @@ body {
 	overflow-x: hidden;
 	font-family: 'Lato', sans-serif;
 	color: var(--n1);
+}
+#content {
 	padding-top: 4rem;
 }
+
+/*-- landing --*/
+#landing {
+	height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    background-image: url('img/footer.png');
+	background-color: rgb(0, 0, 0, 0.2);
+	height: 150%;
+	z-index: -1;
+}
+/*-- end landing --*/
 
 /*-- navigation --*/
 .navbar {
@@ -59,11 +75,6 @@ body {
 /*-- end navigation --*/
 
 /*-- project container, index --*/
-.projects-wrapper {
-	background-image: url('img/footer.png');
-	background-color: rgb(0, 0, 0, 0.2);
-	height: 150%;
-}
 .projects-container h1 {
 	padding: 2rem 0;
 }

@@ -12,7 +12,7 @@
 		<div class="project-item col-md-4">
 			{% with forloop.counter|mod:3 as proj_index %}
 			<div class="os-animation" data-animation="fadeInUp" data-delay="{{ proj_index|multiply:0.1 }}s">
-				<div class="card mb-2">
+				<div class="card mb-2" onclick="location.href='{% url 'project_detail' project.title %}';" style="cursor:pointer;">
 					<img class="card-img-top" src="{% static project.cover %}" style="background-color: {{ project.color }};">
 					<div class="card-body">
 						<h5 class="card-title">{{ project.title }}</h5>
