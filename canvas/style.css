@@ -3,21 +3,24 @@
 {% load static %}
 
 :root {
-	--c1: #e27d60; /*red-orange*/
-	--c1dark: #AF4A2D;
-	--c2: #85dcbf; /*light-teal*/
-	--c2dark: #52A98C;
-	--c5: #e8a87c; /*peach*/
-	--c5dark: #B57549;
-	--c4: #c38d9e; /*mid-purple*/
-	--c4dark: #905A6B;
-	--c3: #41b3a3; /*dark-teal*/
-	--c3dark: #0E8070;
+	--main: #e8a87c;
+	--maindark: #B57549;
 
-	--n1: #2c3840; /*charcoal*/
-	--n1dark: #00050D;
-	--n2: #feffff; /*off-white*/
-	--n2dark: #CBCCCC;
+	--blog: #85dcbf;
+	--blogdark: #52A98C;
+
+	--dark: #2c3840;
+	--darkdark: #00050D;
+
+	--light: #feffff;
+	--lightdark: #CBCCCC;
+	
+	--highlight: #ffe29d;
+	--highlightdark: #ffcb51;
+
+	--info: #D8EDF7;
+	
+	--danger: #F3DDDE;
 }
 
 /*uncomment this line for debugging*/
@@ -27,7 +30,7 @@
 body {
 	overflow-x: hidden;
 	font-family: 'Lato', sans-serif;
-	color: var(--n1);
+	color: var(--dark);
 }
 
 .offset:before {
@@ -51,28 +54,28 @@ body {
 	transition: background-color .5s ease 0s;
 }
 .navbar-brand {
-	color: var(--n2);
+	color: var(--light);
 }
 .svg-inline--fa.fa-w-14 {
-	color: var(--n2);
+	color: var(--light);
 	font-size: 1.6rem;
 }
 #blog-nav-item {
-	color: var(--c2);
+	color: var(--blog);
 }
 .navbar-nav li {
 	padding-right: .8rem;
 }
 .navbar-nav .nav-link {
-	color: var(--n2);
+	color: var(--light);
 	padding-top: .8rem;
 }
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link:hover {
-	color: var(--c5);
+	color: var(--main);
 }
 .navbar-brand:hover {
-	color: var(--c5);
+	color: var(--main);
 }
 .navbar.solid {
 	background: rgba(0, 0, 0, 0.7)!important;
@@ -96,18 +99,18 @@ body {
 	z-index: 1;
 }
 .caption h1 {
-	color: var(--n2);
+	color: var(--light);
 	font-size: 4.5rem;
 	font-family: 'Shadows Into Light', cursive;
 	letter-spacing: .3rem;
-	text-shadow: .1rem .1rem .8rem var(--n1);
+	text-shadow: .1rem .1rem .8rem var(--dark);
 	padding-bottom: 1rem;
 }
 .caption h3 {
-	color: var(--n2);
+	color: var(--light);
 	font-size: 2.5rem;
 	font-family: 'Shadows Into Light', cursive;
-	text-shadow: .1rem .1rem .5rem var(--n1);
+	text-shadow: .1rem .1rem .5rem var(--dark);
 	padding-bottom: 2rem;
 }
 .btn-lg {
@@ -134,15 +137,15 @@ body {
 	margin: 1rem;
 }
 .btn-color {
-	border-color: var(--c5);
-	background-color: var(--c5);
-	color: var(--n2);
+	border-color: var(--main);
+	background-color: var(--main);
+	color: var(--light);
 }
 .btn-color:hover,
 .btn-color:focus {
-	border-color: var(--c5dark);
-	background-color: var(--c5dark);
-	color: var(--n2);
+	border-color: var(--maindark);
+	background-color: var(--maindark);
+	color: var(--light);
 }
 .jumbotron {
 	margin-bottom: 0;
@@ -157,7 +160,7 @@ h1.heading {
 .heading-underline {
 	width: 3rem;
 	height: .2rem;
-	background-color: var(--c5);
+	background-color: var(--main);
 	margin: 0 auto 2rem;
 }
 .about {
@@ -170,7 +173,7 @@ h1.heading {
 	text-align: center;
 }
 .skill .fa-layers {
-	color: var(--c5);
+	color: var(--main);
 	height: 6rem;
 	margin: 0 auto;
 	width: 3.9rem;
@@ -233,9 +236,9 @@ img.example-image {
 
 /*-- experience --*/
 .experience-column {
-	background-color: var(--n2);
+	background-color: var(--light);
 	padding: 2rem;
-	border-top: .2rem solid var(--c5);
+	border-top: .2rem solid var(--main);
 	box-shadow: 0 0 .8rem rgba(0, 0, 0, 0.075);
 	transition: transform .7s ease;
 }
@@ -277,7 +280,7 @@ img.example-image {
   z-index: 1000!important;
 }
 .dark h1, .dark h3, .dark p {
-  color: var(--n2);
+  color: var(--light);
 }
 /*-- end passions --*/
 
@@ -286,7 +289,7 @@ footer {
 	background-image: url('img/footer.png');
 	background-repeat: no-repeat;
 	background-size: cover;
-	color: var(--n2);
+	color: var(--light);
 }
 footer .row {
 	background-color: rgba(57, 63, 70, 0.85);
@@ -297,12 +300,12 @@ footer h2 {
 	margin: 1.5rem 0;
 }
 footer a {
-	color: var(--n2);
+	color: var(--light);
 }
 footer a:hover,
 footer a:focus,
 footer a:active {
-	color: var(--c5)!important;
+	color: var(--main)!important;
 }
 footer svg.svg-inline--fa {
 	font-size: 1.1rem;
@@ -311,17 +314,17 @@ footer svg.svg-inline--fa {
 footer svg.svg-inline--fa:hover,
 footer svg.svg-inline--fa:focus,
 footer svg.svg-inline--fa:active {
-	color: var(--c5)!important;
+	color: var(--main)!important;
 }
 /*-- contact form --*/
 .form-group {
 	margin-bottom: 1.3rem;
 }
 .form-control, .form-control:focus {
-	background-color: var(--n1);
+	background-color: var(--dark);
 	border-radius: 0;
 	border: 0.15rem solid #666b71;
-	color: var(--n2);
+	color: var(--light);
 	font-size: 1.1rem;
 }
 input.btn {
