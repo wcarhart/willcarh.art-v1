@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.shortcuts import render, redirect
 from .forms import EmailForm
 from herald import build_host_message, build_client_message, send_email
 
@@ -28,8 +27,14 @@ def home(request):
 			)
 			print(f"Email to client:{message}")
 
+			return redirect('/#contact')
+
 	context = {
 		"form": EmailForm()
 	}
 	
 	return render(request, 'index.html', context)
+
+def home_redirect(request):
+	response = redirect('/#contact')
+	return response
