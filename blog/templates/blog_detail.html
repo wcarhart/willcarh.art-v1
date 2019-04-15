@@ -25,23 +25,21 @@
 					<i class="lead">{{ post.subtitle }}</i>
 				</div>
 				<div class="container-fluid post-content">
-					{% for section in sections %}
-					{% autoescape off %}
-					<div class="section">{{ section }}</div>
-					{% endautoescape %}
-					{% endfor %}
+					{% include post.content %}
 				</div>
 			</div>
 			<!-- end content -->
 
 			<!-- credits -->
 			<div class="container-fluid credits">
+				{% if cover_credit|length != 0 %}
 				<div class="row">
 					<p>Photo credit:&nbsp;</p>
 					{% for author, link in cover_credit.items %}
 					<a href="{{ link }}" target="_blank">{{ author }}&nbsp;</a>
 					{% endfor %}
 				</div>
+				{% endif %}
 			</div>
 			<!-- end credits -->
 		</div>

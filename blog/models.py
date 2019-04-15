@@ -7,7 +7,7 @@ class Post(models.Model):
 	subtitle = models.CharField(max_length=100, default='', null=True, blank=True)
 	blurb = models.CharField(max_length=250, default='', null=True, blank=True)
 	cover = models.FilePathField(path='/img', default='', null=True, blank=True)
-	content = models.TextField(default='', null=True, blank=True)
+	content = models.FilePathField(path='/posts', default='', null=True, blank=True)
 	published = models.DateTimeField(default=datetime.datetime.now, null=True, blank=True)
 	author = models.CharField(max_length=100, default='', null=True, blank=True)
 	cover_credit = models.TextField(default='', null=True, blank=True)
