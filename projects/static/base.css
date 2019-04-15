@@ -191,7 +191,7 @@ a:active,
 a:focus {
 	text-decoration: none;
 }
-#gif {
+.media {
 	max-height: 500px;
 	max-width: 100%
 }

@@ -1,0 +1,23 @@
+{% load static %}
+<div class="content">
+	<div class="section">
+		<p class="lead">Chordpanion is a work-in-progress iOS app that can write chord changes.</p>
+	</div>
+	<div class="section">
+		<div class="row">
+			<div class="col-lg-4">
+				<div class="section">
+					<img class="media" src="{% static 'chordpanion_demo.png' %}" alt="Chordpanion demo">
+				</div>
+			</div>
+			<div class="col-lg-8">
+				<div class="section">
+					<h4>General Premise</h4>
+					<p class="lead">Music can be broken into scales and chords, which can then be further divided into notes. There are only 12 unique notes that can be played (although they can be replicated in other octaves). If we assign a number 0 through 11 to each of these notes, we can process them with programming. Chordpanion uses commonly known chord progressions and trasposition techniques to build progressions for a given key. 
+					<h4>Example</h4>
+					<p class="lead">One of the most common progressions is <code>I vi IV V</code>. This progression can be replicated in any key. However, we can also make observations between the relationships between each chord in this progression. The <code>I</code> and <code>iv</code> chords are built off the same scale, meaning that any transition from <code>I</code> to <code>iv</code> or from <code>iv</code> to <code>I</code> will sound powerful. Similar conclusions about other chord relationships, such as knowledge of the Circle of Fifths, allows Chordpanion to build cool progressions.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
