@@ -175,7 +175,7 @@
 			"subtitle": "Testy McTesterson",
 			"blurb": "This is a test post to demonstrate what is possible with articles",
 			"cover": "img/firewatch.jpg",
-			"content": "<h1>Heading 1</h1><section><h2>Heading 2</h2><section><h3>Heading 3</h3><section><h4>Heading 4</h4><section><h5>Heading 5</h5><section><h6>Heading 6</h6><section><p class=\"lead\">Here's some lead text.</p><section><p>Here's some paragraph text.</p><section><p>Here's some text with <code>inline code</code> in it.</p><section><pre class=\"code\">this is some code<br>this is some more code</pre><section><div class=\"attention\"><b>Warning!</b><br>Here's what an attention note will look like.</div><section><div class=\"success\"><b>Success!</b><br>Here's what a success note will look like.</div><section><div class=\"info\"><b>Note:</b><br>Here's what an info note will look like.</div><section><div class=\"danger\"><b>Error!</b><br>Here's what a danger note will look like.</div>",
+			"content": "posts/post-1.html",
 			"published": "2019-04-14 11:48:50.120174",
 			"author": "Will Carhart",
 			"cover_credit": "{\"AaronOlive\": \"https://www.deviantart.com/aaronolive\"}"
@@ -189,10 +189,10 @@
 			"subtitle": "Text Blog Subtitle",
 			"blurb": "This is a longer dummy blurb hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue",
 			"cover": "img/img1.png",
-			"content": "This is some dummy content for testing.",
+			"content": "posts/post-2.html",
 			"published": "2019-04-14 11:48:50.120174",
 			"author": "Will Carhart",
-			"cover_credit": "{\"Jason Scheier\": \"https://www.artstation.com/d3cap\"}"
+			"cover_credit": "{}"
 		}
 	},
 	{
@@ -203,10 +203,10 @@
 			"subtitle": "Text Blog Subtitle",
 			"blurb": "This is a dummy blurb",
 			"cover": "img/img2.png",
-			"content": "This is some dummy content for testing.",
+			"content": "posts/post-3.html",
 			"published": "2019-04-14 11:48:50.120174",
 			"author": "Will Carhart",
-			"cover_credit": "{\"Jason Scheier\": \"https://www.artstation.com/d3cap\"}"
+			"cover_credit": "{}"
 		}
 	},
 	{
@@ -217,7 +217,7 @@
 			"subtitle": "Text Blog Subtitle",
 			"blurb": "This is a dummy blurb",
 			"cover": "img/img3.png",
-			"content": "This is some dummy content for testing.",
+			"content": "posts/post-4.html",
 			"published": "2019-04-14 11:48:50.120174",
 			"author": "Will Carhart",
 			"cover_credit": "{\"Jason Scheier\": \"https://www.artstation.com/d3cap\"}"

@@ -163,7 +163,7 @@ i.larger {
 }
 /*-- end blog container, detail --*/
 
-/* this HTML content comes from content.json */
+/* this HTML content comes from post-[index].html */
 /*-- post content --*/
 .section {
 	padding-bottom: 1rem;
@@ -197,6 +197,14 @@ i.larger {
 }
 code {
 	color: var(--dark);
+}
+a {
+	text-decoration: none;
+}
+a:hover,
+a:active,
+a:focus {
+	text-decoration: none;
 }
 /*-- end post content --*/
 
