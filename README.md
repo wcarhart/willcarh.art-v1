@@ -1,6 +1,8 @@
 # willcarh.art
 Full-stack web application for my portfolio! Will eventually be deployed to [willcarh.art]()...
 
+![willcarh.art demo](static/readme_demo.png)
+
 Track development progress here: https://trello.com/b/glDTHpCJ/willcarhart
 
 ## Utilities
