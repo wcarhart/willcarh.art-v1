@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono');
 {% load static %}
 
 :root {
@@ -188,9 +189,11 @@ i.larger {
 	padding: 1rem;
 }
 .code {
+	font-family: 'IBM Plex Mono', monospace;
 	background-color: var(--lightdark);
 	border-radius: 0.5rem;
 	padding: 1rem;
+	white-space: pre-wrap;
 }
 code {
 	color: var(--dark);
@@ -217,5 +220,12 @@ code {
 @media(max-width: 767px) {
 	.narrow {
 		width: 95%;
+	}
+}
+
+/* Devices under 576px (sm) */
+@media(max-width: 575px) {
+	.code {
+	white-space: nowrap;
 	}
 }

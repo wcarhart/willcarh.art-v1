@@ -221,3 +221,9 @@ a:focus {
 }
 /*-- end demo ~ content --*/
 
+/* Devices under 576px (sm) */
+@media(max-width: 575px) {
+	.code {
+	white-space: nowrap;
+	}
+}
