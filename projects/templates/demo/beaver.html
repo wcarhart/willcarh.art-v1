@@ -1,0 +1,17 @@
+<div class="content">
+	<div class="section">
+		<p class="lead"><code>beaver</code> parses log files based for a given date and time range, so you don't have to. Here's how to use <code>beaver</code>'s intuitive syntax.</p>
+	</div>
+	<div class="section">
+		<h4>Quick Examples</h4>
+		<p class="lead">Perhaps you'd like to see the logs for your website since the last time you pushed to production last Wednesday. This can be accomplished easily with <code>beaver</code>:</p>
+		<pre class="code">$ python3 beaver.py Wednesday to today<br>>> logfile1.log<br>2019-04-03 15:10:26,618 - simple_example - DEBUG - debug message<br>2019-04-03 15:12:45,124 - simple_example - DEBUG - debug message<br>...</pre>
+		<p class="lead">All of the following examples will work:</p>
+		<pre class="code">$ python3 beaver.py 10:35 to 11:35<br>$ python3 beaver.py yesterday to today<br>$ python3 beaver.py Mar 2nd, 2012 to now<br>$ python3 beaver.py 2017-06-18 to May 3rd 2018 at 3:17pm<br>$ python3 beaver.py 1:23pm on August 15th 2017 to 10:35 PM on 2 April 2018</pre>
+		<p class="lead"><code>beaver</code> automatically looks for any files ending in <code>.log</code> or <code>.logs</code>, but you can also specify a specific file to parse with the <code>-f/--file</code> option:</p>
+		<pre class="code">$ beaver -f my_log_file.txt May 17th to today</pre>
+	</div>
+	<div class="last">
+		<p class="lead"><code>beaver</code>'s English-like syntax was inspired by Dan Bader's <a href="https://github.com/dbader/schedule" target="_blank">schedule</a> module, which uses a similar syntax.</p>
+	</div>
+</div>
