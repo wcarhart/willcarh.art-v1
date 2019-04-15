@@ -12,7 +12,7 @@ def project_index(request):
 def project_detail(request, title):
 	project = Project.objects.get(title=title)
 
-	description_sections = project.description.split('<br>')
+	description_sections = project.description.split('<section>')
 	links_dictionary = json.loads(project.links.replace("'", '"'))
 	github = pypi = ''
 	if 'GitHub' in links_dictionary.keys():
