@@ -12,6 +12,8 @@
 	--c4dark: #905A6B;
 	--c3: #41b3a3; /*dark-teal*/
 	--c3dark: #0E8070;
+	--info: #D8EDF7;
+	--danger: #F3DDDE;
 
 	--n1: #2c3840; /*charcoal*/
 	--n1dark: #00050D;
@@ -161,14 +163,56 @@ i.larger {
 }
 /*-- end blog container, detail --*/
 
-/* post content comes from content.json and uses custom classes */
+/* this HTML content comes from content.json */
 /*-- post content --*/
+.section {
+	padding-bottom: 1rem;
+}
 .attention {
 	background-color: var(--n3);
 	border-radius: 0.5rem;
 	padding: 1rem;
 }
+.success {
+	background-color: var(--c2);
+	border-radius: 0.5rem;
+	padding: 1rem;
+}
+.danger {
+	background-color: var(--danger);
+	border-radius: 0.5rem;
+	padding: 1rem;
+}
+.info {
+	background-color: var(--info);
+	border-radius: 0.5rem;
+	padding: 1rem;
+}
+.code {
+	background-color: var(--n2dark);
+	border-radius: 0.5rem;
+	padding: 1rem;
+}
+code {
+	color: var(--n1);
+}
 /*-- end post content --*/
+
+/*-- credits --*/
+.credits p {
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+.credits a {
+	color: var(--n1);
+}
+.credits a:hover,
+.credits a:active,
+.credits a:focus {
+	color: var(--n1);
+	text-decoration: none;
+}
+/*-- end credits --*/
 
 /* Devices under 768px (md) */
 @media(max-width: 767px) {

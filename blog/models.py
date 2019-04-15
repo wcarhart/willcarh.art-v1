@@ -10,6 +10,7 @@ class Post(models.Model):
 	content = models.TextField(default='', null=True, blank=True)
 	published = models.DateTimeField(default=datetime.datetime.now, null=True, blank=True)
 	author = models.CharField(max_length=100, default='', null=True, blank=True)
+	cover_credit = models.TextField(default='', null=True, blank=True)
 
 	def __str__(self):
 		return str(self.title)
