@@ -2,27 +2,30 @@
 {% load static %}
 
 :root {
-	--c1: #e27d60; /*red-orange*/
-	--c1dark: #AF4A2D;
-	--c2: #85dcbf; /*light-teal*/
-	--c2dark: #52A98C;
-	--c5: #e8a87c; /*peach*/
-	--c5dark: #B57549;
-	--c4: #c38d9e; /*mid-purple*/
-	--c4dark: #905A6B;
-	--c3: #41b3a3; /*dark-teal*/
-	--c3dark: #0E8070;
+	--main: #e8a87c;
+	--maindark: #B57549;
 
-	--n1: #2c3840; /*charcoal*/
-	--n1dark: #00050D;
-	--n2: #feffff; /*off-white*/
-	--n2dark: #CBCCCC;
+	--blog: #85dcbf;
+	--blogdark: #52A98C;
+
+	--dark: #2c3840;
+	--darkdark: #00050D;
+
+	--light: #feffff;
+	--lightdark: #CBCCCC;
+	
+	--highlight: #ffe29d;
+	--highlightdark: #ffcb51;
+
+	--info: #D8EDF7;
+	
+	--danger: #F3DDDE;
 }
 
 body {
 	overflow-x: hidden;
 	font-family: 'Lato', sans-serif;
-	color: var(--n1);
+	color: var(--dark);
 }
 #content {
 	padding-top: 4rem;
@@ -52,25 +55,25 @@ body {
 	background-color: rgba(0, 0, 0, 0.7);
 }
 .navbar-brand {
-	color: var(--n2);
+	color: var(--light);
 }
 .svg-inline--fa.fa-w-14 {
-	color: var(--n2);
+	color: var(--light);
 	font-size: 1.6rem;
 }
 .navbar-nav li {
 	padding-right: .8rem;
 }
 .navbar-nav .nav-link {
-	color: var(--n2);
+	color: var(--light);
 	padding-top: .8rem;
 }
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link:hover {
-	color: var(--c5);
+	color: var(--main);
 }
 .navbar-brand:hover {
-	color: var(--c5);
+	color: var(--main);
 }
 /*-- end navigation --*/
 
@@ -86,15 +89,15 @@ body {
 	transform: scale(1.1);
 }
 .project-item a {
-	background-color: var(--c5);
-	border-color: var(--c5);
+	background-color: var(--main);
+	border-color: var(--main);
 	border-radius: 0;
 }
 .project-item a:active,
 .project-item a:hover,
 .project-item a:focus {
-	border-color: var(--c5dark)!important;
-	background-color: var(--c5dark)!important;
+	border-color: var(--maindark)!important;
+	background-color: var(--maindark)!important;
 }
 /*-- end project container, index--*/
 
@@ -116,14 +119,14 @@ h1.heading {
 	font-size: 1.3rem;
 	border-radius: 0;
 	margin: 0.5rem;
-	background-color: var(--c5);
-	border-color: var(--c5);
+	background-color: var(--main);
+	border-color: var(--main);
 }
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active {
-	border-color: var(--c5dark)!important;
-	background-color: var(--c5dark)!important;
+	border-color: var(--maindark)!important;
+	background-color: var(--maindark)!important;
 }
 /*-- end project container, detail --*/
 
