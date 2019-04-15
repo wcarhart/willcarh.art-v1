@@ -12,18 +12,31 @@
 	--c4dark: #905A6B;
 	--c3: #41b3a3; /*dark-teal*/
 	--c3dark: #0E8070;
+	--info: #D8EDF7;
+	--danger: #F3DDDE;
 
 	--n1: #2c3840; /*charcoal*/
 	--n1dark: #00050D;
 	--n2: #feffff; /*off-white*/
 	--n2dark: #CBCCCC;
+	--n3: #ffe29d; /*creme*/
+	--n3dark: #ffcb51;
 }
+
+/*uncomment this line for debugging*/
+/*{ outline: solid 0.25rem hsla(210, 100%, 100%, 0.5); }*/
 
 body {
 	overflow-x: hidden;
 	font-family: 'Lato', sans-serif;
 	color: var(--n1);
+}
+#content {
 	padding-top: 4rem;
+}
+.narrow {
+	width: 75%;
+	margin: 0 auto;
 }
 
 /*-- navigation --*/
@@ -51,77 +64,159 @@ body {
 }
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link:hover {
-	color: var(--c5);
+	color: var(--c2);
 }
 .navbar-brand:hover {
 	color: var(--c5);
 }
 /*-- end navigation --*/
 
-/*-- project container, index --*/
-.projects-wrapper {
-	background-image: url('img/footer.png');
+/*-- landing page --*/
+#landing {
+	height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    background-image: url('img/footer.png');
 	background-color: rgb(0, 0, 0, 0.2);
 	height: 150%;
+	z-index: -1;
 }
-.projects-container h1 {
+/*-- end landing page --*/
+
+/*-- blog container, index --*/
+.blog-container h1 {
 	padding: 2rem 0;
 }
-.project-item {
+.blog-item {
 	padding-bottom: 1rem;
+}
+.card {
 	transition: transform .4s ease;
 }
-.project-item:hover {
+.card:hover {
 	transform: scale(1.1);
 }
-.project-item a {
-	background-color: var(--c5);
-	border-color: var(--c5);
+.card:hover img {
+	transform: scale(1.1);
+}
+.card img {
+	height: 300px;
+	max-height: 300px;
+	width: 100%;
+	background-size: cover;
+	object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    transition: transform .4s ease;
+}
+.card-head {
+	overflow: hidden;
+}
+.blog-item a {
+	background-color: var(--c2);
+	border-color: var(--c2);
 	border-radius: 0;
+	margin-bottom: 0.5rem;
 }
-.project-item a:active,
-.project-item a:hover,
-.project-item a:focus {
-	border-color: var(--c5dark)!important;
-	background-color: var(--c5dark)!important;
+.blog-item a:active,
+.blog-item a:hover,
+.blog-item a:focus {
+	border-color: var(--c2dark)!important;
+	background-color: var(--c2dark)!important;
 }
-/*-- end project container, index--*/
+i.subtitle {
+	font-size: 1rem;
+	position: relative;
+	bottom: 0.1rem;
+}
+/*-- end blog container, index--*/
 
-/*-- project container, detail --*/
-.narrow {
-	width: 75%;
-	margin: 0 auto;
+/*-- blog container, detail --*/
+.article {
+	background-color: var(--n2);
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	border-radius: 0.5rem;
+	padding: 1rem;
+}
+.heading-title {
+	margin: 1rem 0;
 }
 h1.heading {
 	font-size: 3.5rem;
-	padding: 2rem 0;
+	margin-bottom: 0.5rem;
+	padding: 0;
 }
-.blurb {
-	font-size: 1.5rem;
-	font-weight: 300;
-	padding: 0.5rem 0 1.1rem;
+i.larger {
+	font-size: 1.1rem;
 }
-.btn-primary {
-	font-size: 1.3rem;
-	border-radius: 0;
-	margin: 0.5rem;
-	background-color: var(--c5);
-	border-color: var(--c5);
+.cover-photo {
+	width: 100%;
+	max-width: 100%;
+	padding-bottom: 1rem;
 }
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active {
-	border-color: var(--c5dark)!important;
-	background-color: var(--c5dark)!important;
+.post-subtitle {
+	font-size: 1.2rem;
+	padding-bottom: 1rem;
 }
-/*-- end project container, detail --*/
+/*-- end blog container, detail --*/
 
-/*-- demo --*/
-.demo h2 {
-	font-size: 2rem;
+/* this HTML content comes from content.json */
+/*-- post content --*/
+.section {
+	padding-bottom: 1rem;
 }
-.demo-content {
-	padding: 2rem;
+.attention {
+	background-color: var(--n3);
+	border-radius: 0.5rem;
+	padding: 1rem;
 }
-/*-- end demo --*/
+.success {
+	background-color: var(--c2);
+	border-radius: 0.5rem;
+	padding: 1rem;
+}
+.danger {
+	background-color: var(--danger);
+	border-radius: 0.5rem;
+	padding: 1rem;
+}
+.info {
+	background-color: var(--info);
+	border-radius: 0.5rem;
+	padding: 1rem;
+}
+.code {
+	background-color: var(--n2dark);
+	border-radius: 0.5rem;
+	padding: 1rem;
+}
+code {
+	color: var(--n1);
+}
+/*-- end post content --*/
 
+/*-- credits --*/
+.credits p {
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+.credits a {
+	color: var(--n1);
+}
+.credits a:hover,
+.credits a:active,
+.credits a:focus {
+	color: var(--n1);
+	text-decoration: none;
+}
+/*-- end credits --*/
+
+/* Devices under 768px (md) */
+@media(max-width: 767px) {
+	.narrow {
+		width: 95%;
+	}
+}

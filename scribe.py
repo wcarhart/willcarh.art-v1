@@ -14,6 +14,7 @@ settings.configure(DATABASES=DATABASES, INSTALLED_APPS=INSTALLED_APPS)
 django.setup()
 
 import projects.models
+import blog.models
 
 def is_valid_against_schema(entity):
 	"""
@@ -32,7 +33,10 @@ def is_valid_against_schema(entity):
 	try:
 		Class = getattr(projects.models, entity['class'])
 	except AttributeError:
-		return False
+		try:
+			Class = getattr(blog.models, entity['class'])
+		except AttributeError:
+			return False
 
 	# validate contents
 	if not 'content' in entity.keys():
@@ -65,7 +69,11 @@ def is_valid_against_table(entity, Class):
 
 def parse_data(entity, index):
 	"""Parse data, add to database"""
-	Class = getattr(projects.models, entity['class'])
+	try:
+		Class = getattr(projects.models, entity['class'])
+	except AttributeError:
+		Class = getattr(blog.models, entity['class'])
+
 	if not is_valid_against_table(entity, Class):
 		print(f"Entity {entity['class']} at index {index} is already in the database")
 	else:

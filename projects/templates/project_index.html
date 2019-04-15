@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
-{% load custom_filters %}
+{% load projects_filters %}
 
 {% block page_content %}
 <div class="container projects-container">
-	<h1>Projects</h1>
+	<div class="os-animation" data-animation="fadeInUp">
+		<h1>Projects</h1>
+	</div>
 	<div class="row">
 		{% for project in projects %}
 		<div class="project-item col-md-4">
