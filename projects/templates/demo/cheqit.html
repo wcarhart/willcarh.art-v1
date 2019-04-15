@@ -1,0 +1,10 @@
+<div class="content">
+	<div class="section">
+		<p class="lead"><code>cheqit</code> is a simple command line utility for checking website status. Usage is super simple:</p>
+		<pre class="code">$ python3 cheqit.py google.com amazon.com willcarh.art testy.mctesterson<br> google.com <span class="green">UP</span><br> amazon.com <span class="green">UP</span><br> willcarh.art <span class="green">UP</span><br> testy.mctesterson <span class="red">DOWN</span></pre>
+		<p class="lead">Works on IP addresses too:</p>
+		<pre class="code">$ python3 cheqit.py 172.217.4.174<br> 172.217.4.174 <span class="green">UP</span></pre>
+		<p class="lead">You can also stream the output, so <code>cheqit</code> will check at a regular interval and update the terminal:</p>
+		<pre class="code">$ python3 cheqit.py --stream google.com<br>$ p3 cheqit.py -s google.com<br> google.com: UP (2019-04-15 05:10:55)<br><br>^C to exit...</pre>
+	</div>
+</div>
