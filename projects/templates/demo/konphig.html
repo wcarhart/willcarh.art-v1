@@ -1,0 +1,53 @@
+<div class="content">
+	<div class="section">
+		<p class="lead"><code>Konphig</code> is my collection of configuration files that I've developed over the years. There are files for:</p>
+		<ul>
+			<li><p class="lead"><code>bash</code> functions</p></li>
+			<li><p class="lead"><code>bash</code> aliases and variables</p></li>
+			<li><p class="lead"><code>vim</code> configurations</p></li>
+			<li><p class="lead"><code>git</code> configurations</p></li>
+			<li><p class="lead"><code>tmux</code> configurations</p></li>
+			<li><p class="lead">PyPI configurations</p></li>
+		</ul>
+	</div>
+	<div class="section">
+		<h4>Favorites</h4>
+		<p class="lead">Since there are over <b>70</b> <code>bash</code> functions in <code>Konphig</code> now, I'll just show you my favorites.</p>
+	</div>
+	<div class="section">
+		<p class="lead"><code>up</code> and <code>down</code> - move up and down the file tree</p>
+		<pre class="code">$ pwd<br>/home/projects/project1/src/<br>$ up 2<br>/home/projects/<br>$ down<br>/home/projects/project1/<br>$ down<br>/home/projects/project1/src/</pre>
+	</div>
+	<div class="section">
+		<p class="lead"><code>adda</code> - add a <code>bash</code> alias on the fly</p>
+		<pre class="code">$ adda e echo<br>$ e 'Hello, world!'<br>Hello, world!</pre>
+	</div>
+	<div class="section">
+		<p class="lead"><code>makef</code> - create a <code>bash</code> function from commands in the history on the fly</p>
+		<pre class="code">$ clear<br>$ ls<br>file0.txt<br>file1.txt<br>$ makef 2 cls<br>$ cat ~/.bashrc<br>cls() {<br>  clear<br>  ls<br>}</pre>
+	</div>
+	<div class="section">
+		<p class="lead"><code>rcreate</code> - create a remote in GitHub</p>
+		<pre class="code">$ git add -A<br>$ git commit -m "Initial commit"<br>$ basename `pwd`<br>cool_new_project<br>$ rcreate<br>Enter passphrase for key '/Users/username/.ssh/id_rsa': <br>Counting objects: 1, done.<br>Writing objects: 100% (1/1), 8 bytes | 0 bytes/s, done.<br>Total 1 (delta 0), reused 0 (delta 0)<br>remote:<br>remote: Create a pull request for 'master' on GitHub by visiting:<br>remote:      https://github.com/username/cool_new_project/pull/new/master<br>remote:<br>To https://github.com/username/cool_new_project.git<br> * [new branch]      master -> master<br>Branch master set up to track remote branch master from origin.</pre>
+	</div>
+	<div class="section">
+		<p class="lead"><code>snag</code> - move the most recently downloaded file to the current directory</p>
+		<pre class="code">$ ls<br>$ ls -t ~/Downloads | head -1<br>new_file.txt<br>$ snag<br>$ ls<br>new_file.txt</pre>
+	</div>
+	<div class="section">
+		<p class="lead"><code>what</code> - show what filetypes are in a directory</p>
+		<pre class="code">$ what<br>.txt<br>.md<br>.py<br>.pyc</pre>
+	</div>
+	<div class="section">
+		<p class="lead"><code>getlocation</code> - get your current location (based on your public IP address)</p>
+		<pre class="code">IP: 105.38.27.128<br>Location: San Francisco, CA, USA</pre>
+	</div>
+	<div class="section">
+		<p class="lead"><code>duf</code> - show disk usage by filetype</p>
+		<pre class="code">$ duf py md<br>py: 30K<br>md: 4.7K</pre>
+	</div>
+	<div class="section">
+		<p class="lead"><code>rickroll</code> - do you really need an explanation?</p>
+		<pre class="code">$ rickroll       # guess you'll have to try this one yourself ;)</pre>
+	</div>
+</div>
