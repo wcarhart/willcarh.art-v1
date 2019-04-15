@@ -178,6 +178,7 @@ h1.heading {
 	background-color: var(--lightdark);
 	border-radius: 0.5rem;
 	padding: 1rem;
+	white-space: pre-wrap;
 }
 code {
 	color: var(--dark);
