@@ -22,25 +22,30 @@
 					<img class="cover-photo" src="{% static post.cover %}" alt="{{ post.title }} cover photo">
 				</div>
 				<div class="container-fluid text-center post-subtitle">
-					<i>{{ post.subtitle }}</i>
+					<i class="lead">{{ post.subtitle }}</i>
 				</div>
 				<div class="container-fluid post-content">
 					{% for section in sections %}
 					{% autoescape off %}
-					<p>{{ section }}</p>
+					<div class="section">{{ section }}</div>
 					{% endautoescape %}
 					{% endfor %}
-					<div class="attention">hello</div>
 				</div>
 			</div>
 			<!-- end content -->
 
-			<!-- footer -->
-			<footer>
-				<br><br><br><br><br><br><br><br>
-			</footer>
-			<!-- end footer -->
+			<!-- credits -->
+			<div class="container-fluid credits">
+				<div class="row">
+					<p>Photo credit:&nbsp;</p>
+					{% for author, link in cover_credit.items %}
+					<a href="{{ link }}" target="_blank">{{ author }}&nbsp;</a>
+					{% endfor %}
+				</div>
+			</div>
+			<!-- end credits -->
 		</div>
 	</div>
+	<br><br>
 </div>
 {% endblock %}

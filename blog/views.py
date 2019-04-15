@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from .models import Post
 from bs4 import BeautifulSoup
+import json
 
 def blog_index(request):
-	posts = Post.objects.all()
+	posts = Post.objects.all()[::-1]
 	context = {
 		'posts': posts
 	}
@@ -14,19 +15,13 @@ def blog_detail(request, title):
 	post = Post.objects.get(title=post_title)
 
 	sections = post.content.split('<section>')
-	formatted_sections = []
-	for section in sections:
-		formatted_sections.append(parse_section(section))
+	cover_credit = json.loads(post.cover_credit)
+	# print(cover_credit)
 
 	context = {
 		'post': post,
-		'sections': sections
+		'sections': sections,
+		'cover_credit': cover_credit
 	}
-	return render(request, 'blog_detail.html', context)
 
-def parse_section(section):
-	"""
-	Parses content for blog post for custom formatting
-		:section: (str) the section to parse
-	"""
-	return
+	return render(request, 'blog_detail.html', context)
