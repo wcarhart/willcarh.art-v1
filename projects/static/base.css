@@ -149,6 +149,10 @@ h1.heading {
 .section {
 	padding-bottom: 1rem;
 }
+.last {
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
 .attention {
 	background-color: var(--highlight);
 	border-radius: 0.5rem;
@@ -185,6 +189,10 @@ a:hover,
 a:active,
 a:focus {
 	text-decoration: none;
+}
+#gif {
+	max-height: 500px;
+	max-width: 100%
 }
 /*-- end demo ~ content --*/
 
