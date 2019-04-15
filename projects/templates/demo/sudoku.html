@@ -1,0 +1,23 @@
+<div class="content">
+	<div class="section">
+		<p class="lead"><code>sudoku</code> solves a standard Sudoku puzzle.</p>
+	</div>
+	<div class="section">
+		<p class="lead">Given the following input:</p>
+		<pre class="code">* * * | 5 * 6 | * * *  <br>* * 4 | * * * | 8 * *  <br>* 9 * | 1 * 2 | * * * <br>---------------------<br>9 * 8 | * * * | 3 * 2 <br>* * * | * 9 * | * * * <br>1 * 2 | * * * | 4 * 7 <br>---------------------<br>* 2 * | 3 * 4 | * 8 *<br>* * 7 | * * * | 9 * *<br>* * * | 9 * 5 | * * *</pre>
+		<p class="lead"><code>sudoku</code> produces the following output:</p>
+		<pre class="code">2 8 1 | 5 4 6 | 7 3 9 <br>6 5 4 | 7 3 9 | 8 2 1 <br>7 9 3 | 1 8 2 | 5 6 4 <br>--------------------- <br>9 7 8 | 4 6 1 | 3 5 2 <br>4 3 5 | 2 9 7 | 6 1 8 <br>1 6 2 | 8 5 3 | 4 9 7 <br>--------------------- <br>5 2 9 | 3 7 4 | 1 8 6 <br>3 1 7 | 6 2 8 | 9 4 5 <br>8 4 6 | 9 1 5 | 2 7 3 </pre>
+		<p class="lead">Usage is very simple:</p>
+		<pre class="code">$ java Solver.java input.txt output.txt</pre>
+	</div>
+	<div class="section">
+		<h4>A lesson in Dynamic Programming</h4>
+		<p class="lead"><code>sudoku</code> uses dynamic programming to solve each puzzle. The basic algorithm is quite simple. We construct a tree via recursive calls:</p>
+		<ol>
+			<li><p class="lead">Place a number <code>[1,9]</code> in a random open cell.</p></li>
+			<li><p class="lead">If the move creates a valid board, continue doing so (create a node and move to its child). If it does not, take a note (memo), undo the move from step 1 (move up to the node's parent), and try another random move.</p></li>
+			<li><p class="lead">Continue until the board is solved, or until no more moves are available, in which case the game is unsolvable.</p>
+		</ol>
+		<p class="lead">The key here is the <i>memoization</i>, which keeps us from trying every single impossible board. Effectively, we are building a tree of possible boards, and only traversing branches that produce possible winning states. In theory, each tree node could have 72 children, but clever prunning keeps us from having to produce such an expensive tree.</p>
+	</div>
+</div>

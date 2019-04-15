@@ -1,0 +1,21 @@
+<div class="content">
+	<div class="section">
+		<p class="lead"><code>locksmith</code> acts as an interface between secrets and the Python code using them.</p>
+	</div>
+	<div class="section">
+		<h4>A simple use case</h4>
+		<p class="lead">Consider the following scenario: <i>Your cool new app requires a slick, unique API key to run. Perhaps your framework requires you to put this API key in a manifest.json file. However, your manifest file(s) need to be checked into GitHub, thus exposing your precious API key. <code>locksmith</code> provides a layer of security to prevent you from having to type out your secrets in plaintext anywhere in your repository.</i></p>
+	</div>
+	<div class="section">
+		<h4>Easy-to-use API</h4>
+		<p class="lead">Once you've installed and set up <code>locksmith</code> (see <a href="https://github.com/wcarhart/locksmith#installation" target="_blank">here for instructions</a>), <code>locksmith</code> exposes a simple API:</p>
+		<p class="lead">In your code, replace:</p>
+		<pre class="code">api_key = D4kTnNOp5lwKYJGwHkai</pre>
+		<p class="lead">With:</p>
+		<pre class="code">lock = Locksmith("your_username")<br>api_key = lock.get_secret('API_KEY')</pre>
+		<p class="lead">It's that easy!</p>
+	</div>
+	<div class="section">
+		<p class="lead"><code>locksmith</code> uses <a href="https://www.gnupg.org/" target="_blank">GPG</a> to encrypt secrets, so you know they'll be safe.</p>
+	</div>
+</div>

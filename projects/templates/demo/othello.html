@@ -1,0 +1,27 @@
+<div class="content">
+	<div class="section">
+		<p class="lead"><code>othello</code> is a command line implementation of the popular game <a href="https://en.wikipedia.org/wiki/Reversi" target="_blank">Othello</a>, which is also known as Reversi.</p>
+	</div>
+	<div class="section">
+		<h4>Simple game, complex theory</h4>
+		<p class="lead">Othello's premise is very simple: take turns adding pieces to the board, and if your piece 'wraps' an enemy's piece, flip it to your color. However, the game's theory is quite complex, because often the winner of the game is only decided in the last few moves.</p>
+		<p class="lead"><code>othello</code> can be played with either two players versus each other or one versus the AI player.</p>
+	</div>
+	<div class="section">
+		<h4>A case study in game theory</h4>
+		<p class="lead"><code>othello</code>'s AI adversaries (<i>Euclid</i>, <i>Lovelace</i>, <i>Dijkstra</i>, and <i>Turing</i>), which are named after famous computer scientists, use knowledge of the game's theory to try to win the game. The most challenge of the AI players, <i>Turing</i>, uses concepts like <i>mobility</i> to dominate most players.</p>
+	</div>
+	<div class="section">
+		<h4>Playing the game</h4>
+		<p class="lead">Start a new game with:</p>
+		<pre class="code">$ python3 othello.py</pre>
+		<p class="lead">Which will draw a board on the terminal:</p>
+		<pre class="code">Welcome to Othello!<br><span class="red">Player 1</span> vs. <span class="green">Player 2</span><br><br>  1 2 3 4 5 6 7 8<br>A - - - - - - - - <br>B - - - - - - - - <br>C - - - - - - - - <br>D - - - <span class="green">*</span> <span class="red">*</span> - - - <br>E - - - <span class="red">*</span> <span class="green">*</span> - - - <br>F - - - - - - - - <br>G - - - - - - - - <br>H - - - - - - - - <br><span class="red">Player 1</span>, where do you want to move? </pre>
+		<p class="lead">The available commands in-game can be show by typing <code>help</code>:</p>
+		<pre class="code">====Command list====<br> B6     -> attempts to place new tile on location B6<br> show   -> redraws the current board<br> where  -> shows possible moves for the current player (you can also use 'hint' or 'where can I go?')<br> help   -> shows this menu and list of commands (you can also use 'command' or 'commands')<br> clear  -> clears the screen<br> score  -> show how many tiles each player has (you can also use 'who's winning?')<br> color  -> changes the current player's color<br> exit   -> ends the game (you can also use 'done')</pre>
+		<p class="lead"><code>othello</code>'s coolest feature, its AI players, can be played by specifying them by name:</p>
+		<pre class="code">$ python3 othello.py --adversary Turing<br>So, you'd like to challenge Turing? (Y/N) y<br>What is your name? Will<br>Okay, so your name is Will? (Y/N) y<br>Okay, what is your color? You can pick from <span class="grey">grey</span>, <span class="red">red</span>, <span class="green">green</span>, <span class="yellow">yellow</span>, <span class="blue">blue</span>, <span class="pink">pink</span>, <span class="teal">teal</span>, or <span class="white">white</span>: red<br>Okay so your color is <span class="red">red</span>? (Y/N) y<br><br>Welcome to Othello!<br><span class="red">Will</span> vs. <span class="green">Turing</span><br><span class="green">Turing</span> says: My bombes will win this game in no time!<br><br>  1 2 3 4 5 6 7 8<br>A - - - - - - - - <br>B - - - - - - - - <br>C - - - - - - - - <br>D - - - <span class="green">*</span> <span class="red">*</span> - - - <br>E - - - <span class="red">*</span> <span class="green">*</span> - - - <br>F - - - - - - - - <br>G - - - - - - - - <br>H - - - - - - - - <br><span class="red">Will</span>, where do you want to move? </pre>
+		<p class="lead">You can also watch a game between two AI players with the <code>--spectate</code> option.</p>
+		<pre class="code">$ python3 othello.py --spectate</pre>
+	</div>
+</div>
