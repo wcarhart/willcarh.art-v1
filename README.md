@@ -57,7 +57,7 @@ $ python3 chronicler.py -m
  * HTML5
  * CSS3
  * Bootstrap 4
- * Javascript
+ * Javascript + jQuery
 ### Back-end
  * Python 3.7
  * Django 2.1.5
