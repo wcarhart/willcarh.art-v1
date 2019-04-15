@@ -1,5 +1,31 @@
-{% block demo %}
-<div>
-	<h1>CHEERS</h1>
+{% load static %}
+<div class="content">
+	<div class="section">
+		<p class="lead">Cheers utilizes the Yelp Fusion API, combined with a proprietary dataset stored in a Firebase database and the user's location, to display nearby happy hours.</p>
+	</div>
+	<div class="section">
+		<div class="row">
+			<div class="col-lg-4">
+				<img id="gif" src="{% static 'cheers_demo.gif' %}" alt="Cheers demo">
+			</div>
+			<div class="col-lg-8">
+				<h4>Features</h4>
+				<b>Nearby Happy Hours, when you want them</b>
+				<p class="lead">Cheers uses the your location to compute ongoing happy hours within a reasonable distance, so it's easy to see what's going on around you. You can also see all bars nearby, to plan ahead for a night out.</p>
+				<b>Build on the Yelp Fusion API</b>
+				<p class="lead">Cheers acquires most of its data from Yelp, so you know you're getting an accurate, up-to-date record of each establishment. Cheers then sprinkles in the stuff Yelp doesn't provide.</p>
+				<b>List & Map Views</b>
+				<p class="lead">Like browsing lists? Use the list view with filtering and search functionality to find the exact bar you want. More of a visual person? Use the map view to see what's around you right now.</p>
+				<b>All your Favorites</b>
+				<p class="lead">Love a bar? Add it to your favorites! Cheers will remember your favorites so you can view them anytime.</p>
+				<b>Take me there!</b>
+				<p class="lead">Cheers supports Uber, Lyft, and Apple Maps. To discourage drinking and driving, Cheers makes it easy to use ridesharing apps to get from bar to bar.</p>
+			</div>
+		</div>
+	</div>
+	<div class="section">
+		<h4>Future Plans</h4>
+		<p class="lead">The demo above is of the proof-of-concept Cheers prototype. I am currently developing a full version, which utilizes a complete Flask API backend, rather than a dummy Firebase database.</p>
+		<p class="lead">Beta testing via TestFlight is planned for late 2019.</p>
+	</div>
 </div>
-{% endblock %}
