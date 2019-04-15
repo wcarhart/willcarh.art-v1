@@ -28,28 +28,34 @@
 </head>
 
 <body>
-	<!-- navigation-->
-	<nav class="navbar navbar-expand-sm fixed-top">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="{% url 'home' %}">Will Carhart</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-				<span class="custom-toggler-icon"><i class="fas fa-bars"></i></span>
-			</button>
+	<div id="landing">
+		<!-- navigation-->
+		<nav class="navbar navbar-expand-sm fixed-top">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="{% url 'home' %}">Will Carhart</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+					<span class="custom-toggler-icon"><i class="fas fa-bars"></i></span>
+				</button>
 
-			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item">
-						<a class="nav-link" href="{% url 'project_index' %}">Projects</a>
-					</li>
-				</ul>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'project_index' %}">Projects</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- end navigation -->
+
+		<!-- page content -->
+		<div id="content">
+			<div class="container-fluid projects-wrapper">
+				{% block page_content %}{% endblock %}
 			</div>
 		</div>
-	</nav>
-	<!-- end navigation -->
+		<!-- end page content -->
 
-	<!-- page content -->
-	<div class="container-fluid projects-wrapper">
-		{% block page_content %}{% endblock %}
 	</div>
 
 	<!-- script source files -->

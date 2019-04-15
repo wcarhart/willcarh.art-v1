@@ -71,7 +71,7 @@ body {
 }
 /*-- end navigation --*/
 
-/*-- landing page --*/
+/*-- landing --*/
 #landing {
 	height: 100%;
     width: 100%;
@@ -83,7 +83,7 @@ body {
 	height: 150%;
 	z-index: -1;
 }
-/*-- end landing page --*/
+/*-- end landing --*/
 
 /*-- blog container, index --*/
 .blog-container h1 {
