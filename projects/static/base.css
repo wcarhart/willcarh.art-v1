@@ -195,5 +195,29 @@ a:focus {
 	max-height: 500px;
 	max-width: 100%
 }
+.red {
+	color: red;
+}
+.green {
+	color: green;
+}
+.grey {
+	color: grey;
+}
+.blue {
+	color: blue;
+}
+.yellow {
+	color: yellow;
+}
+.teal {
+	color: teal;
+}
+.pink {
+	color: pink;
+}
+.white {
+	color: white;
+}
 /*-- end demo ~ content --*/
 
