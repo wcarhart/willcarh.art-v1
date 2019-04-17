@@ -185,11 +185,13 @@ code {
 }
 a {
 	text-decoration: none;
+	color: var(--main);
 }
 a:hover,
 a:active,
 a:focus {
 	text-decoration: none;
+	color: var(--maindark);
 }
 .media {
 	max-height: 500px;

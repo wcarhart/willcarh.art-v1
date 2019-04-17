@@ -5,7 +5,7 @@
 			"title": "Cheers",
 			"blurb": "iOS app for finding ongoing happy hours",
 			"description": "Cheers started as a concept while I attended the University of San Diego. The goal was to develop an iOS app that would show nearby bars and restaurants with ongoing happy hours. Our team observed that often in San Diego there are many fun bars to explore, but sometimes it's hard to know where to look. That's where Cheers comes in!<section>During the project's development, we wrote a proof-of-concept iOS app, which did all processing on the client. The app uses the Yelp Fusion API to acquire its restaurant data and Firebase as a data store. Given that I had the original idea for the app and I had written more than half the code base, I decided to continue the project after my time at USD.<section>The complete version of the app is still a work in progress, but I plan on publishing it soon. The client is written entirely in Swift + iOS, while the backend is an API written in Flask and Python, using the SQLAlchemy adapter for the PostgreSQL database.",
-			"technology": "iOS, Swift, Firebase, Flask, Python, PostgreSQL, SQLAlchemy",
+			"technology": "iOS, Swift, Firebase, Flask, Python, PostgreSQL, SQLAlchemy, Balsamiq",
 			"links": "{'GitHub': 'https://github.com/usd-cs/comp495-sp18-happy-hour'}",
 			"cover": "img/beer.png",
 			"demo": "",
@@ -171,56 +171,14 @@
 		"class": "Post",
 		"content": {
 			"index": "1",
-			"title": "Test Post",
-			"subtitle": "Testy McTesterson",
-			"blurb": "This is a test post to demonstrate what is possible with articles",
-			"cover": "img/firewatch.jpg",
+			"title": "Introducing willcarh.art",
+			"subtitle": "Welcome home!",
+			"blurb": "Announcing my all new personal website, portfolio, and full stack web application: willcarh.art",
+			"cover": "img/img2.png",
 			"content": "posts/post-1.html",
-			"published": "2019-04-14 11:48:50.120174",
+			"published": "2019-04-16 20:12:57.681712+00:00",
 			"author": "Will Carhart",
 			"cover_credit": "{\"AaronOlive\": \"https://www.deviantart.com/aaronolive\"}"
-		}
-	},
-	{
-		"class": "Post",
-		"content": {
-			"index": "2",
-			"title": "Test Blog Title 2",
-			"subtitle": "Text Blog Subtitle",
-			"blurb": "This is a longer dummy blurb hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue",
-			"cover": "img/img1.png",
-			"content": "posts/post-2.html",
-			"published": "2019-04-14 11:48:50.120174",
-			"author": "Will Carhart",
-			"cover_credit": "{}"
-		}
-	},
-	{
-		"class": "Post",
-		"content": {
-			"index": "3",
-			"title": "Test Blog Title 3",
-			"subtitle": "Text Blog Subtitle",
-			"blurb": "This is a dummy blurb",
-			"cover": "img/img2.png",
-			"content": "posts/post-3.html",
-			"published": "2019-04-14 11:48:50.120174",
-			"author": "Will Carhart",
-			"cover_credit": "{}"
-		}
-	},
-	{
-		"class": "Post",
-		"content": {
-			"index": "4",
-			"title": "Test Blog Title 4",
-			"subtitle": "Text Blog Subtitle",
-			"blurb": "This is a dummy blurb",
-			"cover": "img/img3.png",
-			"content": "posts/post-4.html",
-			"published": "2019-04-14 11:48:50.120174",
-			"author": "Will Carhart",
-			"cover_credit": "{\"Jason Scheier\": \"https://www.artstation.com/d3cap\"}"
 		}
 	}
 ]
