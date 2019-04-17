@@ -1,5 +1,63 @@
 <div class="contents">
 	<div class="section">
-		<h1>Post 2 placeholder text</h1>
+		<h2>What is Introspection?</h2>
+		<p class="lead">Introspection is one of those programming buzzwords that gets thrown around, but what does it actually mean? A quick Google search of introspection returns "<i>the examination or observation of one's own mental and emotional processes</i>." For a human, introspection is essentially thinking about thinking, such as reconsidering why we acted a certain way or made a decision in the past.</p>
+	</div>
+	<div class="section">
+		<p class="lead">Introspection with Python is conceptually the same as with humans. We are essentially asking Python to give us some information about itself, whether it be about an instance of a class, object, etc. On the surface, this can sound complex, but in practice it's quite simple. Let's dive right in.
+	</div>
+	<div class="section">
+		<h2>Introducting <code>getattr()</code></h2>
+		<p class="lead">Suppose we have the following Python class:</p>
+		<pre class="code">class Car():<br>    def __init__(self):<br>        self.miles = 0<br>    def drive(self, miles):<br>        self.miles += miles</pre>
+		<p class="lead">Now, let's create a new <code>Car</code> and have it drive a little bit.</p>
+		<pre class="code">>>> car = Car()<br>>>> car.drive(10)<br>>>> car.miles<br>10</pre>
+		<p class="lead">We can also use the Python builtin function <code>getattr</code> to accomplish this.</p>
+		<pre class="code">>>> car = Car()<br>>>> getattr(car, 'drive')(10)<br>>>> getattr(car, 'miles')<br>10</pre>
+		<p class="lead">What just happened? We used the <code>getattr</code> function to get named attributes from our <code>Car</code> class. Even cooler, not only can we use <code>getattr</code> to get the value of class attributes, we can also use it to call functions!</p>
+	</div>
+	<div class="section">
+		<div class="attention"><b>Summary:</b><br><code>getattr(object, 'val')</code> is <b>equivalent</b> to <code>object.val</code></div>
+	</div>
+	<div class="section"></div>
+	<div class="section">
+		<h2>Why is this powerful?</h2>
+		<p class="lead">On the surface, the introspective power of <code>getattr</code> may not be immediately apparent. After all, it took us the same number of steps to drive our <code>Car</code> with introspection as without. However, consider the case where you want to call a function via a variable, like a string. Let's rewrite our <code>Car</code> class to be a bit more generic:</p>
+		<pre class="code">class Car:<br>    def __init__(self):<br>        self.miles = 0<br>        self.velocity = 0<br>    def drive(self, miles):<br>        self.miles += miles<br>    def accelerate(self, velocity):<br>        self.velocity += velocity<br><br>    def do_action(name, value):<br>        getattr(self, name)(value)</pre>
+		<p class="lead">Now we can drive our car by calling <code>drive()</code> or speed up by calling <code>accelerate()</code>. However, we can also use the new <code>do_action()</code> function:</p>
+		<pre class="code">>>> car = Car()<br>>>> car.do_action('drive', 10)<br>>>> car.miles<br>10<br>>>> car.do_action('accelerate', 30)<br>>>> car.velocity<br>30</pre>
+		<p class="lead">This makes automating things in Python much easier!</p>
+	</div>
+	<div class="section">
+		<h2>Why does this matter?</h2>
+		<p class="lead">I'm definitely one to learn by example. Why does introspection matter? Where can I <i>actually</i> use it in my Python? Here's a simple example.</p>
+	</div>
+	<div class="section">
+		<p class="lead">Consider the Python builtin dunder <code>__dict__</code>. This returns a dictionary of the class attributes for a class. If we had our <code>Car</code> class from above, we could use <code>__dict__</code> to get its values:</p>
+		<pre class="code">>>> car = Car()<br>>>> car.miles = 10<br>>>> car.velocity = 30<br>>>> car.__dict__<br>{'miles': 10, 'velocity': 30}</pre>
+		<p class="lead">Do you think we can recreate <code>__dict__</code>'s functionality using introspection? You bet we can! Let's use <code>getattr</code> to write a function that will <i>JSONize</i> a class, or take its attributes and turn them into a JSON string.</p>
+		<pre class="code">def jsonize(self):<br>    variables = [var for var in dir(self) if not var.startswith(('_', '__')) and not callable(getattr(self, var))]<br>    return "{" + ",".join([f"\"{var}\": \"{getattr(self, var)}\"" for var in variables]) + "}"</pre>
+		<p class="lead">This might seem like some Python mumbo-jumbo, so let's break it down! The first line of <code>jsonize</code> gets all of the variables in the class (<code>self</code>). Then, the second line calls <code>getattr</code> for each variable, and arranges them nicely into JSON format. See, not so bad! Check out the code <a href="https://gist.github.com/wcarhart/cf3944f3a62415406f8bd92c427173e5" target="_blank">here</a>.</p>
+	</div>
+	<div class="section">
+		<h2>A real life example</h2>
+		<p class="lead"><code>getattr</code> is actually used in <a href="{% url 'home' %}">willcarh.art</a>! All of the content for the site's database is read from a JSON file. Rather than hard coding this content in a Python file, I wrote a simple script called the <code>Scribe</code> to read from the JSON file and upload to <a href="{% url 'home' %}">willcarh.art</a>'s database. Now, there are multiple different models, or classes, in the database, so <code>Scribe</code> needs to be able to dynamically create Python objects. Here's how I used <code>getattr</code> to accomplish this... </p>
+	</div>
+	<div class="section">
+		<p class="lead">My JSON schema is defined as such:</p>
+		<pre class="code">[<br>  {<br>    "class": "...",<br>    "contents": "..."<br>  }<br>]</pre>
+		<p class="lead">After some data validation, I attempt to make an instance of the class, load in its content from the <code>contents</code> field in the JSON, and save it to the database. Note that in this call to <code>getattr</code>, the first argument is the <i>module</i> and the second is the <i>class</i>, whereas in our early usage the first argument was the <i>class</i> and the second argument was the <i>attribute</i>. <code>getattr</code> is very flexible!</p>
+		<pre class="code">def parse_data(entity):<br>    Class = getattr(models, entity['class'])<br>    instance = Class(**entity['content'])<br>    instance.save()</pre>
+		<p class="lead">And that's it! These few lines of code save me the hassle of micromanaging my database. This is a watered down version of <code>Scribe</code> for demonstration purposes. If you'd like to see the full source code, check it out <a href="https://github.com/wcarhart/willcarh.art/blob/master/scribe.py" target="_target">here</a>.</p>
+	</div>
+	<div class="section">
+		<div class="attention"><b>Summary</b><br><code>getattr</code> is a powerful Python builtin. You can use it to acquire a class instance from a module or an attribute from a class, as well as calling class functions.</div>
+	</div>
+	<div class="section"></div>
+	<div class="section">
+		<p class="lead">If you're interested in learning more about <a href="https://docs.python.org/3/library/functions.html#getattr" target="_blank"><code>getattr</code></a>, <a href="https://linux.die.net/diveintopython/html/power_of_introspection/index.html" target="_blank">here's</a> a great introspection article. You could also consider looking into <a href="https://docs.python.org/3/library/functions.html#setattr" target="_blank"><code>setattr</code></a> or <a href="https://docs.python.org/3/library/functions.html#hasattr" target="_blank"><code>hasattr</code></a>.
+	</div>
+	<div class="section">
+		<p class="lead">🦉</p>
 	</div>
 </div>
