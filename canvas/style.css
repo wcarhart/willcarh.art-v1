@@ -327,8 +327,20 @@ footer svg.svg-inline--fa:active {
 	color: var(--light);
 	font-size: 1.1rem;
 }
-input.btn {
-	cursor: pointer;
+#submit-row {
+	padding: 0;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 0);
+}
+#spinner:hover,
+#spinner:focus,
+#spinner:active {
+	color: var(--light)!important;
+}
+#sent-indicator {
+	padding: 1.25rem 1rem 0 0;
+	color: var(--blog);
+	background-color: rgba(0, 0, 0, 0);
 }
 /*-- end contact form --*/
 hr.socket {

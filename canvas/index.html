@@ -481,22 +481,46 @@
 					<form id="contact-form" method="post">
 						<div class="messages">
 							<div class="controls">
-
 						        {% csrf_token %}
-
 						        <div class="form-group">
 						            {{ form.name }}
 						        </div>
-
 						        <div class="form-group">
 						            {{ form.email }}
 						        </div>
-
 						        <div class="form-group">
 						        	{{ form.message }}
 						        </div>
+						        <div id="submit-row" class="row" style="background-color: rgba(0, 0, 0, 0)">
+							        <button type="submit" class="btn btn-outline-light btn-sm" onclick="sendEmail(this);">Say hello!</button>
+							        <div id="waiting-spinner"></div>
 
-						        <input type="submit" class="btn btn-outline-light btn-sm" value="Say hello!">
+							        {% if messages %}
+							        <div id="sent-indicator" class="row">
+							        	<p class="lead">Message sent!</p>
+							        	<i class="fas fa-check" data-fa-transform="up-11 right-8"></i>
+							        </div>
+							        {% endif %}
+							    </div>
+
+						        <script>
+								function sendEmail(button)
+								{
+								  	var name = document.getElementById("form_name").value;
+									var email = document.getElementById("form_email").value;
+									var message = document.getElementById("form_message").value;
+
+									var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+									var result = re.test(String(email).toLowerCase());
+
+									if (name != "" && result && message != "") {
+										button.disabled = true; 
+										button.innerHTML = "Sending...";
+										document.getElementById("waiting-spinner").innerHTML = "<i id=\"spinner\" class=\"fas fa-circle-notch fa-spin\" data-fa-transform=\"down-8\"></i>";
+										document.getElementById("contact-form").submit()
+									}
+								}
+								</script>
 
 						    </div>
 					    </div>

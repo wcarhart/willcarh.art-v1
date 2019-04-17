@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from .forms import EmailForm
 from herald import build_host_message, build_client_message, send_email
 
@@ -27,12 +28,20 @@ def home(request):
 			)
 			print(f"Email to client:{message}")
 
+			messages.add_message(request, messages.SUCCESS, "Message sent!")
+
 			return redirect('/#contact')
 
 	context = {
 		"form": EmailForm()
 	}
-	
+
+	# clear messages
+	system_messages = messages.get_messages(request)
+	for message in system_messages:
+		pass
+	system_messages.used = True
+
 	return render(request, 'index.html', context)
 
 def home_redirect(request):

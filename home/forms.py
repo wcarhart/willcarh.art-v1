@@ -25,8 +25,8 @@ class EmailForm(forms.Form):
 		})
 	)
 
-	message = forms.CharField(widget=forms.Textarea(
-		attrs={
+	message = forms.CharField(
+		widget=forms.Textarea(attrs={
 			"id": "form_message",
 			"name": "message",
 			"class": "form-control",
