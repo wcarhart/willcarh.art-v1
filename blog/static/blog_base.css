@@ -193,7 +193,6 @@ i.larger {
 	background-color: var(--lightdark);
 	border-radius: 0.5rem;
 	padding: 1rem;
-	white-space: pre-wrap;
 }
 code {
 	color: var(--dark);
@@ -230,12 +229,5 @@ a:focus {
 @media(max-width: 767px) {
 	.narrow {
 		width: 95%;
-	}
-}
-
-/* Devices under 576px (sm) */
-@media(max-width: 575px) {
-	.code {
-	white-space: nowrap;
 	}
 }

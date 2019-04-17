@@ -178,6 +178,20 @@
 			"content": "posts/post-1.html",
 			"published": "2019-04-16 20:12:57.681712+00:00",
 			"author": "Will Carhart",
+			"cover_credit": "{\"HoHoHO\": \"https://steamcommunity.com/id/themell\"}"
+		}
+	},
+	{
+		"class": "Post",
+		"content": {
+			"index": "2",
+			"title": "The Power of Introspection in Python",
+			"subtitle": "getattr explained",
+			"blurb": "Python comes packed out of the box with some powerful introspection capabilities. Let's take a look at some simple examples for why they're so useful.",
+			"cover": "img/firewatch.jpg",
+			"content": "posts/post-2.html",
+			"published": "2019-04-17 07:51:11.121756+00:00",
+			"author": "Will Carhart",
 			"cover_credit": "{\"AaronOlive\": \"https://www.deviantart.com/aaronolive\"}"
 		}
 	}
