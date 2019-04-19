@@ -1,0 +1,1 @@
+web: gunicorn easel.wsgi
