@@ -1,7 +1,8 @@
-# willcarh.art
-Full-stack web application for my portfolio! Will eventually be deployed to [willcarh.art]()...
+# [willcarh.art](http://www.willcarh.art/)
 
-![willcarh.art demo](static/readme_demo.png)
+[![willcarh.art demo](static/readme_demo.png)](http://www.willcarh.art/)
+
+Full-stack web application for my portfolio!
 
 Track development progress here: https://trello.com/b/glDTHpCJ/willcarhart
 
@@ -63,5 +64,6 @@ $ python3 chronicler.py -m
 ### Back-end
  * Python 3.7
  * Django 2.1.5
+ * Heroku
 ### Database
  * PostgreSQL 11.2
