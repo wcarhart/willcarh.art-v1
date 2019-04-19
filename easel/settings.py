@@ -11,8 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-from locksmith import Locksmith
-l = Locksmith('willcarhart_admin')
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,13 +21,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'z@fj932$_(6^*zvsn+qae1-bv=9xc)$$g0y&ig88pmpoho9oq)'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'z@fj932$_(6^*zvsn+qae1-bv=9xc)$$g0y&ig88pmpoho9oq)')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -47,6 +46,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -82,13 +82,23 @@ WSGI_APPLICATION = 'easel.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': l.get_secret('DB_NAME'),
-        'USER': l.get_secret('DB_USER'),
-        'PASSWORD': l.get_secret('DB_PASS'),
+        'NAME': 'willcarhart_dev',
+        'USER': 'willcarhart_admin',
+        'PASSWORD': 'password',
         'HOST': 'localhost',
         'PORT': '5432',
     }
 }
+
+DATABASES = {
+    'default': dj_database_url.config(
+
+    )
+}
+
+DEFAULT_TARGET_EMAIL = os.environ.get('DEFAULT_TARGET_EMAIL')
+SENDER_EMAIL = os.environ.get('SENDER_EMAIL')
+SENDER_EMAIL_PASSWORD = os.environ.get('SENDER_EMAIL_PASSWORD')
 
 
 # Password validation
@@ -132,7 +142,14 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
     os.path.join(BASE_DIR, 'canvas'),
-    os.path.join(BASE_DIR, 'blog'),
 )
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
+
+
+
+
+
+

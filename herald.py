@@ -4,10 +4,11 @@ Sends emails from a controlled address
 """
 
 import argparse
-from locksmith import Locksmith
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import smtplib, ssl
+
+from django.conf import settings
 
 def build_parser():
 	"""
@@ -88,13 +89,13 @@ def send_email(message, subject="", target=None, email=None, password=None):
 		return (-1, -1, error_msg)
 
 	# build credentials and context for smtp
-	l = Locksmith('willcarhart_admin')
 	if not target:
-		target = l.get_secret('TARGET_EMAIL')
+		target = settings.DEFAULT_TARGET_EMAIL
 	if not email:
-		email = l.get_secret('EMAIL_NAME')
+		email = settings.SENDER_EMAIL
 	if not password:
-		password = l.get_secret('EMAIL_PASSWORD')
+		password = settings.SENDER_EMAIL_PASSWORD
+
 
 	port = 465
 	context = ssl.create_default_context()
