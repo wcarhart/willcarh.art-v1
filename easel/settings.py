@@ -24,10 +24,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'z@fj932$_(6^*zvsn+qae1-bv=9xc)$$g0y&ig88pmpoho9oq)')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['*']
-# ALLOWED_HOSTS = []
+DEBUG = False
+ALLOWED_HOSTS = ['localhost', 
+                 '127.0.0.1',
+                 'willcarhart-dev.herokuapp.com', 
+                 'www.willcarhart-dev.herokuapp.com', 
+                 'willcarh.art',
+                 'www.willcarh.art',
+]
 
 
 # Application definition
