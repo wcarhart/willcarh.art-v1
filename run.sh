@@ -5,10 +5,10 @@ usage() {
 Run or deploy willcarh.art
 
 Usage:
-  ./run.sh MODE
+  run.sh MODE
 
 Required arguments:
-  MODE       - the run mode, can be one of {local, dev, or prod}
+  MODE       - the run mode, can be one of {local, dev, prod}
                'local' will run the app locally
                'dev' will publish the app to the staging space: https://willcarhart-dev.herokuapp.com/
                'prod' will publish the app to production: http://willcarh.art
