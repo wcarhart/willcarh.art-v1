@@ -33,6 +33,11 @@ update_vars() {
 		return 1
 	fi
 	VARS=( `gpg -d willcarhart_admin.lcksmth.gpg` )
+	if [[ $? -ne 0 ]] ; then
+		echo "deploy.sh: warning: incorrect credentials for locksmith file"
+		echo "  Did not update environment variables."
+		return 1
+	fi
 	for VAR in "${VARS[@]}" ; do
 		heroku config:set --app "$APP" "$VAR"
 	done
@@ -55,15 +60,18 @@ case $MODE in
 		echo "Running willcarh.art locally..."
 		python manage.py runserver
 		;;
-	dev)
+	dev|devo|development)
 		echo "Deploying willcarh.art to dev staging space: https://willcarhart-dev.herokuapp.com/"
 		update_vars willcarhart-dev
 		heroku run --app willcarhart-dev python manage.py migrate
 		heroku run --app willcarhart-dev python maid.py -u
 		git push heroku-willcarhart-dev `git branch | grep \* | cut -d ' ' -f2`
+		echo
+		echo "Deploy attempt complete [dev]"
+		echo "Heroku statistics:"
 		heroku ps --app willcarhart-dev
 		;;
-	prod)
+	prod|production)
 		read -p "Are you *absolutely* sure you want to push to production? " CONFIRM
 		if [[ $CONFIRM == [yY] || $CONFIRM == [yY][eE][sS] ]] ; then
 			echo "Deploying willcarh.art to production: http://willcarh.art"
@@ -71,6 +79,9 @@ case $MODE in
 			heroku run --app willcarhart-prod python manage.py migrate
 			heroku run --app willcarhart-prod python maid.py -u
 			git push heroku master
+			echo
+			echo "Deploy attempt complete [prod]"
+			echo "Heroku statistics:"
 			heroku ps --app willcarhart-prod
 		else
 			echo "Did not deploy to production."
