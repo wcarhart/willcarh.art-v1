@@ -1,5 +1,12 @@
 #!/bin/bash
 
+command -v heroku > /dev/null 2>&1
+if [[ $? -ne 0 ]] ; then
+	echo "deploy: err: Heroku CLI is not installed. Please install it before continuing."
+	echo "  Heroku CLI reference: https://devcenter.heroku.com/articles/heroku-cli"
+	exit 1
+fi
+
 usage() {
 	cat << EndOfUsage
 Run or deploy willcarh.art
