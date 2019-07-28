@@ -1,8 +1,9 @@
 local_settings.py
+willcarhart_admin.lcksmth
 
 *.py[cod]
 
 **/.DS_Store
 
 __pycache__/
-myenv/
+venv/
