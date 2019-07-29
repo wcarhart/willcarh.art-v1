@@ -5,7 +5,7 @@
 			"title": "Cheers",
 			"blurb": "iOS app for finding ongoing happy hours",
 			"description": "Cheers started as a concept while I attended the University of San Diego. The goal was to develop an iOS app that would show nearby bars and restaurants with ongoing happy hours. Our team observed that often in San Diego there are many fun bars to explore, but sometimes it's hard to know where to look. That's where Cheers comes in!<section>During the project's development, we wrote a proof-of-concept iOS app, which did all processing on the client. The app uses the Yelp Fusion API to acquire its restaurant data and Firebase as a data store. Given that I had the original idea for the app and I had written more than half the code base, I decided to continue the project after my time at USD.<section>The complete version of the app is still a work in progress, but I plan on publishing it soon. The client is written entirely in Swift + iOS, while the backend is an API written in Flask and Python, using the SQLAlchemy adapter for the PostgreSQL database.",
-			"technology": "iOS, Swift, Firebase, Flask, Python, PostgreSQL, SQLAlchemy, Balsamiq",
+			"technology": "iOS, Swift, Firebase, Python, PostgreSQL, Balsamiq, Yelp/Uber/Lyft APIs",
 			"links": "{'GitHub': 'https://github.com/usd-cs/comp495-sp18-happy-hour'}",
 			"cover": "img/beer.png",
 			"demo": "",
@@ -18,7 +18,7 @@
 		"content": {
 			"title": "Lurker",
 			"blurb": "Hacker News terminal client",
-			"description": "",
+			"description": "Lurker is a simple terminal client for reading Y Combinator's <i>Hacker News.</i> It uses the public Hacker News API and is written entirely in Bash so it runs smoothly on the majority of terminal environments.<section>Lurker embraces the \"hacker\" in Hacker News by exposing a simple CLI for reading stories, comments, and user information. This makes it easy to read Hacker News while completing other command line activities, especially when combined with tools like <i>tmux.</i><section>Now you can read the news at work while others still think you're programming 😉",
 			"technology": "Bash, Hacker News API",
 			"links": "{'GitHub': 'https://github.com/wcarhart/lurker'}",
 			"cover": "img/lurker.png",
