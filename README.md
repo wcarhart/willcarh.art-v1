@@ -73,7 +73,7 @@ $ python3 chronicler.py -m
 ```
 
 ## Nomenclature Explained
-As you may notice, the URL for [willcarh.art](http://willcarh.art) is rather odd. In order to preserve my full name, Will Carhart, I opted to use a .art [top-level domain (TLD)](https://en.wikipedia.org/wiki/Top-level_domain). Since the .art TLD is usually reserved for art portfolios and related content, I thought it was a fitting name for my _coding portfolio._ However, the naming convention doesn't stop there! If you peruse the file structure of [willcarh.art](http://willcarh.art), you may notice that the back-end of the app is called the _easel_ while the front end of the app is called the _canvas,_ which I felt fit with the whole "art" vibe of the project 🤗
+As you may have noticed, the URL for [willcarh.art](http://willcarh.art) is rather odd. In order to preserve my full name, Will Carhart, in the URL, I opted to use a .art [top-level domain (TLD)](https://en.wikipedia.org/wiki/Top-level_domain). Since the .art TLD is usually reserved for art portfolios, I thought it was a fitting name for my _coding portfolio._ However, the naming convention doesn't stop there! If you peruse the file structure of [willcarh.art](http://willcarh.art), you may notice that the back-end of the app is called the _easel_ while the front end of the app is called the _canvas,_ which I felt fit with the whole "art" vibe of the project 🤗
 
 ## Technologies Used
 ### Front-end
