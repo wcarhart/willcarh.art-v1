@@ -25,14 +25,13 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'z@fj932$_(6^*zvsn+qae1-bv=9xc)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ['*']
-# ALLOWED_HOSTS = ['localhost', 
-#                  '127.0.0.1',
-#                  'willcarhart-dev.herokuapp.com', 
-#                  'www.willcarhart-dev.herokuapp.com', 
-#                  'willcarh.art',
-#                  'www.willcarh.art',
-# ]
+ALLOWED_HOSTS = ['localhost', 
+                 '127.0.0.1',
+                 'willcarhart-dev.herokuapp.com', 
+                 'www.willcarhart-dev.herokuapp.com', 
+                 'willcarh.art',
+                 'www.willcarh.art',
+]
 
 
 # Application definition
