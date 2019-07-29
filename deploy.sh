@@ -69,10 +69,10 @@ case $MODE in
 		;;
 	dev|devo|development)
 		echo "Deploying willcarh.art to dev staging space: https://willcarhart-dev.herokuapp.com/"
+		git push heroku-willcarhart-dev `git branch | grep \* | cut -d ' ' -f2`
 		update_vars willcarhart-dev
 		heroku run --app willcarhart-dev python manage.py migrate
 		heroku run --app willcarhart-dev python maid.py -u
-		git push heroku-willcarhart-dev `git branch | grep \* | cut -d ' ' -f2`
 		echo
 		echo "Deploy attempt complete [dev]"
 		echo "Heroku statistics:"
@@ -82,11 +82,11 @@ case $MODE in
 		read -p "Are you *absolutely* sure you want to push to production? " CONFIRM
 		if [[ $CONFIRM == [yY] || $CONFIRM == [yY][eE][sS] ]] ; then
 			echo "Deploying willcarh.art to production: http://willcarh.art"
+			git push heroku master
 			update_vars willcarhart-prod
 			heroku config:set --app willcarhart-prod DEBUG=False
 			heroku run --app willcarhart-prod python manage.py migrate
 			heroku run --app willcarhart-prod python maid.py -u
-			git push heroku master
 			echo
 			echo "Deploy attempt complete [prod]"
 			echo "Heroku statistics:"
