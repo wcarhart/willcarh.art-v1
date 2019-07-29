@@ -1,5 +1,6 @@
 local_settings.py
 willcarhart_admin.lcksmth
+staticfiles/
 
 *.py[cod]
 
