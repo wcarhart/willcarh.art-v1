@@ -20,7 +20,6 @@ from django.conf.urls import handler404, handler500
 from easel import views as easel_views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('projects/', include('projects.urls')),
     path('blog/', include('blog.urls'))
