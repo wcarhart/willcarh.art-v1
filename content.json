@@ -116,7 +116,7 @@
 		"content": {
 			"title": "Konphig",
 			"blurb": "Quirky bash functions and configuration files",
-			"description": "Konphig (pronounced 'config') is the result of my laziness. Over time I've written little Bash functions to automate boring command line tasks. I eventually realized I had written more than 50 functions, so I combined them with the rest of my configuration files for other command line utilities (Vim, tmux, etc.) and threw them in a repository for safe keeping.<section>The special parts of Konphig are in the .bash_functions file, which include functions for automation, metaprogramming, location services, and even rickrolling!",
+			"description": "Konphig (pronounced 'config') is the result of my laziness. Over time I've written little Bash functions to automate boring command line tasks. I eventually realized I had written quite a few functions, so I combined them with the rest of my configuration dotfiles for other command line utilities (Vim, tmux, etc.) and threw them in a repository for safe keeping.<section>The special parts of Konphig are in the .bash_functions directory, which include functions for automation, metaprogramming, location services, and even rickrolling!<section>Konphig has grown into a large repository for dotfiles, complete with CI/CD for multiple Linux distributions and an OS-specific automated installation process.",
 			"technology": "Bash",
 			"links": "{'GitHub': 'https://github.com/wcarhart/Konphig'}",
 			"cover": "img/settings.png",
