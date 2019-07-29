@@ -10,21 +10,21 @@ Track active development progress and bug fixes here: https://trello.com/b/glDTH
 To install or deploy, clone this repo and use the `deploy.sh` script.
 
 To run _locally_:
-```bash
+```
 deploy.sh local
 ```
 To deploy to _development_ staging area:
-```bash
+```
 deploy.sh dev
 ```
 To deploy to _production_:
-```bash
+```
 deploy.sh prod
 ```
 Note that [willcarh.art](http://willcarh.art) encrypts its secrets in a GPG file, so you'll have to replicate those values with your own if you'd like to run the app locally.
 
 ## Utilities
-The following are custom utilities I've written in Python to facilitate the microservices of willcarh.art.
+The following are custom utilities I've written in Python to facilitate the microservices of [willcarh.art](http://willcarh.art).
 
 ### `Scribe`
 The `scribe` writes content to the database from a JSON file. Checkout the code --> [`scribe.py`](https://github.com/wcarhart/willcarh.art/blob/master/scribe.py)
