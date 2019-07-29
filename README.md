@@ -6,6 +6,22 @@ Full-stack web application for my portfolio!
 
 Track development progress here: https://trello.com/b/glDTHpCJ/willcarhart
 
+## Install and deploy
+To install or deploy, clone this repo and use the `deploy.sh` script.
+
+To run _locally_:
+```bash
+deploy.sh local
+```
+To deploy to _development_ staging area:
+```bash
+deploy.sh dev
+```
+To deploy to _production_:
+```bash
+deploy.sh prod
+```
+
 ## Utilities
 The following are custom utilities I've written in Python to facilitate the microservices of willcarh.art.
 
