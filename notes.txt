@@ -1,7 +1,7 @@
 Just some notes that I think could be helpful in the future once I've forgotten how I designed this damn thing...
 
 1. Icons
-All icons are PNG files downloaded from icons8.com with 480x480 dimensions. Colors are determined from icons8, but the actual icon file is downloaded with a transparent background and the color is added in with CSS later.
+All icons are PNG files downloaded from icons8.com with 480x480 dimensions. Each PNG uses a 50% padding so the icon is in the middle with plenty of room to zoom in. Colors are determined from icons8, but the actual icon file is downloaded with a transparent background and the color is added in with CSS later.
 
 2. Deployment
 There are three deployment environments: local, dev, and prod. Use the deploy.sh script to run the app at any of those locations.
