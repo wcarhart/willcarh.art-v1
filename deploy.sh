@@ -61,6 +61,7 @@ else
 	MODE="$1"
 fi
 
+
 MODE=`echo "$MODE" | tr '[:upper:]' '[:lower:]'`
 case $MODE in
 	local)
