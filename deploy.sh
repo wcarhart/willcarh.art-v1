@@ -70,7 +70,7 @@ case $MODE in
 		;;
 	dev|devo|development)
 		echo "Deploying willcarh.art to dev staging space: https://willcarhart-dev.herokuapp.com/"
-		git push heroku-willcarhart-dev `git branch | grep \* | cut -d ' ' -f2`
+		git push heroku-willcarhart-dev `git branch | grep \* | cut -d ' ' -f2`:master
 		update_vars willcarhart-dev
 		heroku run --app willcarhart-dev python manage.py migrate
 		heroku run --app willcarhart-dev python maid.py -u
