@@ -1,0 +1,49 @@
+<div class="content">
+	<div class="section">
+		<p class="lead"><code>aerogram</code> utilizes the existing functionality of SSH and SCP to send messages between hosts. It accomplishes this by spawning two processes: a <i>message listener</i> in the background and a <i>message renderer</i> in the foreground. The listener waits for a specific file to appear in a buffer directory and then sends a signal to the renderer, which reads the message and displays it on the screen. This simple protocol, loosely-based off of protocols like TCP, allows <code>aerogram</code> to create seemingly complex messaging functionality without reinventing the "networking" wheel.</p>
+	</div>
+	<div class="section">
+		<h4>Here's a demo of two hosts chatting with <code>aerogram</code></h4>
+		<p class="lead">I'm simulating two separate hosts by SSH'ing into two separate DigitalOcean droplets and then using <code>aerogram</code> to talk to each other.</p>
+		<div class="row">
+			<div class="section" align="center">
+				<a href="https://gifyu.com/image/E1Kt" target="_blank"><img class="media" src="https://s3.gifyu.com/images/demofabebf244af6f5f0.gif" alt="aerogram demo" /></a>
+			</div>
+		</div>
+	</div>
+	<div class="section">
+		<h4>FAQs</h4>
+		<p class="lead"><b>How do I send messages between two machines?</b></p>
+		<p class="lead">The basic syntax is:</p>
+		<pre class="code">aerogram.sh USER@IP</pre>
+		<p class="lead">Where <code>USER</code> is the user you'd like to chat with at IP address <code>IP</code>.</p>
+		<p class="lead"><b>What is necessary for sending messages between two machines with <code>aerogram</code>?</b></p>
+		<p class="lead">If you can SSH into another machine, <code>aerogram</code> will function properly. Note that for two machines to be able to send messages to each other, they will <i>both</i> have to be able to SSH into each other.</p>
+		<p class="lead"><b>What setup is required?</b></p>
+		<p class="lead">No setup! <code>aerogram</code> will alert you if your environment isn't configured correctly, and how to fix it. It is <b>highly</b> suggested that you add your SSH keys via <code>ssh-keygen</code> to the desired host so you don't have to enter your password every time you send a message. If you don't know how to do this, follow <a href="https://askubuntu.com/a/46935/838525" target="_blank">this tutorial</a>.</p>
+		<p class="lead"><b>Yes, but what are the <i>actual</i> requirements?</b></p>
+		<ul>
+			<li>Only supported for <i>Bash</i> on <i>MacOS</i> or <i>Linux</i>.</li>
+			<li>Recipient machine must have directory <code>~/.aerogram</code>, created when the recipient runs <code>aerogram</code>.</li>
+			<li><code>~/.aerogram</code> directory on the recipient machine must be readable and writeable for the other (xx6 or xx7).</li>
+			<li>SSH must be enabled on the recipient machine for the sending user on the local machine (the user specified via <code>--user</code>).</li>
+			<li><code>aerogram.sh</code> must have execute permissions for the current user.</li>
+			<li><code>aerogram_renderer.sh</code> must have execute permissions for the current user.</li>
+			<li><code>aerogram_listener.sh</code> must have execute permissions for the current user.</li>
+			<li><b>highly recommended:</b> using passwordless SSH via RSA keys.</li>
+		</ul>
+		<p class="lead"><b>What if I want to log into the recipient machine as a user other than my current one?</b></p>
+		<p class="lead"><code>aerogram</code> supports this. Use the <code>-u USER</code> or <code>--user USER</code> option. The default is the output of <code>whoami</code>, or the current user on your local machine.</p>
+		<p class="lead"><b>What if my username is very long? Can I shorten it during the chat?</b></p>
+		<p class="lead">Yes, use the <code>-d NAME</code> or <code>--disp NAME</code> option to set your desired display name.</p>
+		<p class="lead"><b>What if I only want to receive messages, and not send them?</b></p>
+		<p class="lead"><code>aerogram</code> supports this as well. Use the <i>receive-only</i> mode by specifying the <code>-r</code> or <code>--recv</code> option, like so:</p>
+		<pre class="code">aerogram.sh -r</pre>
+		<p class="lead"><b>Are there any commands in the chat?</b></p>
+		<p class="lead">Yes, the currently supported commands are <code>/color</code>, <code>/help</code>, and <code>/exit</code>.</p>
+		<p class="lead"><b>How does <code>aerogram</code> work?</b></p>
+		<p class="lead"><code>aerogram</code> piggybacks off the capabilities of SCP to send messages. The actual program spins up a listener in the background and a renderer in the foreground. When messages are sent and received, each message moves through one of three states: <i>new</i>, <i>ready</i>, and <i>done</i>. As the messages are processeed, the renderer displays the contents in the chat and moves the messages to the <i>done</i> state.</p>
+		<p class="lead"><b>What is an aerogram?</b></p>
+		<p class="lead">Traditionally, an <a href="https://en.wikipedia.org/wiki/Aerogram" target="_blank">aerogram</a> is a thin, lightweight piece of foldable paper for writing a letter for transit via airmail, in which the letter and envelope are one and the same. Given that <code>aerogram</code> is lightweight and requires no server, I thought this was an apt name for the program.</p>
+	</div>
+</div>

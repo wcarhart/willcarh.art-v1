@@ -30,15 +30,29 @@
 	{
 		"class": "Project",
 		"content": {
-			"title": "beaver",
-			"blurb": "CLI for parsing log files",
-			"description": "Beaver is a cool command line utility that parses log files. Super exciting, right??<section>When modern applications run, they generate a plethora of logging content, and it is often cumbersome to find the small tidbit of information that's actually useful.<section>Beaver uses an English-like syntax, where the user can essentially specify <i>show me the logs from yesterday to today.</i> Beaver is smart enough to understand what the user is looking for and automatically searches for .log files in the project directory, and then prints all logs whose timestamps are between yesterday and today.<section>It's called <i>beaver</i> because beavers eat logs 😉",
-			"technology": "Python",
-			"links": "{'GitHub': 'https://github.com/wcarhart/beaver', 'PyPI': 'https://pypi.org/project/beavr/'}",
-			"cover": "img/beaver.png",
+			"title": "willcarh.art",
+			"blurb": "Personal portfolio, full stack web app",
+			"description": "willcarh.art, as you can see, is my personal website. I use it to host my porfolio, as well as my blog.<section>The front end of willcarh.art is written with the usual HTML, CSS, and Javascript, and utilizes Bootstrap 4 and some jQuery to make it look nice.<section>The back end, which I generally enjoy writing more, is a Django app (Python), which accesses a PostgreSQL database. The website is deployed via Heroku.",
+			"technology": "HTML5, CSS3, Bootstrap 4, Javascript, jQuery, Django, PostgreSQL, Python, Heroku",
+			"links": "{'GitHub': 'https://github.com/wcarhart/willcarh.art'}",
+			"cover": "img/internet.png",
 			"demo": "",
-			"color": "#1ABC9C",
-			"democontent": "demo/beaver.html"
+			"color": "#E74C3C",
+			"democontent": "demo/willcarhart.html"
+		}
+	},
+	{
+		"class": "Project",
+		"content": {
+			"title": "aerogram",
+			"blurb": "Serverless chat via SSH/SCP",
+			"description": "Aerogram is a messenging app built for the terminal. It has similar functionality to other messaging services, but without as much setup. Unlike Slack, Mattermost, or other messaging platforms, aerogram does not require a server or 3rd party service to run. As long as you can SSH into a host, you can send it a message with aerogram.<section>Aerogram piggybacks off of the existing functionality of SSH and SCP, allowing it to be portable to lots of different environments. This allows aerogram to be incredibly lightweight, as well.",
+			"technology": "Bash",
+			"links": "{'GitHub': 'https://github.com/wcarhart/aerogram'}",
+			"cover": "img/aerogram.png",
+			"demo": "",
+			"color": "#F1C40F",
+			"democontent": "demo/aerogram.html"
 		}
 	},
 	{
@@ -58,15 +72,15 @@
 	{
 		"class": "Project",
 		"content": {
-			"title": "willcarh.art",
-			"blurb": "Personal portfolio, full stack web app",
-			"description": "willcarh.art, as you can see, is my personal website. I use it to host my porfolio, as well as my blog.<section>The front end of willcarh.art is written with the usual HTML, CSS, and Javascript, and utilizes Bootstrap 4 and some jQuery to make it look nice.<section>The back end, which I generally enjoy writing more, is a Django app (Python), which accesses a PostgreSQL database. The website is deployed via Heroku.",
-			"technology": "HTML5, CSS3, Bootstrap 4, Javascript, jQuery, Django, PostgreSQL, Python, Heroku",
-			"links": "{'GitHub': 'https://github.com/wcarhart/willcarh.art'}",
-			"cover": "img/internet.png",
+			"title": "beaver",
+			"blurb": "CLI for parsing log files",
+			"description": "Beaver is a cool command line utility that parses log files. Super exciting, right??<section>When modern applications run, they generate a plethora of logging content, and it is often cumbersome to find the small tidbit of information that's actually useful.<section>Beaver uses an English-like syntax, where the user can essentially specify <i>show me the logs from yesterday to today.</i> Beaver is smart enough to understand what the user is looking for and automatically searches for .log files in the project directory, and then prints all logs whose timestamps are between yesterday and today.<section>It's called <i>beaver</i> because beavers eat logs 😉",
+			"technology": "Python",
+			"links": "{'GitHub': 'https://github.com/wcarhart/beaver', 'PyPI': 'https://pypi.org/project/beavr/'}",
+			"cover": "img/beaver.png",
 			"demo": "",
-			"color": "#E74C3C",
-			"democontent": "demo/willcarhart.html"
+			"color": "#1ABC9C",
+			"democontent": "demo/beaver.html"
 		}
 	},
 	{
