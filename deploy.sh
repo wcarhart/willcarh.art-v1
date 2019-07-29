@@ -82,7 +82,7 @@ case $MODE in
 		read -p "Are you *absolutely* sure you want to push to production? " CONFIRM
 		if [[ $CONFIRM == [yY] || $CONFIRM == [yY][eE][sS] ]] ; then
 			echo "Deploying willcarh.art to production: http://willcarh.art"
-			git push heroku-willcarhart-prod master
+			git push heroku master:master
 			update_vars willcarhart-prod
 			heroku config:set --app willcarhart-prod DEBUG=False
 			heroku run --app willcarhart-prod python manage.py migrate
