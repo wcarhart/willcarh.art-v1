@@ -97,6 +97,7 @@ case $MODE in
 		;;
 	*)
 		echo "deploy.sh: err: unknown mode '$MODE'"
+		echo "  Use deploy.sh -h for supported modes"
 		exit 1
 		;;
 esac
