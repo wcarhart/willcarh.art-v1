@@ -16,6 +16,20 @@
 	{
 		"class": "Project",
 		"content": {
+			"title": "Lurker",
+			"blurb": "Hacker News terminal client",
+			"description": "",
+			"technology": "Bash, Hacker News API",
+			"links": "{'GitHub': 'https://github.com/wcarhart/lurker'}",
+			"cover": "img/lurker.png",
+			"demo": "",
+			"color": "#E67E22",
+			"democontent": "demo/lurker.html"
+		}
+	},
+	{
+		"class": "Project",
+		"content": {
 			"title": "beaver",
 			"blurb": "CLI for parsing log files",
 			"description": "Beaver is a cool command line utility that parses log files. Super exciting, right??<section>When modern applications run, they generate a plethora of logging content, and it is often cumbersome to find the small tidbit of information that's actually useful.<section>Beaver uses an English-like syntax, where the user can essentially specify <i>show me the logs from yesterday to today.</i> Beaver is smart enough to understand what the user is looking for and automatically searches for .log files in the project directory, and then prints all logs whose timestamps are between yesterday and today.<section>It's called <i>beaver</i> because beavers eat logs 😉",
