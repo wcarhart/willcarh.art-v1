@@ -17,8 +17,8 @@ Usage:
 Required arguments:
   MODE       - the deploy mode, can be one of {local, dev, prod}
                'local' will run the app locally
-               'dev' will publish the app to the staging space: https://willcarhart-dev.herokuapp.com/
-               'prod' will publish the app to production: http://willcarh.art
+               'dev' will publish the current working git branch of the app to the staging space: https://willcarhart-dev.herokuapp.com/
+               'prod' will publish the master branch of the app to production: http://willcarh.art
                (default: local)
 
 Optional arguments:
@@ -83,6 +83,7 @@ case $MODE in
 		if [[ $CONFIRM == [yY] || $CONFIRM == [yY][eE][sS] ]] ; then
 			echo "Deploying willcarh.art to production: http://willcarh.art"
 			update_vars willcarhart-prod
+			heroku config:set --app willcarhart-prod DEBUG=False
 			heroku run --app willcarhart-prod python manage.py migrate
 			heroku run --app willcarhart-prod python maid.py -u
 			git push heroku master
