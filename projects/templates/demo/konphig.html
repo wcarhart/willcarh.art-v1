@@ -2,28 +2,28 @@
 	<div class="section">
 		<p class="lead"><code>Konphig</code> is my collection of configuration files that I've developed over the years. There are files for:</p>
 		<ul>
-			<li><p class="lead"><code>bash</code> functions</p></li>
-			<li><p class="lead"><code>bash</code> aliases and variables</p></li>
+			<li><p class="lead"><code>bash</code> functions, aliases, and variables</p></li>
 			<li><p class="lead"><code>vim</code> configurations</p></li>
 			<li><p class="lead"><code>git</code> configurations</p></li>
 			<li><p class="lead"><code>tmux</code> configurations</p></li>
+			<li><p class="lead"><code>gpg</code> configurations</p></li>
 			<li><p class="lead">PyPI configurations</p></li>
 		</ul>
 	</div>
 	<div class="section">
 		<h4>Favorites</h4>
-		<p class="lead">Since there are over <b>70</b> <code>bash</code> functions in <code>Konphig</code> now, I'll just show you my favorites.</p>
+		<p class="lead">Since there are over <b>80</b> <code>bash</code> functions in <code>Konphig</code> now, I'll just show you my favorites.</p>
 	</div>
 	<div class="section">
 		<p class="lead"><code>up</code> and <code>down</code> - move up and down the file tree</p>
 		<pre class="code">$ pwd<br>/home/projects/project1/src/<br>$ up 2<br>/home/projects/<br>$ down<br>/home/projects/project1/<br>$ down<br>/home/projects/project1/src/</pre>
 	</div>
 	<div class="section">
-		<p class="lead"><code>adda</code> - add a <code>bash</code> alias on the fly</p>
+		<p class="lead"><code>adda</code> - add a permanent <code>bash</code> alias on the fly</p>
 		<pre class="code">$ adda e echo<br>$ e 'Hello, world!'<br>Hello, world!</pre>
 	</div>
 	<div class="section">
-		<p class="lead"><code>makef</code> - create a <code>bash</code> function from commands in the history on the fly</p>
+		<p class="lead"><code>makef</code> - create a permanent <code>bash</code> function from commands in the history on the fly</p>
 		<pre class="code">$ clear<br>$ ls<br>file0.txt<br>file1.txt<br>$ makef 2 cls<br>$ cat ~/.bashrc<br>cls() {<br>  clear<br>  ls<br>}</pre>
 	</div>
 	<div class="section">
@@ -40,7 +40,7 @@
 	</div>
 	<div class="section">
 		<p class="lead"><code>getlocation</code> - get your current location (based on your public IP address)</p>
-		<pre class="code">IP: 105.38.27.128<br>Location: San Francisco, CA, USA</pre>
+		<pre class="code">$ getlocation<br>IP: 105.38.27.128<br>Location: San Francisco, CA, USA</pre>
 	</div>
 	<div class="section">
 		<p class="lead"><code>duf</code> - show disk usage by filetype</p>
