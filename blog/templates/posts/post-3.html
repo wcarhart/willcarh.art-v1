@@ -1,5 +1,64 @@
+{% load static %}
 <div class="contents">
 	<div class="section">
-		<h1>Post 3 placeholder text</h1>
+		<h2>Emails in Python: An Introduction</h2>
+		<p class="lead">Ever want to set up an email newsletter on your own? Or have you ever wondered how services like <a href="https://mailchimp.com/" target="_blank">MailChimp</a> send automated emails? Sending emails programmatically is very common practice, and Python comes out of the box with some awesome packages to help us send emails. Let's dive in!</p>
+	</div>
+	<div class="section">
+		<h2>What is SMTP?</h2>
+		<p class="lead">The <a href="https://www.geeksforgeeks.org/simple-mail-transfer-protocol-smtp/" target="_blank"><i>Simple Mail Transfer Protocol</i></a>, or <i>SMTP</i>, is one of the most common protocol for sending outgoing emails. Specific SMTP servers are responsible for connecting individual email clients like Gmail and Yahoo to the greater Internet, which in turns allows you to send an email to (almost) anyone in the world! I'm not going to delve into the details of SMTP right now, but a high-level take away is that <b><i>SMTP is an interface that allows you to send emails to other recipients' inboxes.</i></b></p> 
+	</div>
+	<div class="section">
+		<h2>Using the <code>smtplib</code> package in Python</h2>
+		<p class="lead">Python has a powerful vanilla package for sending emails: <code>smtplib</code>. This package abstracts a lot of the heavily lifting away from the user and exposes a simple API. Let's look at some quick examples.</p>
+		<p class="lead">Let's suppose I'd like to send an email, via Python, from my super cool email address <i>pythonista@gmail.com</i>, where my password is simply <i>password</i>. Gmail actually won't like this method, but let's disregard that for now.</p>
+		<pre class="code">import smtplib, ssl<br>from email.mime.text import MIMEText<br><br>port = 465<br>smtp_server = 'smtp.gmail.com'<br><br>email_content = "Hi! How's it going?"<br>sender = 'pythonista@gmail.com'<br>password = 'password'<br>receiver = 'receiver@gmail.com'<br>subject = 'Just checking in!'<br>message = MIMEText(email_content)<br>message['To'] = receiver<br>message['From'] = sender<br>message['Subject'] = subject<br><br>context = ssl.create_default_context()<br>with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:<br>    server.login(sender_email_address, password)<br>    server.sendmail(sender_email, receiver_email, message.as_string())</pre>
+		<p class="lead">This is just a simple example - Python can do a <i>lot</i> more when it comes to emails! I'm not going to dive into all of its features, but there are plenty of great tutorials for learning how to send emails with Python, such as over at <a href="https://realpython.com/python-send-email/" target="_blank">RealPython</a>.</p>
+	</div>
+	<div class="section">
+		<h2>Let's talk security</h2>
+		<p class="lead">Before we go any further, let's take a look at a specific snippet from the code above:</p>
+		<pre class="code">context = ssl.create_default_context()<br>with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:<br>    ...</pre>
+		<p class="lead">What do <code>ssl.create_default_context()</code> and <code>smtplib.STMP_SSL()</code> do? In order to set up a secure connection for sending our emails, we use <a href="https://www.websecurity.symantec.com/security-topics/what-is-ssl-tls-https" target="_blank">SSL</a>, which is a transport security layer protocol. This encrypts our messages and protects us from nefarious individuals who might be trying to read them without our knowledge! Security is something that Gmail takes very seriously, and if we want to send emails through an <i>@gmail</i> address, we'll have to make sure we're following the proper protocols.</p>
+	</div>
+	<div class="section">
+		<h2>Insert Gmail</h2>
+		<p class="lead">Remember earlier when I said that Gmail won't let us send emails through an <i>@gmail</i> address normally? This is because doing so allows <i>less secure</i> applications to access our Gmail address. Anyone who knows our password could write some code to send malicious emails through <i>pythonista@gmail.com</i>, which is very bad!</p>
+		<p class="lead">In order for us to send emails with the above code snippet, we'd have to go into a <a href="https://support.google.com/accounts/answer/6010255?hl=en" target="_blank">hidden Gmail setting</a> and turn off protections which prevent sending emails from insecure applications. This will allow us to send emails freely with the code we've already written, but Gmail often complains! The email utility I wrote for <a href="{% url 'home' %}">willcarh.art</a>, the <a href="https://github.com/wcarhart/willcarh.art/blob/master/herald.py" target="_blank">Herald</a>, used this implementation for the site's initial architecture. However, whenever someone would send an email through the site, I'd get a <b>critical security alert</b> from Google, claiming that <i>"Someone just used your password to try to sign in to your account. Google blocked them, but you should check what happened!"</i></p>
+		<p class="lead"><b>Yes, Google, that was me.</b></p>
+		<div class="section" align="center">
+			<img src="{% static 'img/critical_alert.png' %}" alt="Picture of Google critical security alert">
+		</div>
+		<p class="lead">What's troublesome is not the annoying email itself, but Gmail's behavior: <i>it locked out my application until I manually confirmed its access.</i> That can't be a valid implementation, because then nobody can send emails from <a href="{% url 'home' %}">willcarh.art</a> while Gmail has it blocked! How do we get around this?</p>
+	</div>
+	<div class="section">
+		<h2>Our saving grace: the official Gmail API</h2>
+		<p class="lead">In order to allow secure applications to send automated emails, Gmail exposes an API that helps ensure that automated email access is intended. And, it's got some <i>"decent"</i> <a href="https://developers.google.com/gmail/api/quickstart/python" target="_blank">documentation</a> for how to get started with it. Let's take a look at the quickstart Python guide in Gmail's API docs. I've modified it a little bit to simplify it for us. First, let's install the necessary dependencies with <code>pip</code>.</p>
+		<pre class="code">pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib</pre>
+		<p class="lead">Next, go ahead and click the <b>Enable the Gmail API</b> button from the documentation to acquire your Gmail API keys. Save this file as <code>credentials.json</code>.</p>
+		<p class="lead">Then, let's write a simple script to set up our credentials.</p>
+		<pre class="code">import os<br>import pickle<br>from googleapiclient.discovery import build<br>from google_auth_oauthlib.flow import InstalledAppFlow<br>from google.auth.transport.requests import Request<br><br>SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']<br><br>def main():<br>    creds = None<br>    # The file token.pickle stores the user's access and refresh tokens, and is<br>    # created automatically when the authorization flow completes for the first<br>    # time.<br>    if os.path.exists('token.pickle'):<br>        with open('token.pickle', 'rb') as token:<br>            creds = pickle.load(token)<br>    # If there are no (valid) credentials available, let the user log in.<br>    if not creds or not creds.valid:<br>        if creds and creds.expired and creds.refresh_token:<br>            creds.refresh(Request())<br>        else:<br>            flow = InstalledAppFlow.from_client_secrets_file('credentials.json', SCOPES)<br>            creds = flow.run_local_server(port=0)<br>        # Save the credentials for the next run<br>        with open('token.pickle', 'wb') as token:<br>            pickle.dump(creds, token)<br><br>    service = build('gmail', 'v1', credentials=creds)</pre>
+		<p class="lead">When we run this script, it'll open a browser window to walk you through your API key setup. During the setup, if Gmail states that your app isn't secure, just click the <i>Advanced</i> button to continue past the checkpoint. The good news is once you've run this script once, you just need the <code>token.pickle</code> file and then we can do away with <code>credentials.json</code> and most of our code from above.</p>
+	</div>
+	<div class="section">
+		<h2>Using the Gmail API to send emails</h2>
+		<p class="lead">Great! Now we can write some code to actually send emails! First, let's revise our code from above to be a little bit more succinct.</p>
+		<pre class="code">import os<br>import pickle<br><br>def get_gmail_api_instance():<br>    if not os.path.exists('token.pickle'):<br>        return None<br>    with open('token.pickle', 'rb') as token:<br>        creds = pickle.load(token)<br>    service = build('gmail', 'v1', credentials=creds)<br>    return service</pre>
+		<p class="lead">Cool! Now, let's write a quick function to draft an email that the Gmail API will send for us. The Gmail API doesn't work with regular strings, unlike <code>smtplib</code> from earlier. We'll have to use <code>base64</code> encodings.</p>
+		<pre class="code">import base64<br>from email.mime.text import MIMEText<br><br>def create_message(sender, to, subject, message_text):<br>    message = MIMEText(message_text)<br>    message['to'] = to<br>    message['from'] = sender<br>    message['subject'] = subject<br>    raw = base64.urlsafe_b64encode(message.as_bytes())<br>    raw = raw.decode()<br>    body = {'raw': raw}<br>    return body</pre>
+		<p class="lead">Nice! Next, we'll write another function for actually sending emails that we've drafted using our code above.</p>
+		<pre class="code">def send_email(service, user_id, message):<br>    try:<br>        message = (service.users().messages().send(userId=user_id, body=message).execute())<br>        return message<br>    except Exception as e:<br>        print("err: problem sending email")<br>        print(e)</pre>
+		<p class="lead">Almost there! Finally, we'll write a little bit of code to string everything together!</p>
+		<pre class="code">import sys<br><br># draft our message<br>sender = 'pythonista@gmail.com'<br>receiver = 'receiver@gmail.com'<br>subject = 'Just checking in!'<br>message_text = "Hi! How's it going?"<br><br># authenticate with Gmail API<br>service = get_gmail_api_instance()<br>if service == None:<br>    print("err: no credentials .pickle file found")<br>    sys.exit(1)<br><br># create message structure<br>message = create_message(sender, receiver, subject, message_text)<br><br># send email<br>result = send_email(service, sender, message)<br>if not result == None:<br>    print(f"Message sent successfully! Message id: {result['id']}")</pre>
+		<p class="lead">And that's it! Now when we send emails, Gmail won't complain any more! 🎉</p>
+	</div>
+	<div class="section">
+		<h2>Parting Notes</h2>
+		<p class="lead">There you have it! You're now a pythonista armed with the power, and responsibility, of Gmail. Note that when you use the Gmail API, you're subject to its Terms of Service, so please don't use it nefariously 😊</p>
+		<p class="lead">If you'd like to use the code from this blog post, I've uploaded it all to <a href="https://gist.github.com/wcarhart/b4f509c46ad1515a9954d356aaf10df1" target="_blank">a GitHub gist</a> for your convenience. Many of the code samples were derived from Gmail's API documentation for Python, which you can access <a href="https://developers.google.com/gmail/api/quickstart/python" target="_blank">here</a>.</p>
+		<p class="lead">In addition, I used this architecture for my own email utility, the Herald, for <a href="{% url 'home' %}">willcarh.art</a>. You can see it action by going to the <a href="{% url 'home' %}#contact">contact section</a> of the homepage. If you'd like to take a peek at the <a href="https://github.com/wcarhart/willcarh.art/blob/master/herald.py" target="_blank">source code</a>, please be my guest!</p>
+	</div>
+	<div class="section">
+		<p class="lead">🦉</p>
 	</div>
 </div>

@@ -227,7 +227,7 @@
 		"class": "Post",
 		"content": {
 			"index": "3",
-			"title": "Automating emails in Python",
+			"title": "Automating Emails in Python",
 			"subtitle": "Why Gmail sometimes says no",
 			"blurb": "Python provides some awesome libraries for sending emails, but sometimes Gmail is not a fan. Let's take a look at how to safely send automated emails from a Gmail account, via Python.",
 			"cover": "img/img1.png",
