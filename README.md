@@ -88,5 +88,5 @@ As you may have noticed, the URL for [willcarh.art](http://willcarh.art) is rath
  * PostgreSQL 11.2
 ### Deployment
  * Heroku 18 (Ubuntu 18)
- * Cloudflare (DNS)
+ * Cloudflare (DNS, SSL)
  * GoDaddy (Registrar)
