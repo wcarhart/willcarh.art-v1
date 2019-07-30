@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.shortcuts import render
 from .models import Post
 import json
@@ -11,7 +12,10 @@ def blog_index(request):
 
 def blog_detail(request, title):
 	post_title = title.replace('--', '%20').replace('-', ' ').replace('%20', ' ')
-	post = Post.objects.get(title=post_title)
+	try:
+		post = Post.objects.get(title=post_title)
+	except Post.DoesNotExist:
+		raise Http404
 
 	cover_credit = json.loads(post.cover_credit)
 

@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.shortcuts import render
 from projects.models import Project
 import json
@@ -10,7 +11,10 @@ def project_index(request):
 	return render(request, 'project_index.html', context)
 
 def project_detail(request, title):
-	project = Project.objects.get(title=title)
+	try:
+		project = Project.objects.get(title=title)
+	except Project.DoesNotExist:
+		raise Http404
 
 	description_sections = project.description.split('<section>')
 	links_dictionary = json.loads(project.links.replace("'", '"'))
