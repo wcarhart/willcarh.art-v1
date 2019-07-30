@@ -58,8 +58,8 @@ Hi {from_name}!
 
 Nice to meet you! Thanks so much for checking out my website! I'm excited to read your note, and I'll get back to you as soon as I can.
 
-In the meantime, willcarh.art's friendly email bot, the Herald, is sending you this email to confirm your note's delivery. If you're interested in 
-seeing how the Herald sends emails, please check out its code here: https://github.com/wcarhart/willcarh.art/blob/master/herald.py
+In the meantime, willcarh.art's friendly email bot, the Herald, is sending you this email to confirm your note's delivery. If you're interested in seeing how the Herald sends emails, please check out its code here:
+https://github.com/wcarhart/willcarh.art/blob/master/herald.py
 
 Take care,
 Will 🦉
