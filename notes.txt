@@ -1,22 +1,46 @@
 Just some notes that I think could be helpful in the future once I've forgotten how I designed this damn thing...
 
+============== ARCHITECTURE ==============
+.
+├── blog/                         - Django app for '/blog'
+├── canvas/                       - front-end files for Django 'home' app
+├── easel/                        - main Django app
+│   ├── settings.py                 - master settings for willcarh.art
+│   ├── urls.py                     - master URL routing schemes for willcarh.art
+│   └── wsgi.py                     - WSGI settings to run in production with Gunicorn and NGINX
+├── home/                         - Django app for '/', which is the homepage
+├── projects/                     - Django app for '/projects'
+├── static/                       - miscellaneous static files
+├── staticfiles/                  - static file directory created by Django with `python manage.py collectstatic` at runtime [GIT ignored]
+├── venv/                         - files for virtual environment [GIT ignored]
+├── .gitignore                    - standard GIT ignore for willcarh.art
+├── chronicler.py                 - utility to manage the 'manifest.json' file
+├── content.json                  - content of the database as a JSON file (all projects and blog posts)
+├── deploy.sh                     - deployment script
+├── herald.py                     - utility for sending emails via Gmail API
+├── local_settings.py             - settings for local deploy only [GIT ignored]
+├── maid.py                       - utility for refreshing/cleansing the database
+├── manage.py                     - main startup script, called from 'deploy.sh'
+├── manifest.json                 - manifest file that tracks app version
+├── notes.txt                     - more detailed documentation and notes about structure of willcarh.art
+├── Procfile                      - configuration file for Heroku deployment
+├── README.md                     - pretty README for GitHub
+├── requirements.txt              - Python dependency file
+├── scribe.py                     - utility for writing to the database
+├── token.pickle                  - encrypted Gmail API credentials
+└── willcarhart_admin.lcksmth.gpg - encrypted app secrets for willcarh.art
+
+==========================================
+
+
 1. Icons
 All icons are PNG files downloaded from icons8.com with 480x480 dimensions. Each PNG uses a 50% padding so the icon is in the middle with plenty of room to zoom in. Colors are determined from icons8, but the actual icon file is downloaded with a transparent background and the color is added in with CSS later.
 
 2. Deployment
 There are three deployment environments: local, dev, and prod. Use the deploy.sh script to run the app at any of those locations.
 
-3. Structure
-The main Django app is called 'easel'. There are three other installed apps:
- - home (the home page)
- - projects (the project page)
- - blog (the blog page)
-Additional file structures include:
- - canvas - the front-end files that are rendered from the 'home' app
- - static - the local static files that are app agnostic
- - staticfiles - the static directory created by WhiteNoise for deployment
- - venv - the virtual environment
-There are static files littered through the project in their respective app locations. It's a little bit spaghettified!
+3. Static files
+There are static files littered through the project in their respective app locations. Each app folder has a 'static/' directory, as well as a static/ folder in the root directory. The 'staticfiles/' directory is created by Django at runtime for deployment. It's a little bit spaghettified!
 
 4. Microservices
 There are a few python utilities that help maintaint the site. Read about them in the README.md.

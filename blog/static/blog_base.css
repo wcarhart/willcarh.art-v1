@@ -168,6 +168,9 @@ i.larger {
 .section {
 	padding-bottom: 1rem;
 }
+.section img {
+	max-width: 100%!important;
+}
 .attention {
 	background-color: var(--highlight);
 	border-radius: 0.5rem;

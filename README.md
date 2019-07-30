@@ -40,9 +40,10 @@ $ python3 scribe.py -f custom.json
 The `herald` sends emails. Checkout the code --> [`herald.py`](https://github.com/wcarhart/willcarh.art/blob/master/herald.py)
 
 **Usage**:
-```bash
-# send an email with the subject "News Flash!" to "you@email.com" describing the news
-$ python3 herald.py -s "News Flash!" -t "you@email.com" "willcarh.art is a sick website!"
+```python
+# the herald exposes an easy-to-use API:
+from herald import send_message
+send_message(from_name, from_email, from_message)
 ```
 ### `Locksmith`
 The `locksmith` encrypts project secrets so nefarious individuals can't see them when my code's stored in GitHub. Checkout the code --> [`locksmith`](https://github.com/wcarhart/locksmith)
