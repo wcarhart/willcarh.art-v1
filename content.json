@@ -222,5 +222,19 @@
 			"author": "Will Carhart",
 			"cover_credit": "{\"AaronOlive\": \"https://www.deviantart.com/aaronolive\"}"
 		}
+	},
+	{
+		"class": "Post",
+		"content": {
+			"index": "3",
+			"title": "Automating emails in Python",
+			"subtitle": "Why Gmail sometimes says no",
+			"blurb": "Python provides some awesome libraries for sending emails, but sometimes Gmail is not a fan. Let's take a look at how to safely send automated emails from a Gmail account, via Python.",
+			"cover": "img/img1.png",
+			"content": "posts/post-3.html",
+			"published": "2019-07-29 21:48:18.959676+00:00",
+			"author": "Will Carhart",
+			"cover_credit": "{\"Campo Santo\": \"https://blog.camposanto.com/post/138965082204/firewatch-launch-wallpaper-when-we-redid-the\"}"
+		}
 	}
 ]
