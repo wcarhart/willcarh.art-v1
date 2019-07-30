@@ -1,6 +1,5 @@
 local_settings.py
 willcarhart_admin.lcksmth
-gmail_test.py
 staticfiles/
 
 *.py[cod]

@@ -10,9 +10,6 @@ from google.auth.transport.requests import Request
 import os
 import pickle
 
-# scope of sender email
-SCOPES = ['https://www.googleapis.com/auth/gmail.send']
-
 def get_gmail_api_instance():
 	"""
 	Setup Gmail API instance
