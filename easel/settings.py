@@ -102,7 +102,6 @@ DATABASES = {
 
 DEFAULT_TARGET_EMAIL = os.environ.get('DEFAULT_TARGET_EMAIL')
 SENDER_EMAIL = os.environ.get('SENDER_EMAIL')
-SENDER_EMAIL_PASSWORD = os.environ.get('SENDER_EMAIL_PASSWORD')
 
 
 # Password validation
