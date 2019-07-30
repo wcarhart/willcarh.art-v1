@@ -90,3 +90,4 @@ As you may have noticed, the URL for [willcarh.art](https://willcarh.art) is rat
  * Heroku 18 (Ubuntu 18)
  * Cloudflare (DNS, SSL)
  * GoDaddy (Registrar)
+ * Gmail API

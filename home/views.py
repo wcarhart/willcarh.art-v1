@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import EmailForm
-from herald import build_host_message, build_client_message, send_email
+from herald import send_message
 
 def home(request):
 
@@ -12,24 +12,9 @@ def home(request):
 			from_name = form.cleaned_data['name']
 			from_email = form.cleaned_data['email']
 			from_message = form.cleaned_data['message']
-
-			host_message = build_host_message(from_name, from_email, from_message)
-			status, smtpcode, message = send_email(
-				(host_message, ""),
-				subject=f"willcarh.art: New email from {from_name}"
-			)
-			print(f"Email to host:{message}")
-
-			client_message = build_client_message(from_name, from_email, from_message)
-			status, smtpcode, message = send_email(
-				(client_message, ""), 
-				subject="Hello from willcarh.art!",
-				target=from_email
-			)
-			print(f"Email to client:{message}")
-
+			send_message(from_name, from_email, from_message, target=from_email)
+			send_message(from_name, from_email, from_message)
 			messages.add_message(request, messages.SUCCESS, "Message sent!")
-
 			return redirect('/#contact')
 
 	context = {
