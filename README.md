@@ -1,6 +1,6 @@
-# [willcarh.art](http://www.willcarh.art/)
+# [willcarh.art](https://www.willcarh.art/)
 
-[![willcarh.art demo](static/readme_demo.png)](http://www.willcarh.art/)
+[![willcarh.art demo](static/readme_demo.png)](https://www.willcarh.art/)
 
 Full-stack web application for my portfolio!
 
@@ -21,10 +21,10 @@ To deploy to _production_:
 ```
 deploy.sh prod
 ```
-Note that [willcarh.art](http://willcarh.art) encrypts its secrets in a GPG file, so you'll have to replicate those values with your own if you'd like to run the app locally.
+Note that [willcarh.art](https://willcarh.art) encrypts its secrets in a GPG file, so you'll have to replicate those values with your own if you'd like to run the app locally.
 
 ## Utilities
-The following are custom utilities I've written in Python to facilitate the microservices of [willcarh.art](http://willcarh.art).
+The following are custom utilities I've written in Python to facilitate the microservices of [willcarh.art](https://willcarh.art).
 
 ### `Scribe`
 The `scribe` writes content to the database from a JSON file. Checkout the code --> [`scribe.py`](https://github.com/wcarhart/willcarh.art/blob/master/scribe.py)
@@ -73,7 +73,7 @@ $ python3 chronicler.py -m
 ```
 
 ## Nomenclature Explained
-As you may have noticed, the URL for [willcarh.art](http://willcarh.art) is rather odd. In order to preserve my full name, Will Carhart, in the URL, I opted to use a .art [top-level domain (TLD)](https://en.wikipedia.org/wiki/Top-level_domain). Since the .art TLD is usually reserved for art portfolios, I thought it was a fitting name for my _coding portfolio._ However, the naming convention doesn't stop there! If you peruse the file structure of [willcarh.art](http://willcarh.art), you may notice that the back-end of the app is called the _easel_ while the front end of the app is called the _canvas,_ which I felt fit with the whole "art" vibe of the project 🤗
+As you may have noticed, the URL for [willcarh.art](https://willcarh.art) is rather odd. In order to preserve my full name, Will Carhart, in the URL, I opted to use a .art [top-level domain (TLD)](https://en.wikipedia.org/wiki/Top-level_domain). Since the .art TLD is usually reserved for art portfolios, I thought it was a fitting name for my _coding portfolio._ However, the naming convention doesn't stop there! If you peruse the file structure of [willcarh.art](https://willcarh.art), you may notice that the back-end of the app is called the _easel_ while the front end of the app is called the _canvas,_ which I felt fit with the whole "art" vibe of the project 🤗
 
 ## Technologies Used
 ### Front-end
