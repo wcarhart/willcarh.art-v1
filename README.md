@@ -84,6 +84,9 @@ As you may have noticed, the URL for [willcarh.art](http://willcarh.art) is rath
 ### Back-end
  * Python 3.7
  * Django 2.1.5
- * Heroku
 ### Database
  * PostgreSQL 11.2
+### Deployment
+ * Heroku 18 (Ubuntu 18)
+ * Cloudflare (DNS)
+ * GoDaddy (Registrar)
