@@ -8,8 +8,34 @@ This is a history of the development to willcarh.art. Changes can happen in one 
 Version numbers follow the format _[major.minor.commit]_. See `chronicler.py` for more details.
 
 ## Unreleased
+There is currently no unreleased content. Track actively development here: https://trello.com/b/glDTHpCJ/willcarhart
 
-## [0.1.130] 2019-07-29
+## [0.1.x] 2019-07-31 (PR #11)
+### Functionality ADDED
+ - introduced the changelog
+
+### Content UPDATED
+ - fixed various typos in blog posts
+ - highlighted GitHub links in blog posts
+
+## [0.1.155] 2019-07-29 (PR #10)
+### Functionality ADDED
+ - added alt tags for more images
+
+### Functionality UPDATED
+ - updated notes.txt
+
+### Content ADDED
+ - added third blog post
+
+### Content UPDATED
+ - fixed the Herald usage in the README
+ - fixed typo in lurker demo section
+
+### Bugfix
+ - fixed media content overflow issue on blog posts
+
+## [0.1.130] 2019-07-29 (PR #9)
 ### Functionality UPDATED
  - migrated the Herald to the official Gmail API
  - moved large visual media to third party hosting solution
@@ -32,7 +58,7 @@ Version numbers follow the format _[major.minor.commit]_. See `chronicler.py` fo
  - fixed missing project bug resulting in 500 error (now is 404)
  - fixed missing blog bug resulting in 500 error (now is 404)
 
-## [0.1.0] 2019-07-28
+## [0.1.0] 2019-07-28 (PR #6)
 ### Functionality ADDED
  - added notes.txt for miscellaneous dev notes about willcarh.art
 
@@ -63,7 +89,7 @@ Version numbers follow the format _[major.minor.commit]_. See `chronicler.py` fo
 ### Content ADDED
  - updated README with deploy instructions
 
-## [0.0.82] 2019-04-15
+## [0.0.82] 2019-04-15 (PR #4)
 ### Deployment
  - first deploy to Heroku
 
@@ -75,7 +101,7 @@ Version numbers follow the format _[major.minor.commit]_. See `chronicler.py` fo
  - demo content for each project
  - visual media for project demos
 
-## [0.0.55] 2019-04-14
+## [0.0.55] 2019-04-14 (PR ##)
 ### Functionality ADDED
  - prototype of fullstack Blog app
  - noscript tag on home page
@@ -90,7 +116,7 @@ Version numbers follow the format _[major.minor.commit]_. See `chronicler.py` fo
 ### Content UPDATED
  - About, Experience sections on home page
 
-## [0.0.0] <2019-04-11
+## [0.0.0] <2019-04-11 (PR #2)
 ### Functionality ADDED
  - basic implementation of index.html for home page
  - basic implementation of CSS styling for site
