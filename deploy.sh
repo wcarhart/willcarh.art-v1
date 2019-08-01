@@ -48,6 +48,7 @@ update_vars() {
 	for VAR in "${VARS[@]}" ; do
 		heroku config:set --app "$APP" "$VAR"
 	done
+	return 0
 }
 
 if [[ "$1" == "-h" || "$1" == "--help" ]] ; then
@@ -71,6 +72,9 @@ case $MODE in
 		echo "Deploying willcarh.art to dev staging space: https://willcarhart-dev.herokuapp.com/"
 		git push heroku-willcarhart-dev `git branch | grep \* | cut -d ' ' -f2`:master
 		update_vars willcarhart-dev
+		if [[ $? -ne 0 ]] ; then
+			exit 1
+		fi
 		heroku run --app willcarhart-dev python manage.py migrate
 		heroku run --app willcarhart-dev python maid.py -u
 		echo
@@ -84,6 +88,9 @@ case $MODE in
 			echo "Deploying willcarh.art to production: http://willcarh.art"
 			git push https://git.heroku.com/willcarhart-prod.git master
 			update_vars willcarhart-prod
+			if [[ $? -ne 0 ]] ; then
+				exit 1
+			fi
 			heroku config:set --app willcarhart-prod DEBUG=False
 			heroku run --app willcarhart-prod python manage.py migrate
 			heroku run --app willcarhart-prod python maid.py -u
