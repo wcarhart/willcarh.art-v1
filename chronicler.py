@@ -4,9 +4,9 @@ Manages the manifest.json file
 
 -- Versioning --
 Versioning follows the `major.minor.commit` format
-	- major change signifies a change in programmatic structure for site
-	- minor change signifies a change in content for website
-	- commit is the number of commits since last version change
+	- a 'major' change signifies a major change in programatic structure or non-backwards compatible change for site
+	- a 'minor' change signifies a minor change in programatic structure or a change in content for site
+	- a 'commit' update is the number of commits since last version change, if the update is not major or minor
 """
 import argparse
 import json
@@ -45,17 +45,6 @@ def bump_version(major, minor):
 	contents['version'] = f'{major_version}.{minor_version}.{commits}'
 	with open('manifest.json', 'w') as manifest:
 		json.dump(contents, manifest)
-
-def get_version():
-	"""
-	Get the app version
-		returns (str) the app version
-	"""
-	assert os.path.isfile('manifest.json')
-	with open('manifest.json', 'r') as manifest:
-		contents = json.load(manifest)
-	assert 'version' in contents.keys()
-	return contents['version']
 
 def build_parser():
 	"""
