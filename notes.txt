@@ -11,11 +11,13 @@ Just some notes that I think could be helpful in the future once I've forgotten 
 ├── home/                         - Django app for '/', which is the homepage
 ├── projects/                     - Django app for '/projects'
 ├── static/                       - miscellaneous static files
-├── staticfiles/                  - static file directory created by Django with `python manage.py collectstatic` at runtime [GIT ignored]
+├── staticfiles/                  - static file directory created by Django with `collectstatic` at runtime [GIT ignored]
 ├── venv/                         - files for virtual environment [GIT ignored]
 ├── .gitignore                    - standard GIT ignore for willcarh.art
+├── changelog.md                  - history of changes and updates to willcarh.art
 ├── chronicler.py                 - utility to manage the 'manifest.json' file
 ├── content.json                  - content of the database as a JSON file (all projects and blog posts)
+├── contributing.md               - description of contribution workflow
 ├── deploy.sh                     - deployment script
 ├── herald.py                     - utility for sending emails via Gmail API
 ├── local_settings.py             - settings for local deploy only [GIT ignored]
