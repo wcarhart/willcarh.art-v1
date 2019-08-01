@@ -110,7 +110,7 @@ There is currently no unreleased content. Track active development progress [her
 ### Deployment
  - first deploy to Heroku
 
-## [0.0.55] 2019-04-14 (PR ##)
+## [0.0.55] 2019-04-14 (PR #3)
 ### Functionality ADDED
  - prototype of fullstack Blog app
  - noscript tag on home page
