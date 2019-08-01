@@ -27,18 +27,19 @@ $ python chronicler.py -m
 $ python chronicerl.py -M
 ```
 10. Update `changelog.md` with the appropriate changes. Make sure to use the proper format.
-11. Open a Pull Request with your changes.
-12. Review **every** file in the open Pull Request. Look for bugs and [smelly code](https://blog.codinghorror.com/code-smells/).
-13. Merge the Pull Request into _master_.
-14. On your local machine, update to master by running:
+11. Update `notes.txt` if you added any new files or directories.
+12. Open a Pull Request with your changes.
+13. Review **every** file in the open Pull Request. Look for bugs and [smelly code](https://blog.codinghorror.com/code-smells/).
+14. Merge the Pull Request into _master_.
+15. On your local machine, update to master by running:
 ```
 $ git checkout master
 $ git pull
 ```
-15. Deploy to _prod_.
+16. Deploy to _prod_.
 ```
 $ ./deploy prod
 Are you *absolutely* sure you want to push to production? yes
 ```
-16. Test the changes in _prod_. If any tests fail, return to **Step 1**.
-17. Close the story in the backlog on [Trello](https://trello.com/b/glDTHpCJ/willcarhart).
+17. Test the changes in _prod_. If any tests fail, return to **Step 1**.
+18. Close the story in the backlog on [Trello](https://trello.com/b/glDTHpCJ/willcarhart).
