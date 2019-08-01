@@ -10,9 +10,10 @@ Version numbers follow the format _[major.minor.commit]_. See [`chronicler.py`](
 ## Unreleased
 There is currently no unreleased content. Track active development progress [here](https://trello.com/b/glDTHpCJ/willcarhart).
 
-## [0.1.158] 2019-07-31 (PR #11)
+## [0.1.160] 2019-07-31 (PR #11)
 ### Functionality ADDED
  - introduced the changelog
+ - introduced `contributing.md`
 
 ### Functionality UPDATED
  - improved the Chronicler implementation
