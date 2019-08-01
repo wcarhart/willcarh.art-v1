@@ -41,3 +41,4 @@ $ ./deploy prod
 Are you *absolutely* sure you want to push to production? yes
 ```
 16. Test the changes in _prod_. If any tests fail, return to **Step 1**.
+17. Close the story in the backlog on [Trello](https://trello.com/b/glDTHpCJ/willcarhart).
