@@ -12,6 +12,7 @@ def error_500(request):
 		'exception_type': exc_type,
 		'exception_value': exc_value,
 		'stack_trace': traceback.format_exception(exc_type, exc_value, trace),
+		'request': request,
 	}
 	send_message(
 		debug=True,

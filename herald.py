@@ -11,6 +11,7 @@ from google.auth.transport.requests import Request
 import os
 import pickle
 import sys
+import time
 
 def get_gmail_api_instance():
 	"""
@@ -79,6 +80,8 @@ def build_error_message(error_context):
 	exception_value = error_context.get('exception_value', "ERROR: INVALID EXCEPTION VALUE")
 	stack_trace = error_context.get('stack_trace', "ERROR: INVALID STACK TRACE")
 	stack_trace = "".join(stack_trace)
+	request = error_context.get('request', "ERROR: INVALID REQUEST")
+
 	return f"""
 Hi Will,
 
@@ -86,11 +89,24 @@ willcarh.art experienced a 500 server error. Here are the details:
 
 ---
 Timestamp: {datetime.datetime.now()}
-Attempted URL: TBD
-Attempted HTTP call: TBD
-Exception type: {exception_type}
+Epoch time: {time.time()}
+Attempted URL: willcarh.art{request.path}
+
+HTTP content:
+└── scheme: {request.scheme}
+└── method: {request.method}
+└── path: {request.path}
+└── path info: {request.path_info}
+└── encoding: {request.encoding}
+└── content type: {request.content_type}
+└── cookies: 
+{format_dict(request.COOKIES)}
+└── headers: 
+{format_dict(request.headers)}
+
+Exception type: {exception_type.__name__}
 Exception value: {exception_value}
-Stack trace:
+Full stack trace:
 {str(stack_trace)}
 ---
 
@@ -98,6 +114,16 @@ Best of luck,
 The Herald 🦉
 
 """
+
+def format_dict(d):
+	"""
+	Format a dictionary *nicely*
+		:d: (dict) the dictionary to format
+	"""
+	ret = []
+	for key, value in d.items():
+		ret.append(f"\t{key}: {value}")
+	return "\n".join(ret)
 
 def create_message(sender, to, subject, message_text):
 	"""
@@ -152,7 +178,7 @@ def send_message(from_name="", from_email="", from_message="", target=settings.D
 	if target == settings.DEFAULT_TARGET_EMAIL:
 		if debug:
 			message_text = build_error_message(error_context)
-			subject = f"Server error 500 occurred in production"
+			subject = f"500 Server error"
 		else:
 			message_text = build_host_message(from_name, from_email, from_message)
 			subject = f"willcarh.art: New email from {from_name}"
