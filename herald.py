@@ -2,6 +2,7 @@
 Sends emails from a controlled address
 """
 import base64
+import datetime
 from django.conf import settings
 from email.mime.text import MIMEText
 from googleapiclient.discovery import build
@@ -10,7 +11,6 @@ from google.auth.transport.requests import Request
 import os
 import pickle
 import sys
-import time
 
 def get_gmail_api_instance():
 	"""
@@ -69,21 +69,29 @@ Will 🦉
 """
 	return message
 
-def build_error_message(trace):
+def build_error_message(error_context):
 	"""
 	Build an error message to be sent when 500 server errors occur
-		:trace: (str) stack trace of exception that caused 500 error
+		:error_context: (dict) error details to include in the body of the email (stack trace, etc.)
 	"""
 	# TODO: finish this
+	exception_type = error_context.get('exception_type', "ERROR: INVALID EXCEPTION TYPE")
+	exception_value = error_context.get('exception_value', "ERROR: INVALID EXCEPTION VALUE")
+	stack_trace = error_context.get('stack_trace', "ERROR: INVALID STACK TRACE")
+	stack_trace = "".join(stack_trace)
 	return f"""
 Hi Will,
 
 willcarh.art experienced a 500 server error. Here are the details:
 
 ---
-Timestamp: {time.strftime("%Y-%m-%d %H:%M")}
+Timestamp: {datetime.datetime.now()}
+Attempted URL: TBD
+Attempted HTTP call: TBD
+Exception type: {exception_type}
+Exception value: {exception_value}
 Stack trace:
-{trace}
+{str(stack_trace)}
 ---
 
 Best of luck,
@@ -122,7 +130,7 @@ def send_email(service, user_id, message):
 		print("herald.py: err: problem sending email")
 		print(e)
 
-def send_message(from_name="", from_email="", from_message="", target=settings.DEFAULT_TARGET_EMAIL, debug=False, trace=""):
+def send_message(from_name="", from_email="", from_message="", target=settings.DEFAULT_TARGET_EMAIL, debug=False, error_context={}):
 	"""
 	Handle input from outside programs calling Herald
 		:from_name: (str) the sender's name
@@ -130,7 +138,7 @@ def send_message(from_name="", from_email="", from_message="", target=settings.D
 		:from_message: (str) the sender's message
 		:target: (str) the receiver's email address
 		:debug: (bool) whether or not to build an error debug message
-		:trace: (str) the stack trace for a given error, to include in the body of the email
+		:error_context: (dict) error details to include in the body of the email (stack trace, etc.)
 	"""
 
 	# authenticate with Gmail API
@@ -143,7 +151,7 @@ def send_message(from_name="", from_email="", from_message="", target=settings.D
 	# build message content
 	if target == settings.DEFAULT_TARGET_EMAIL:
 		if debug:
-			message_text = build_error_message(trace)
+			message_text = build_error_message(error_context)
 			subject = f"Server error 500 occurred in production"
 		else:
 			message_text = build_host_message(from_name, from_email, from_message)
