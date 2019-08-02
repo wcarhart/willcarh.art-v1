@@ -75,12 +75,10 @@ def build_error_message(error_context):
 	Build an error message to be sent when 500 server errors occur
 		:error_context: (dict) error details to include in the body of the email (stack trace, etc.)
 	"""
-	# TODO: finish this
 	exception_type = error_context.get('exception_type', "ERROR: INVALID EXCEPTION TYPE")
 	exception_value = error_context.get('exception_value', "ERROR: INVALID EXCEPTION VALUE")
 	stack_trace = error_context.get('stack_trace', "ERROR: INVALID STACK TRACE")
 	stack_trace = "".join(stack_trace)
-	request = error_context.get('request', "ERROR: INVALID REQUEST")
 
 	return f"""
 Hi Will,
