@@ -7,6 +7,10 @@ def error_404(request, exception):
 
 def error_500(request):
 	trace = sys.exc_info()
+	send_message(
+		debug=True,
+		trace=trace
+	)
 	response = render(request, '500.html')
 	response.status_code = 500
 	return response

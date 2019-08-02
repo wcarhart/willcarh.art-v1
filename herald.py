@@ -122,13 +122,15 @@ def send_email(service, user_id, message):
 		print("herald.py: err: problem sending email")
 		print(e)
 
-def send_message(from_name, from_email, from_message, target=settings.DEFAULT_TARGET_EMAIL, debug=False, trace=""):
+def send_message(from_name="", from_email="", from_message="", target=settings.DEFAULT_TARGET_EMAIL, debug=False, trace=""):
 	"""
 	Handle input from outside programs calling Herald
 		:from_name: (str) the sender's name
 		:from_email: (str) the sender's email address
 		:from_message: (str) the sender's message
 		:target: (str) the receiver's email address
+		:debug: (bool) whether or not to build an error debug message
+		:trace: (str) the stack trace for a given error, to include in the body of the email
 	"""
 
 	# authenticate with Gmail API
