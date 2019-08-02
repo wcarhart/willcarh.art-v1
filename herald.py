@@ -10,6 +10,7 @@ from google.auth.transport.requests import Request
 import os
 import pickle
 import sys
+import time
 
 def get_gmail_api_instance():
 	"""
@@ -68,6 +69,28 @@ Will 🦉
 """
 	return message
 
+def build_error_message(trace):
+	"""
+	Build an error message to be sent when 500 server errors occur
+		:trace: (str) stack trace of exception that caused 500 error
+	"""
+	# TODO: finish this
+	return f"""
+Hi Will,
+
+willcarh.art experienced a 500 server error. Here are the details:
+
+---
+Timestamp: {time.strftime("%Y-%m-%d %H:%M")}
+Stack trace:
+{trace}
+---
+
+Best of luck,
+The Herald 🦉
+
+"""
+
 def create_message(sender, to, subject, message_text):
 	"""
 	Create a message for an email
@@ -99,7 +122,7 @@ def send_email(service, user_id, message):
 		print("herald.py: err: problem sending email")
 		print(e)
 
-def send_message(from_name, from_email, from_message, target=settings.DEFAULT_TARGET_EMAIL):
+def send_message(from_name, from_email, from_message, target=settings.DEFAULT_TARGET_EMAIL, debug=False, trace=""):
 	"""
 	Handle input from outside programs calling Herald
 		:from_name: (str) the sender's name
@@ -117,8 +140,12 @@ def send_message(from_name, from_email, from_message, target=settings.DEFAULT_TA
 
 	# build message content
 	if target == settings.DEFAULT_TARGET_EMAIL:
-		message_text = build_host_message(from_name, from_email, from_message)
-		subject = f"willcarh.art: New email from {from_name}"
+		if debug:
+			message_text = build_error_message(trace)
+			subject = f"Server error 500 occurred in production"
+		else:
+			message_text = build_host_message(from_name, from_email, from_message)
+			subject = f"willcarh.art: New email from {from_name}"
 	else:
 		message_text = build_client_message(from_name)
 		subject = "Hello from willcarh.art!"
