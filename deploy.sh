@@ -72,7 +72,7 @@ case $MODE in
 		echo "Deploying willcarh.art to dev staging space: https://willcarhart-dev.herokuapp.com/"
 		git push heroku-willcarhart-dev `git branch | grep \* | cut -d ' ' -f2`:master
 		if [[ $? -ne 0 ]] ; then
-			echo "deploy.sh: err: Deploy aborted"
+			echo "deploy.sh: err: deploy aborted"
 			exit 1
 		fi
 		update_vars willcarhart-dev
@@ -89,7 +89,7 @@ case $MODE in
 			echo "Deploying willcarh.art to production: http://willcarh.art"
 			git push https://git.heroku.com/willcarhart-prod.git master
 			if [[ $? -ne 0 ]] ; then
-				echo "deploy.sh: err: Deploy aborted"
+				echo "deploy.sh: err: deploy aborted"
 				exit 1
 			fi
 			update_vars willcarhart-prod
