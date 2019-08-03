@@ -10,7 +10,7 @@ Version numbers follow the format _[major.minor.commit]_. See [`chronicler.py`](
 ## Unreleased
 There is currently no unreleased content. Track active development progress [here](https://trello.com/b/glDTHpCJ/willcarhart).
 
-## [] 2019-08-02 (PR #12)
+## [0.1.177] 2019-08-02 (PR #12)
 ### Functionality UPDATED
  - updated `deploy.sh` to abort on build failures
  - implemented email notifications for 500 errors in production
