@@ -72,9 +72,9 @@ case $MODE in
 		echo "Deploying willcarh.art to dev staging space: https://willcarhart-dev.herokuapp.com/"
 		git push heroku-willcarhart-dev `git branch | grep \* | cut -d ' ' -f2`:master
 		if [[ $? -ne 0 ]] ; then
-				echo "deploy.sh: err: Deploy aborted"
-				exit 1
-			fi
+			echo "deploy.sh: err: Deploy aborted"
+			exit 1
+		fi
 		update_vars willcarhart-dev
 		heroku run --app willcarhart-dev python manage.py migrate
 		heroku run --app willcarhart-dev python maid.py -u
