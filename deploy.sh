@@ -29,7 +29,7 @@ EndOfUsage
 
 update_vars() {
 	if [[ "$1" != "willcarhart-dev" && "$1" != "willcarhart-prod" ]] ; then
-		echo "deploy.sh: warning: no such environment '$1'"
+		echo "deploy.sh: warning: no such Heroku app '$1'"
 		echo "  Did not update environment variables."
 		return 1
 	fi
@@ -71,10 +71,11 @@ case $MODE in
 	dev|devo|development)
 		echo "Deploying willcarh.art to dev staging space: https://willcarhart-dev.herokuapp.com/"
 		git push heroku-willcarhart-dev `git branch | grep \* | cut -d ' ' -f2`:master
-		update_vars willcarhart-dev
 		if [[ $? -ne 0 ]] ; then
+			echo "deploy.sh: err: deploy aborted"
 			exit 1
 		fi
+		update_vars willcarhart-dev
 		heroku run --app willcarhart-dev python manage.py migrate
 		heroku run --app willcarhart-dev python maid.py -u
 		echo
@@ -87,10 +88,11 @@ case $MODE in
 		if [[ $CONFIRM == [yY] || $CONFIRM == [yY][eE][sS] ]] ; then
 			echo "Deploying willcarh.art to production: http://willcarh.art"
 			git push https://git.heroku.com/willcarhart-prod.git master
-			update_vars willcarhart-prod
 			if [[ $? -ne 0 ]] ; then
+				echo "deploy.sh: err: deploy aborted"
 				exit 1
 			fi
+			update_vars willcarhart-prod
 			heroku config:set --app willcarhart-prod DEBUG=False
 			heroku run --app willcarhart-prod python manage.py migrate
 			heroku run --app willcarhart-prod python maid.py -u

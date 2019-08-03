@@ -4,7 +4,6 @@ from .forms import EmailForm
 from herald import send_message
 
 def home(request):
-
 	form = EmailForm()
 	if request.method == 'POST':
 		form = EmailForm(request.POST)
@@ -12,8 +11,17 @@ def home(request):
 			from_name = form.cleaned_data['name']
 			from_email = form.cleaned_data['email']
 			from_message = form.cleaned_data['message']
-			send_message(from_name, from_email, from_message, target=from_email)
-			send_message(from_name, from_email, from_message)
+			send_message(
+				from_name=from_name,
+				from_email=from_email,
+				from_message=from_message,
+				target=from_email
+			)
+			send_message(
+				from_name=from_name,
+				from_email=from_email,
+				from_message=from_message
+			)
 			messages.add_message(request, messages.SUCCESS, "Message sent!")
 			return redirect('/#contact')
 
