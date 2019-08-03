@@ -43,7 +43,11 @@ The `herald` sends emails. Checkout the code --> [`herald.py`](https://github.co
 ```python
 # the herald exposes an easy-to-use API:
 from herald import send_message
-send_message(from_name, from_email, from_message)
+send_message(
+  from_name="Will Carhart", 
+  from_email="my_email@mail.com", 
+  from_message="Hey! How's it going?"
+)
 ```
 ### `Locksmith`
 The `locksmith` encrypts project secrets so nefarious individuals can't see them when my code's stored in GitHub. Checkout the code --> [`locksmith`](https://github.com/wcarhart/locksmith)
