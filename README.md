@@ -87,8 +87,8 @@ As you may have noticed, the URL for [willcarh.art](https://www.willcarh.art) is
  * Bootstrap 4
  * Javascript + jQuery
 ### Back-end
- * Python 3.7
- * Django 2.1.5
+ * Python 3.6.8
+ * Django 2.2.4
 ### Database
  * PostgreSQL 11.2
 ### Deployment
