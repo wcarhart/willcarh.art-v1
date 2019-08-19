@@ -236,5 +236,33 @@
 			"author": "Will Carhart",
 			"cover_credit": "{\"Campo Santo\": \"https://blog.camposanto.com/post/138965082204/firewatch-launch-wallpaper-when-we-redid-the\"}"
 		}
+	},
+	{
+		"class": "Post",
+		"content": {
+			"index": "4",
+			"title": "Building Chatbots for GitHub",
+			"subtitle": "I am definitely a human beep boop",
+			"blurb": "Using the GitHub API, we can automate just about any functionality of GitHub. Let's take a look at how we can conglomerate Python, Travis CI, and the GitHub API to make a friendly chatbot.",
+			"cover": "img/img4.jpg",
+			"content": "posts/post-4.html",
+			"published": "2019-08-18 22:46:42.149371+00:00",
+			"author": "Will Carhart",
+			"cover_credit": "{\"Jason Scheier\": \"https://www.artstation.com/d3cap\"}"
+		}
+	},
+	{
+		"class": "Post",
+		"content": {
+			"index": "5",
+			"title": "Mastering Failure",
+			"subtitle": "Learning from our hardest moments",
+			"blurb": "Failure is often the best teacher we will ever have. What can we discern from our mistakes?",
+			"cover": "img/img5.jpg",
+			"content": "posts/post-5.html",
+			"published": "2019-08-20 22:46:42.149371+00:00",
+			"author": "Will Carhart",
+			"cover_credit": "{\"Jason Scheier\": \"https://www.artstation.com/d3cap\"}"
+		}
 	}
 ]
