@@ -18,7 +18,7 @@ Required arguments:
   MODE       - the deploy mode, can be one of {local, dev, prod}
                'local' will run the app locally
                'dev' will publish the current working git branch of the app to the staging space: https://willcarhart-dev.herokuapp.com/
-               'prod' will publish the master branch of the app to production: http://willcarh.art
+               'prod' will publish the master branch of the app to production: https://willcarh.art
                (default: local)
 
 Optional arguments:
@@ -86,7 +86,7 @@ case $MODE in
 	prod|production)
 		read -p "Are you *absolutely* sure you want to push to production? " CONFIRM
 		if [[ $CONFIRM == [yY] || $CONFIRM == [yY][eE][sS] ]] ; then
-			echo "Deploying willcarh.art to production: http://willcarh.art"
+			echo "Deploying willcarh.art to production: https://willcarh.art"
 			git push https://git.heroku.com/willcarhart-prod.git master
 			if [[ $? -ne 0 ]] ; then
 				echo "deploy.sh: err: deploy aborted"
