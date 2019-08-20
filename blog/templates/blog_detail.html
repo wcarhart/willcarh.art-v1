@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block page_content %}
-<meta property="og:title" content="{% static post.title %}" />
+<meta property="og:title" content="{{ post.title }}" />
 <meta property="og:image" content="{% static post.cover %}" />
 <div class="container blog-container">
 	<div class="os-animation" data-animation="fadeInUp">

@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block page_content %}
-<meta property="og:title" content="{% static project.title %}" />
+<meta property="og:title" content="{{ project.title }}" />
 <meta property="og:image" content="{% static project.cover %}" />
 <div class="project-detail narrow">
 	<!-- heading -->
