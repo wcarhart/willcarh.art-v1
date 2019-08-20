@@ -4,7 +4,7 @@
 		"content": {
 			"title": "Soliloquy",
 			"blurb": "A platform for showcasing your software hobby projects",
-			"description": "TBD",
+			"description": "I think there's an unfortunate stereotype that often surrounds software development. Many characterize coding as a purely technical discipline, reserved for the nerdy and erudite. However, I think coding can be expressive, fun, and creative. You can create anything you can imagine, from complex web applications to beautiful front-end designs.<section>That's why I created Soliloquy, as a place for hackers and software enthusiasts to showcase their passion projects and promote Software-as-a-Hobby. The word <i>soliloquy</i> means the act of speaking one's thoughts aloud regardless of any hearers, which fits the purpose of Soliloquy aptly.",
 			"technology": "Python, Django, Heroku, PostgreSQL, HTML5, CSS3, Boostrap 4, Javascript, Travis CI",
 			"links": "{'GitHub': 'https://github.com/wcarhart/Soliloquy'}",
 			"cover": "img/shakespeare.png",
