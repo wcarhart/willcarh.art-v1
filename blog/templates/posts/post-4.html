@@ -1,3 +1,4 @@
+{% load static %}
 <div class="contents">
 	<div class="section"></div>
 	<div class="section">
@@ -60,7 +61,10 @@
 			<li>We could create a <a href="https://help.github.com/en/articles/types-of-github-accounts" target="_blank">separate GitHub account</a> for our commenting bot.</li>
 			<li>We could <a href="https://docs.travis-ci.com/user/deployment" target="_blank">deploy our application</a>, if our tests pass.</li>
 		</ul>
-		<p class="lead">I did all of the above in my latest personal project, <a href="{% url 'project_detail' 'Soliloquy' %}">Soliloquy</a> (<a href="https://www.soliloquy.dev" target="_blank">www.soliloquy.dev</a>), which uses CI to leave complex Pull Request comments via a GitHub bot account known as the <a href="https://github.com/friendly-committer" target="_blank">Friendly Committer</a>. If you'd like to see how this works, feel free to check out its <a href="https://github.com/wcarhart/Soliloquy/blob/master/scripts/validate_content.py" target="_blank">code here</a>.</p>
+		<p class="lead">I did all of the above in my latest personal project, <a href="{% url 'project_detail' 'Soliloquy' %}">Soliloquy</a> (<a href="https://www.soliloquy.dev" target="_blank">www.soliloquy.dev</a>), which uses CI to leave complex Pull Request comments via a GitHub bot account known as the <a href="https://github.com/friendly-committer" target="_blank">Friendly Committer</a>. If you'd like to see how this works, feel free to check out its <a href="https://github.com/wcarhart/Soliloquy/blob/master/scripts/validate_content.py" target="_blank">code here</a>. Here's what this looks like in practice:</p>
+		<div class="section" align="center">
+			<img src="{% static 'img/friendlycommitter.png' %}" alt="Screenshot of GitHub bot commenting on a Pull Request">
+		</div>
 	</div>
 	<div class="section">
 		<h2>Closing Notes</h2>
