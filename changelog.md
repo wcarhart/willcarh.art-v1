@@ -10,7 +10,7 @@ Version numbers follow the format _[major.minor.commit]_. See [`chronicler.py`](
 ## Unreleased
 There is currently no unreleased content. Track active development progress [here](https://trello.com/b/glDTHpCJ/willcarhart).
 
-## [0.1.xxx] 2019-08-20 (PR #13)
+## [0.2.0] 2019-08-20 (PR #13)
 ### Functionality ADDED
  - updated Projects title on home page so it's a link
 
