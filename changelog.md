@@ -10,6 +10,17 @@ Version numbers follow the format _[major.minor.commit]_. See [`chronicler.py`](
 ## Unreleased
 There is currently no unreleased content. Track active development progress [here](https://trello.com/b/glDTHpCJ/willcarhart).
 
+## [0.1.xxx] 2019-08-20 (PR #13)
+### Functionality ADDED
+ - updated Projects title on home page so it's a link
+
+### Content ADDED
+ - added fourth blog post
+ - added project information for Soliloquy
+
+### Deployment
+ - patched Django security flaw, updated to 2.2.4
+
 ## [0.1.177] 2019-08-02 (PR #12)
 ### Functionality UPDATED
  - updated `deploy.sh` to abort on build failures
