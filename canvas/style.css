@@ -197,6 +197,10 @@ img.example-image {
 .row.no-padding [class*=col-] {
 	padding: 0;
 }
+#nodec-proj a {
+	text-decoration: none!important;
+	color: var(--dark);
+}
 .project-item img:hover {
 	transform: scale(1.3);
 }

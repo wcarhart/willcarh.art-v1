@@ -1,5 +1,75 @@
 <div class="contents">
+	<div class="section"></div>
 	<div class="section">
-		<h1>Post 4 placeholder text</h1>
+		<div class="info"><b>News Flash!</b><br>The content and lessons learned from this blog post are a product of my most recent project, <a href="https://www.soliloquy.dev" target="_blank">Soliloquy</a>, which I made to promote what I call <i>software-as-a-hobby</i>. If you haven't checked it out yet, I <i>highly</i> recommend it!</div>
+	</div>
+	<div class="section"></div>
+	<div class="section">
+		<h2>Let's get chatty!</h2>
+		<p class="lead"><i>Here's an interesting use case:</i> &nbsp;Suppose you manage a large open source software project. When a new contributor opens a Pull Request, you'd like some tests to run. Pretty standard, right?</p>
+		<p class="lead">However, perhaps you'd also like to inspect the results of these tests and leave the new contributor a personalized comment with why they passed or failed. How would we automate this? Well, first we'd have to somehow automate the testing process, plug that into our repository via <a href="https://www.redhat.com/en/topics/devops/what-is-ci-cd" target="_blank">CI/CD</a>, and then pipe the results of our testing to some automated process that could then comment on the Pull Request.</p>
+		<p class="lead">As it turns out, this is very possible! There are many ways to accomplish it; let's discuss one possibility. For our testing, we'll just need <a href="https://www.python.org" target="_blank">Python</a>. For our CI/CD, we'll use <a href="https://travis-ci.org" target="_blank">Travis CI</a>. Finally, for our automated commenting process, we'll make a simple bot using the <a href="https://developer.github.com/v3/" target="_blank">GitHub API</a>. I promise it sounds more complex than it actually is! 😊</p>
+		<p class="lead">Let's dive in!</p>
+	</div>
+	<div class="section">
+		<h2>Utilizing the GitHub API</h2>
+		<p class="lead">Let's start with the <a href="https://developer.github.com/v3/" target="_blank">GitHub API</a>. The GitHub API allows us to automate essentially any functionality of GitHub via HTTP requests. For example, you can make a new remote repository like so (in Bash):</p>
+		<pre class="code">curl -X POST -u $USER https://api.github.com/user/repos -d "{ \<br>    \"name\": \"$REPONAME\", \<br>    \"private\": false, \<br>    \"has_issues\": true, \<br>    \"has_downloads\": true, \<br>    \"has_wiki\": false \<br>}"</pre>
+		<p class="lead">Pretty cool, right? <a href="https://github.com/wcarhart/Konphig/blob/master/.bash_functions/Linux/rcreate.sh" target="_blank">Here is a Bash function</a> I wrote to create a GitHub remote on the fly, so you don't have to navigate to <a href="https://github.com" target="_blank">github.com</a> when you make a new local repository.</p>
+		<p class="lead">Now, let's consider how we want to use the GitHub API. Rather than dive into the documentation, let's first consider what we want to do <i>as a human</i>. When a new contributor opens a Pull Request, we'd like to eventually leave a comment on that Pull Request about its content. So, we need to automate, via the GitHub API, the ability to leave comments on Pull Requests.</p>
+		<p class="lead">Let's take a look at the <a href="https://developer.github.com/v3/" target="_blank">GitHub API Documentation</a>, as this will tell us how to utilize the API for our needs. Intuitively, you might look for the solution in the <a href="https://developer.github.com/v3/pulls/" target="_blank">Pull Request</a> section of the documentation. This is a little bit misleading, because while we are leaving a comment on a Pull Request in reality, the GitHub API classifies Pull Request comments <a href="https://stackoverflow.com/a/16744314/6246128" target="_blank">as the same as Issue comments</a>.</p>
+		<p class="lead">Knowing this, let's take a look at the <a href="https://developer.github.com/v3/issues/" target="_blank">Issue section</a> of the documentation. We can see that we can comment on an open Issue or Pull Request via its index number, like so (in Bash):</p>
+		<pre class="code">curl -X POST -u $USER https://api.github.com/repos/$USER/$REPONAME/issues/$PRNUMBER/comments -d "{ \<br>    \"body\": \"Hello, this is a new comment!\" \<br>}"</pre>
+		<p class="lead">Bash is kinda hard to read, what would this look like in Python?</p>
+		<div class="section">
+			<div class="info"><b>Heads Up!</b><br>From here on out, you'll need to use a <a href="https://github.blog/2013-05-16-personal-api-tokens/" target="_blank"><i>personal access token</i></a> to use the Github API. Use <a href="https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line" target="_blank">this helpful tutorial</a> to generate your own token (all you need is a GitHub account). For our purposes, we'll need to select the <code>repo:status</code>, <code>repo_deployment</code>, and <code>public_repo</code> scopes found under the <code>repo</code> category.<br><br><strong>A good rule is to not grant your application more privileges than necessary!</strong> Often a safe way of storing secrets, like API keys, is to <a href="https://askubuntu.com/a/58826" target="_blank">set them as environment variables</a>.</div>
+		</div>
+		<p class="lead">Here's what the above POST request would look like in Python, via the <a href="https://realpython.com/python-requests/" target="_blank"><code>requests</code> library</a>:</p>
+		<pre class="code">import os<br>import requests<br><br>GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')<br>headers = { 'Authorization': f'token {GITHUB_TOKEN}' }<br>content = '{"body":"Hello, this is a new comment!"}'<br>response = requests.post(<br>    f'https://api.github.com/repos/{user}/{repo}/issues/{pr_number}/comments',<br>    headers=headers,<br>    data=content.encode('utf-8')<br>)</pre>
+		<p class="lead">Automation is under way! <i>beep boop</i> &nbsp;🤖</p>
+	</div>
+	<div class="section">
+		<h2>Integrating with Travis CI</h2>
+		<p class="lead">Now that we can leave automated Pull Request comments, let's move onto the next task: <i>How do we get our Python code from above to run every time there's a new Pull Request?</i></p>
+		<p class="lead"><a href="https://www.redhat.com/en/topics/devops/what-is-ci-cd" target="_blank">Continuous Integration and Deployment</a>, or CI/CD, are tools that allow us to automatically run code and tests, as well as deploy software, on a regular basis, such as when code is committed or a new Pull Request is opened. There are many great CI/CD tools. We will be using <a href="https://travis-ci.org" target="_blank">Travis CI</a> because it's free and "fairly" easy to set up.</p>
+		<div class="section">
+			<div class="info"><b>Heads Up!</b><br>I'm not going to go into depth on setting up Travis CI, so please refer to <a href="https://docs.travis-ci.com/user/tutorial/#to-get-started-with-travis-ci" target="_blank">this helpful tutorial</a> if you haven't done that before.</div>
+		</div>
+		<p class="lead">Suppose, for now, we have a Python script for leaving automated comments on Pull Requests in a script called <code>comment.py</code>. Let's use the following <code>.travis.yml</code> file so our script gets run every time a Pull Request is opened.</p>
+		<pre class="code">language: python<br>python:<br>  - 3.7<br>install:<br>  - pip install -r requirements.txt<br>script:<br>  - if [[ $TRAVIS_EVENT_TYPE == "pull_request" && $TRAVIS_PULL_REQUEST_BRANCH != "master" ]] ; then python comment.py ; fi</pre>
+		<p class="lead">Breaking this down, the important part is the <code>script</code> section, which uses a Bash statement to check the Pull Request branch. This statement says that if the current commit is via an opened Pull Request, we should run our automated commenting Python script.</p>
+	</div>
+	<div class="section">
+		<h2>Using Python to glue everything together</h2>
+		<p class="lead">We're almost there! <i>How do we tie it all together?</i></p>
+		<p class="lead">Now, you'll have to decide how <i>your</i> tests will actually work, and <i>what</i> you're testing for. For example, you could test for the existence of a specific file, like so:</p>
+		<pre class="code">import os<br>def test_file_existence():<br>    return os.path.isfile('myfile.txt')</pre>
+		<p class="lead">You could also use a testing framework, like the builtin <a href="https://docs.python.org/3/library/unittest.html" target="_blank">unittest</a> Python module. There are endless possibilities!</p>
+		<p class="lead">For now, I'll leave the content of the tests up to you, and make a generic script instead. Let's write some Python code that will run some tests and leave a GitHub comment based on the tests' results. The script below will rely on some <a href="https://docs.travis-ci.com/user/environment-variables/#default-environment-variables" target="_blank">Travis CI environment variables</a>, so that the script can be automated when a Pull Request is opened.</p>
+		<pre class="code">import os<br>import requests<br><br>def test_something():<br>    """Run some automated tests"""<br>    test_passed = True<br>    # content of your test goes here, update 'test_passed' accordingly<br><br>    if test_passed:<br>        return 0, "The test passed!"<br>    else:<br>        return 1, "Uh oh, the test failed!"<br><br>def add_github_comment(result, message):<br>    """<br>    Add a comment to a Pull Request in GitHub<br>        :result: (int) exit code of tests, 0 is pass, 1 is fail<br>        :message: (str) the content of the Pull Request comment<br>    """<br>    travis_pull_request = os.environ.get('TRAVIS_PULL_REQUEST')<br>    user = "YOUR GITHUB USERNAME"<br>    repo = "YOUR GITHUB REPOSITORY NAME"<br><br>    GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')<br>    headers = { 'Authorization': f'token {GITHUB_TOKEN}' }<br>    content = f'{{ "{{" }}"body":"{message}"{% verbatim %}}}{% endverbatim %}'<br>    response = requests.post(<br>        f'https://api.github.com/repos/{user}/{repo}/issues/{travis_pull_request}/comments',<br>        headers=headers,<br>        data=content.encode('utf-8')<br>    )<br><br>def main():<br>    result, message = test_something()<br>    add_github_comment(result, message)<br><br>if __name__ == '__main__':<br>    main()</pre>
+		<p class="lead">There ya go! If you have both <code>.travis.yml</code> and the above code saved as <code>comment.py</code> in your repository, you'll get automated comments on Pull Requests!</p>
+		<div class="section">
+			<div class="info"><b>Heads Up!</b><br>In order for the above code to work, you'll have to add <code>GITHUB_TOKEN</code> as a secure environment variable to your Travis environment. There are a few ways to do this, as outlined in <a href="https://docs.travis-ci.com/user/environment-variables/#defining-variables-in-repository-settings" target="_blank">Travis' documentation</a>.</div>
+		</div>
+	</div>
+	<div class="section">
+		<h2>Getting extra creative</h2>
+		<p class="lead">The above code a great starting point! What else could we accomplish with this?</p>
+		<ul>
+			<li>We could build more complex Pull Request comments by using <a href="https://guides.github.com/features/mastering-markdown/" target="_blank">GitHub's markdown language</a> to leave stylized content.</li>
+			<li>We could create a <a href="https://help.github.com/en/articles/types-of-github-accounts" target="_blank">separate GitHub account</a> for our commenting bot.</li>
+			<li>We could <a href="https://docs.travis-ci.com/user/deployment" target="_blank">deploy our application</a>, if our tests pass.</li>
+		</ul>
+		<p class="lead">I did all of the above in my latest personal project, <a href="{% url 'project_detail' 'Soliloquy' %}">Soliloquy</a> (<a href="https://www.soliloquy.dev" target="_blank">www.soliloquy.dev</a>), which uses CI to leave complex Pull Request comments via a GitHub bot account known as the <a href="https://github.com/friendly-committer" target="_blank">Friendly Committer</a>. If you'd like to see how this works, feel free to check out its <a href="https://github.com/wcarhart/Soliloquy/blob/master/scripts/validate_content.py" target="_blank">code here</a>.</p>
+	</div>
+	<div class="section">
+		<h2>Closing Notes</h2>
+		<p class="lead">And there you have it! This blog post barely scratches the surface of what automation is possible via Travis CI and the GitHub API. What's even more exciting is the <a href="https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/" target="_blank">introduction of CI/CD in GitHub Actions</a>, which was announced in August 2019. Who knows, maybe this tutorial will be deprecated within the near future due to GitHub Actions!</p>
+		<div class="section">
+			<div class="info"><b>Hey there!</b><br>If you've made a cool software project using some of the lessons from this blog post, I'd love for you to submit it to <a href="https://www.soliloquy.dev" target="_blank">Soliloquy</a>!</div>
+		</div>
+	</div>
+	<div class="section">
+		<p class="lead">🦉</p>
 	</div>
 </div>
