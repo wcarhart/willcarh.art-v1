@@ -4,6 +4,8 @@
 {% block page_content %}
 <meta property="og:title" content="{{ project.title }}" />
 <meta property="og:image" content="{% static project.cover %}" />
+<meta property="og:description" content="{{ project.blurb }}">
+<meta name="twitter:card" value="{{ project.blurb }}">
 <div class="project-detail narrow">
 	<!-- heading -->
 	<div class="os-animation" data-animation="fadeInUp">
