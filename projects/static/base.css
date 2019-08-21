@@ -92,6 +92,14 @@ body {
 }
 /*-- end navigation --*/
 
+/*-- radio button group --*/
+.center-me {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+/*-- end radio button group --*/
+
 /*-- project container, index --*/
 .projects-container h1 {
 	padding: 2rem 0;

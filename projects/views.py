@@ -5,6 +5,7 @@ import json
 
 def project_index(request):
 	projects = Project.objects.order_by('importance')
+	print(projects)
 	context = {
 		'projects': projects,
 	}

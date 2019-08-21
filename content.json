@@ -11,7 +11,8 @@
 			"demo": "",
 			"color": "#2ECC71",
 			"democontent": "demo/soliloquy.html",
-			"importance": 1
+			"importance": 1,
+			"tags": "tag_web"
 		}
 	},
 	{
@@ -26,7 +27,8 @@
 			"demo": "",
 			"color": "#9B59B6",
 			"democontent": "demo/cheers.html",
-			"importance": 2
+			"importance": 2,
+			"tags": "tag_mobile"
 		}
 	},
 	{
@@ -41,7 +43,8 @@
 			"demo": "",
 			"color": "#E74C3C",
 			"democontent": "demo/willcarhart.html",
-			"importance": 3
+			"importance": 3,
+			"tags": "tag_web"
 		}
 	},
 	{
@@ -56,7 +59,8 @@
 			"demo": "",
 			"color": "#E67E22",
 			"democontent": "demo/lurker.html",
-			"importance": 4
+			"importance": 4,
+			"tags": "tag_cli"
 		}
 	},
 	{
@@ -71,7 +75,8 @@
 			"demo": "",
 			"color": "#F1C40F",
 			"democontent": "demo/aerogram.html",
-			"importance": 5
+			"importance": 5,
+			"tags": "tag_cli"
 		}
 	},
 	{
@@ -86,7 +91,8 @@
 			"demo": "",
 			"color": "#3498DB",
 			"democontent": "demo/locksmith.html",
-			"importance": 6
+			"importance": 6,
+			"tags": "tag_other"
 		}
 	},
 	{
@@ -101,7 +107,8 @@
 			"demo": "",
 			"color": "#1ABC9C",
 			"democontent": "demo/beaver.html",
-			"importance": 7
+			"importance": 7,
+			"tags": "tag_cli"
 		}
 	},
 	{
@@ -116,7 +123,8 @@
 			"demo": "",
 			"color": "#34495E",
 			"democontent": "demo/smoosh.html",
-			"importance": 8
+			"importance": 8,
+			"tags": "tag_cli"
 		}
 	},
 	{
@@ -131,7 +139,8 @@
 			"demo": "",
 			"color": "#2ECC71",
 			"democontent": "demo/chordpanion.html",
-			"importance": 9
+			"importance": 9,
+			"tags": "tag_mobile"
 		}
 	},
 	{
@@ -146,7 +155,8 @@
 			"demo": "",
 			"color": "#F1C40F",
 			"democontent": "demo/othello.html",
-			"importance": 10
+			"importance": 10,
+			"tags": "tag_cli"
 		}
 	},
 	{
@@ -161,7 +171,8 @@
 			"demo": "",
 			"color": "#E67E22",
 			"democontent": "demo/sudoku.html",
-			"importance": 11
+			"importance": 11,
+			"tags": "tag_cli"
 		}
 	},
 	{
@@ -176,7 +187,8 @@
 			"demo": "",
 			"color": "#34495E",
 			"democontent": "demo/konphig.html",
-			"importance": 12
+			"importance": 12,
+			"tags": "tag_other"
 		}
 	},
 	{
@@ -191,7 +203,8 @@
 			"demo": "",
 			"color": "#9B59B6",
 			"democontent": "demo/cheqit.html",
-			"importance": 13
+			"importance": 13,
+			"tags": "tag_cli"
 		}
 	},
 	{
@@ -206,7 +219,8 @@
 			"demo": "",
 			"color": "#E74C3C",
 			"democontent": "demo/despicable.html",
-			"importance": 14
+			"importance": 14,
+			"tags": "tag_other"
 		}
 	},
 	{
@@ -221,7 +235,8 @@
 			"demo": "",
 			"color": "#1ABC9C",
 			"democontent": "demo/nasa_apod.html",
-			"importance": 15
+			"importance": 15,
+			"tags": "tag_mobile"
 		}
 	},
 	{
