@@ -109,8 +109,7 @@ body {
 	border-radius: 0;
 }
 .project-item a:active,
-.project-item a:hover,
-.project-item a:focus {
+.project-item a:hover {
 	border-color: var(--maindark)!important;
 	background-color: var(--maindark)!important;
 }
@@ -138,7 +137,6 @@ h1.heading {
 	border-color: var(--main);
 }
 .btn-primary:hover,
-.btn-primary:focus,
 .btn-primary:active {
 	border-color: var(--maindark)!important;
 	background-color: var(--maindark)!important;
@@ -202,8 +200,7 @@ a {
 	color: var(--main);
 }
 a:hover,
-a:active,
-a:focus {
+a:active {
 	text-decoration: none;
 	color: var(--maindark);
 }

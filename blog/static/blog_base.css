@@ -135,8 +135,7 @@ body {
 	margin-bottom: 0.5rem;
 }
 .blog-item a:active,
-.blog-item a:hover,
-.blog-item a:focus {
+.blog-item a:hover {
 	border-color: var(--blogdark)!important;
 	background-color: var(--blogdark)!important;
 }
@@ -219,8 +218,7 @@ a {
 	color: var(--main);
 }
 a:hover,
-a:active,
-a:focus {
+a:active {
 	text-decoration: none;
 	color: var(--maindark);
 }
@@ -235,8 +233,7 @@ a:focus {
 	color: var(--dark);
 }
 .credits a:hover,
-.credits a:active,
-.credits a:focus {
+.credits a:active {
 	color: var(--dark);
 	text-decoration: none;
 }
