@@ -11,8 +11,9 @@ def project_index(request):
 	return render(request, 'project_index.html', context)
 
 def project_detail(request, title):
+	project_title = title.replace('--', '%20').replace('-', ' ').replace('%20', ' ')
 	try:
-		project = Project.objects.get(title=title)
+		project = Project.objects.get(title__iexact=title)
 	except Project.DoesNotExist:
 		raise Http404
 
