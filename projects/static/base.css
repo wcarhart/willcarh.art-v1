@@ -23,6 +23,10 @@
 	--danger: #F3DDDE;
 }
 
+html {
+	height:100%;
+}
+
 body {
 	overflow-x: hidden;
 	font-family: 'Lato', sans-serif;
