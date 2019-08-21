@@ -37,510 +37,527 @@
 </head>
 
 <body data-spy="scroll" data-target="#navbarResponsive">
+	<script>
+		document.onreadystatechange = function () {
+		  var state = document.readyState
+		  if (state == 'interactive') {
+		       document.getElementById('maincontent').style.visibility="hidden";
+		  } else if (state == 'complete') {
+		      setTimeout(function(){
+		         document.getElementById('interactive');
+		         document.getElementById('loadingicon').style.visibility="hidden";
+		         document.getElementById('maincontent').style.visibility="visible";
+		      },1000);
+		  }
+		}
+	</script>
+	<div id="loadingicon"></div>
+	<div id="maincontent">
 
-	<!-- home -->
-	<div id="home">
-		<!-- navigation -->
-		<nav class="navbar navbar-expand-lg fixed-top">
-			<div class="container-fluid">
-				<a class="navbar-brand" href="#home">Will Carhart</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-					<span class="custom-toggler-icon"><i class="fas fa-bars"></i></span>
-				</button>
+		<!-- home -->
+		<div id="home">
+			<!-- navigation -->
+			<nav class="navbar navbar-expand-lg fixed-top">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="#home">Will Carhart</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+						<span class="custom-toggler-icon"><i class="fas fa-bars"></i></span>
+					</button>
 
-				<div class="collapse navbar-collapse" id="navbarResponsive">
-					<ul class="navbar-nav ml-auto">
-						<li class="nav-item">
-							<a class="nav-link" href="#home">Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#about">About</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#skills">Skills</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#projects">Projects</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#experience">Experience</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#passions">Passions</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#contact">Contact</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" id="blog-nav-item" href="{% url 'blog_index' %}">Blog</a>
-						</li>
-					</ul>
+					<div class="collapse navbar-collapse" id="navbarResponsive">
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item">
+								<a class="nav-link" href="#home">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#about">About</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#skills">Skills</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#projects">Projects</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#experience">Experience</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#passions">Passions</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#contact">Contact</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" id="blog-nav-item" href="{% url 'blog_index' %}">Blog</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<!-- end navigation -->
+
+			<!-- landing page image -->
+			<div class="landing">
+				<div class="home-wrap">
+					<div class="home-inner">
+					</div>
 				</div>
 			</div>
-		</nav>
-		<!-- end navigation -->
+			<!-- end landing page image -->
 
-		<!-- landing page image -->
-		<div class="landing">
-			<div class="home-wrap">
-				<div class="home-inner">
+			<noscript>
+				<h1>Sorry! You'll need to enable JavaScript for willcarh.art to run properly!</h1>
+				<h3>Don't know how to do that? Follow this tutorial:</h3>
+				<a href="https://www.enable-javascript.com/" target="_blank">How to enable Javascript</a>
+			</noscript>
+
+			<!-- landing page caption -->
+			<div class="caption center-block text-center">
+				<div class="os-animation" data-animation="fadeInUp" data-delay=".6s">
+					<h1>hi there</h1>
+				</div>
+				<div class="os-animation" data-animation="fadeInUp" data-delay="1.2s">
+					<h3>my name's Will</h3>
+				</div>
+				<div class="os-animation" data-animation="fadeInUp" data-delay="1.8s">
+					<a class="btn btn-outline-light btn-lg" href=#about>Explore</a>
 				</div>
 			</div>
+			<!-- end landing page caption -->
+
+			<!-- arrow -->
+			<a class="down-arrow" href="#about">
+				<div class="arrow bounce d-none d-md-block">
+					<i class="fas fa-angle-down" aria-hidden="true"></i>
+				</div>
+			</a>
+			<!-- end arrow -->
 		</div>
-		<!-- end landing page image -->
+		<!-- end home -->
 
-		<noscript>
-			<h1>Sorry! You'll need to enable JavaScript for willcarh.art to run properly!</h1>
-			<h3>Don't know how to do that? Follow this tutorial:</h3>
-			<a href="https://www.enable-javascript.com/" target="_blank">How to enable Javascript</a>
-		</noscript>
-
-		<!-- landing page caption -->
-		<div class="caption center-block text-center">
-			<div class="os-animation" data-animation="fadeInUp" data-delay=".6s">
-				<h1>hi there</h1>
-			</div>
-			<div class="os-animation" data-animation="fadeInUp" data-delay="1.2s">
-				<h3>my name's Will</h3>
-			</div>
-			<div class="os-animation" data-animation="fadeInUp" data-delay="1.8s">
-				<a class="btn btn-outline-light btn-lg" href=#about>Explore</a>
-			</div>
-		</div>
-		<!-- end landing page caption -->
-
-		<!-- arrow -->
-		<a class="down-arrow" href="#about">
-			<div class="arrow bounce d-none d-md-block">
-				<i class="fas fa-angle-down" aria-hidden="true"></i>
-			</div>
-		</a>
-		<!-- end arrow -->
-	</div>
-	<!-- end home -->
-
-	<!-- about -->
-	<div id="about" class="offset">
-		<div class="os-animation" data-animation="fadeInUp">
-			<div class="narrow text-center">
-				<div class="col-12">
-					<h1>About</h1>
-					<p class="lead about">Hi there! My name is Will Carhart, and I'm a software engineer living in San Diego. I love using software to find creative solutions to complex problems. I graduated <i>magna cum laude</i> with a B.S. in Computer Science from the University of San Diego in January 2019, and I currently work as a Software Engineer at Illumina, a genetics company based in San Diego.</p>
-					<div class="heading-underline"></div>
-					<p class="lead">In my free time, I enjoy exploring San Diego, playing my ukulele and piano, cooking, and coding side projects. Please feel free to drop me a note, check out my blog, or just explore!</p>
-					<a class="btn btn-secondary btn-sm" href="#contact">Say Hello</a>
-					<a class="btn btn-color btn-sm" href="#projects">See Projects</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end about -->
-
-	<!-- skills -->
-	<div id="skills" class="offset">
-		<!-- jumbotron -->
-		<div class="jumbotron">
-			<div class="narrow">
-				<div class="os-animation" data-animation="fadeInUp">
-					<h1 class="heading">Skills & Languages</h1>
-					<div class="heading-underline"></div>
-
-				</div>
-
-				<div class="row">
-					<div class="col-sm-6 col-md-4">
-						<div class="os-animation" data-animation="fadeInLeft">
-							<div class="skill">
-								<span class="fa-layers fa-4x">
-									<i class="fa fa-circle"></i>
-									<i class="fas fa-server fa-inverse" data-fa-transform="shrink-8"></i>
-								</span>
-								<h3>Back End</h3>
-								<p>Python, Django, Docker, Heroku, DigitalOcean, Linux</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-sm-6 col-md-4">
-						<div class="os-animation" data-animation="fadeInUp">
-							<div class="skill">
-								<span class="fa-layers fa-4x">
-									<i class="fa fa-circle"></i>
-									<i class="fas fa-desktop fa-inverse" data-fa-transform="shrink-8 left-1 down-0.4"></i>
-								</span>
-								<h3>Front End</h3>
-								<p>HTML5, CSS3, Bootstrap 4, Javascript</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-sm-6 col-md-4">
-						<div class="os-animation" data-animation="fadeInRight">
-							<div class="skill">
-								<span class="fa-layers fa-4x">
-									<i class="fa fa-circle"></i>
-									<i class="fas fa-mobile-alt fa-inverse" data-fa-transform="shrink-6 right-0.25"></i>
-								</span>
-								<h3>Mobile</h3>
-								<p>Swift, iOS</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-sm-6 col-md-4">
-						<div class="os-animation" data-animation="fadeInLeft">
-							<div class="skill">
-								<span class="fa-layers fa-4x">
-									<i class="fa fa-circle"></i>
-									<i class="fas fa-database fa-inverse" data-fa-transform="grow-4 right-0.5"></i>
-								</span>
-								<h3>Databases</h3>
-								<p>PostgreSQL, Sqlite, Firebase</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-sm-6 col-md-4">
-						<div class="os-animation" data-animation="fadeInUp">
-							<div class="skill">
-								<span class="fa-layers fa-4x">
-									<i class="fa fa-circle"></i>
-									<i class="fas fa-terminal fa-inverse" data-fa-transform="shrink-10 left-2 down-0.3"></i>
-								</span>
-								<h3>CLIs & APIs</h3>
-								<p>Python, Django REST Framework, Bash, Java</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-sm-6 col-md-4">
-						<div class="os-animation" data-animation="fadeInRight">
-							<div class="skill">
-								<span class="fa-layers fa-4x">
-									<i class="fa fa-circle"></i>
-									<i class="fas fa-hammer fa-inverse" data-fa-transform="shrink-8"></i>
-								</span>
-								<h3>Tools</h3>
-								<p>Bash, Heroku, DigitalOcean, Git, GitHub, Sublime, Agile, Travis CI, AWS, Jira, Linux</p>
-							</div>
-						</div>
+		<!-- about -->
+		<div id="about" class="offset">
+			<div class="os-animation" data-animation="fadeInUp">
+				<div class="narrow text-center">
+					<div class="col-12">
+						<h1>About</h1>
+						<p class="lead about">Hi there! My name is Will Carhart, and I'm a software engineer living in San Diego. I love using software to find creative solutions to complex problems. I graduated <i>magna cum laude</i> with a B.S. in Computer Science from the University of San Diego in January 2019, and I currently work as a Software Engineer at Illumina, a genetics company based in San Diego.</p>
+						<div class="heading-underline"></div>
+						<p class="lead">In my free time, I enjoy exploring San Diego, playing my ukulele and piano, cooking, and coding side projects. Please feel free to drop me a note, check out my blog, or just explore!</p>
+						<a class="btn btn-secondary btn-sm" href="#contact">Say Hello</a>
+						<a class="btn btn-color btn-sm" href="#projects">See Projects</a>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- end jumbotron -->
-	</div>
-	<!-- end skills -->
+		<!-- end about -->
 
-	<!-- projects -->
-	<div id="projects" class="offset">
-		<div class="row padding">
-			<div class="col-12 os-animation" data-animation="fadeInUp">
-				<h1 id="nodec-proj" class="heading"><a href="{% url 'project_index' %}">Projects</a></h1>
-				<div class="heading-underline"></div>
-			</div>
-		</div>
-
-		<!-- grid -->
-		<div class="container-fluid">
-			<div class="row no-padding">
-
-				<!--  grid content -->
-				<div class="col-sm-6 col-md-3">
-					<div class="os-animation" data-animation="bounceInLeft" data-delay=".2s">
-						<div id="beaver-proj" class="project-item">
-							<a href="{% url 'project_detail' 'beaver' %}">
-								<img class="example-image" src="{% static 'img/beaver.png' %}" alt="beaver icon">
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="os-animation" data-animation="bounceInLeft">
-						<div id="locksmith-proj" class="project-item">
-							<a href="{% url 'project_detail' 'locksmith' %}">
-								<img class="example-image" src="{% static 'img/lock.png' %}" alt="locksmith icon">
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="os-animation" data-animation="bounceInRight">
-						<div id="othello-proj" class="project-item">
-							<a href="{% url 'project_detail' 'othello' %}">
-								<img class="example-image" src="{% static 'img/checkers.png' %}" alt="othello icon">
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="os-animation" data-animation="bounceInRight" data-delay=".2s">
-						<div id="cheers-proj" class="project-item">
-							<a href="{% url 'project_detail' 'Cheers' %}">
-								<img class="example-image" src="{% static 'img/beer.png' %}" alt="Cheers icon">
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="os-animation" data-animation="bounceInLeft" data-delay=".2s">
-						<div id="willcarhart-proj" class="project-item">
-							<a href="{% url 'project_detail' 'willcarh.art' %}">
-								<img class="example-image" src="{% static 'img/internet.png' %}" alt="willcarh.art icon">
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="os-animation" data-animation="bounceInLeft">
-						<div id="chordpanion-proj" class="project-item">
-							<a href="{% url 'project_detail' 'Chordpanion' %}">
-								<img class="example-image" src="{% static 'img/musical-notes.png' %}" alt="Chordpanion icon">
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="os-animation" data-animation="bounceInRight">
-						<div id="sudoku-proj" class="project-item">
-							<a href="{% url 'project_detail' 'sudoku' %}">
-								<img class="example-image" src="{% static 'img/square-with-numbers.png' %}" alt="sudoku icon">
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="os-animation" data-animation="bounceInRight" data-delay=".2s">
-						<div id="smoosh-proj" class="project-item">
-							<a href="{% url 'project_detail' 'smoosh' %}">
-								<img class="example-image" src="{% static 'img/news.png' %}" alt="smoosh icon">
-							</a>
-						</div>
-					</div>
-				</div>
-				<!-- end grid content -->
-			</div>
-		</div>
-		<!-- end grid -->
-
-		<!-- text below lightbox -->
-		<div class="os-animation" data-animation="fadeInUp">
-			<div class="narrow text-center">
-				<div class="col-12">
-					<p class="lead">Not only is coding part of my career, <i>it's my passion.</i> I love starting new side projects and spend a lot of my free time coding. My GitHub always has my most recent code samples, as well as more projects that aren't highlighted here.</p>
-					<a class="btn btn-secondary btn-sm" href="{% url 'project_index' %}">See All Projects</a>
-					<a class="btn btn-color btn-sm" href="https://github.com/wcarhart" target="_blank">
-						View My Github <i class="fab fa-github"></i>
-					</a>
-				</div>
-			</div>
-		</div>
-		<!-- end of text below lightbox -->
-
-	</div>
-	<!-- end projects -->
-
-	<!-- experience -->
-	<div id="experience" class="offset">
-		<!-- jumbotron -->
-		<div class="jumbotron">
-			<div class="narrow">
-
-				<div class="os-animation" data-animation="fadeInUp">
-					<h1 class="heading">Experience</h1>
-					<div class="heading-underline"></div>
-				</div>
-
-				<!-- columns -->
-				<div class="row justify-content-md-center">
-					<div class="col-md-6 col-lg-4">
-						<div class="os-animation" data-animation="fadeInLeft">
-							<div class="experience-column text-center">
-								<img src="{% static 'img/illumina.png' %}" alt="Illumina logo">
-								<h3>Illumina</h3>
-								<p class="lead">Software Engineer, Test Automation</p>
-								<div class="experience-details">
-									<h4><span class="item">Team</span>: Oncology, Clinical Genomics Software</h4>
-									<h4><span class="item">My role</span>: In my current role at Illumina, I write scripts to automate testing of new software components, mostly in Python. In addition, I've written a suite of custom compression algorithms for a few of our genomic data types, compressing them by over 90% on average.</h4>
-									<h4><span class="item">Technologies used</span>: Python, Bash, Docker, Jenkins</h4>
-								</div>
-								<a class="btn btn-color btn-sm" href="https://www.illumina.com/" target="_blank">Visit Website</a>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-6 col-lg-4">
-						<div class="os-animation" data-animation="fadeInUp">
-							<div class="experience-column text-center">
-								<img src="{% static 'img/starlit-software.png' %}" alt="Starlit Software logo">
-								<h3>Starlit Software</h3>
-								<p class="lead">Web Development Intern</p>
-								<div class="experience-details">
-									<h4><span class="item">Team</span>: Web Development</h4>
-									<h4><span class="item">My role</span>: In my previous internship at Starlit, I built HTML5 webpages to supplement existing content for our consulting partners, as well as adding ReactJS code where needed. In addition, I troubleshot our backend Elixir code, when necessary.</h4>
-									<h4><span class="item">Technologies used</span>: HTML, CSS, Javascript, ReactJS, Elixir, Docker</h4>
-								</div>
-								<a class="btn btn-color btn-sm" href="https://www.starlitsoftware.com/" target="_blank">Visit Website</a>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-6 col-lg-4">
-						<div class="os-animation" data-animation="fadeInRight">
-							<div class="experience-column text-center">
-								<img src="{% static 'img/qolsys.png' %}" alt="Qolsys logo">
-								<h3>Qolsys</h3>
-								<p class="lead">Software Engineering Intern</p>
-								<div class="experience-details">
-									<h4><span class="item">Team</span>: Home Security</h4>
-									<h4><span class="item">My role</span>: In my previous internship at Qolsys, I architected a suite of Bash scripts to emulate poor networking conditions using <code>netem</code>. This automation setup was used to diagnose networking issues between Qolsys's proprietary home security panels and various routers.</h4>
-									<h4><span class="item">Technologies used</span>: Bash</h4>
-								</div>
-								<a class="btn btn-color btn-sm" href="https://qolsys.com/" target="_blank">Visit Website</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- end columns -->
-			</div>
-		</div>
-		<!-- end jumbotron -->
-	</div>
-	<!-- end experience -->
-
-	<!-- passions -->
-	<div id="passions" class="offset">
-		<!-- dark background image -->
-		<div class="fixed-background">
-			<div class="row dark">
-				<div class="col-12 os-animation" data-animation="fadeInUp">
-					<h1 class="heading">Passions</h1 >
-					<div class="heading-underline"></div>
-				</div>
-
-				<div class="col-md-4">
-					<div class="os-animation" data-animation="fadeInLeft">
-						<h3>Music</h3>
-						<div class="skill">
-							<span class="fa-layers fa-3x">
-								<i class="fas fa-music"></i>
-							</span>
-						</div>
-						<p class="lead">Since starting classical piano in second grade, music has been a big part of my life. Now, I actively play both the piano and ukulele. Some of my favorite artists to play are Jack Johnson, The Beatles, and Dispatch.</p>
-					</div>
-				</div>
-
-				<div class="col-md-4">
+		<!-- skills -->
+		<div id="skills" class="offset">
+			<!-- jumbotron -->
+			<div class="jumbotron">
+				<div class="narrow">
 					<div class="os-animation" data-animation="fadeInUp">
-						<h3>Cooking</h3>
-						<div class="skill">
-							<span class="fa-layers fa-3x">
-								<i class="fas fa-utensils"></i>
-							</span>
-						</div>
-						<p class="lead">I am passionate about learning new things, and one of the ways I explore that passion is by finding new, fun recipes to explore. I love making <i>seemingly</i> difficult dishes from scratch, like sushi or hummus.</p>
-					</div>
-				</div>
+						<h1 class="heading">Skills & Languages</h1>
+						<div class="heading-underline"></div>
 
-				<div class="col-md-4">
-					<div class="os-animation" data-animation="fadeInRight">
-						<h3>Coding</h3>
-						<div class="skill">
-							<span class="fa-layers fa-3x">
-								<i class="fas fa-code"></i>
-							</span>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-6 col-md-4">
+							<div class="os-animation" data-animation="fadeInLeft">
+								<div class="skill">
+									<span class="fa-layers fa-4x">
+										<i class="fa fa-circle"></i>
+										<i class="fas fa-server fa-inverse" data-fa-transform="shrink-8"></i>
+									</span>
+									<h3>Back End</h3>
+									<p>Python, Django, Docker, Heroku, DigitalOcean, Linux</p>
+								</div>
+							</div>
 						</div>
-						<p class="lead">In addition to being the foundation of my career, coding is one of my hobbies. I love being able to take an idea from inception to reality. I think of writing software can be just as much of an art form as writing or painting.</p>
+
+						<div class="col-sm-6 col-md-4">
+							<div class="os-animation" data-animation="fadeInUp">
+								<div class="skill">
+									<span class="fa-layers fa-4x">
+										<i class="fa fa-circle"></i>
+										<i class="fas fa-desktop fa-inverse" data-fa-transform="shrink-8 left-1 down-0.4"></i>
+									</span>
+									<h3>Front End</h3>
+									<p>HTML5, CSS3, Bootstrap 4, Javascript</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-6 col-md-4">
+							<div class="os-animation" data-animation="fadeInRight">
+								<div class="skill">
+									<span class="fa-layers fa-4x">
+										<i class="fa fa-circle"></i>
+										<i class="fas fa-mobile-alt fa-inverse" data-fa-transform="shrink-6 right-0.25"></i>
+									</span>
+									<h3>Mobile</h3>
+									<p>Swift, iOS</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-6 col-md-4">
+							<div class="os-animation" data-animation="fadeInLeft">
+								<div class="skill">
+									<span class="fa-layers fa-4x">
+										<i class="fa fa-circle"></i>
+										<i class="fas fa-database fa-inverse" data-fa-transform="grow-4 right-0.5"></i>
+									</span>
+									<h3>Databases</h3>
+									<p>PostgreSQL, Sqlite, Firebase</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-6 col-md-4">
+							<div class="os-animation" data-animation="fadeInUp">
+								<div class="skill">
+									<span class="fa-layers fa-4x">
+										<i class="fa fa-circle"></i>
+										<i class="fas fa-terminal fa-inverse" data-fa-transform="shrink-10 left-2 down-0.3"></i>
+									</span>
+									<h3>CLIs & APIs</h3>
+									<p>Python, Django REST Framework, Bash, Java</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-6 col-md-4">
+							<div class="os-animation" data-animation="fadeInRight">
+								<div class="skill">
+									<span class="fa-layers fa-4x">
+										<i class="fa fa-circle"></i>
+										<i class="fas fa-hammer fa-inverse" data-fa-transform="shrink-8"></i>
+									</span>
+									<h3>Tools</h3>
+									<p>Bash, Heroku, DigitalOcean, Git, GitHub, Sublime, Agile, Travis CI, AWS, Jira, Linux</p>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
+			<!-- end jumbotron -->
+		</div>
+		<!-- end skills -->
 
-			<div class="fixed-wrap">
-				<div id="fixed">
+		<!-- projects -->
+		<div id="projects" class="offset">
+			<div class="row padding">
+				<div class="col-12 os-animation" data-animation="fadeInUp">
+					<h1 id="nodec-proj" class="heading"><a href="{% url 'project_index' %}">Projects</a></h1>
+					<div class="heading-underline"></div>
 				</div>
 			</div>
+
+			<!-- grid -->
+			<div class="container-fluid">
+				<div class="row no-padding">
+
+					<!--  grid content -->
+					<div class="col-sm-6 col-md-3">
+						<div class="os-animation" data-animation="bounceInLeft" data-delay=".2s">
+							<div id="beaver-proj" class="project-item">
+								<a href="{% url 'project_detail' 'beaver' %}">
+									<img class="example-image" src="{% static 'img/beaver.png' %}" alt="beaver icon">
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-3">
+						<div class="os-animation" data-animation="bounceInLeft">
+							<div id="locksmith-proj" class="project-item">
+								<a href="{% url 'project_detail' 'locksmith' %}">
+									<img class="example-image" src="{% static 'img/lock.png' %}" alt="locksmith icon">
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-3">
+						<div class="os-animation" data-animation="bounceInRight">
+							<div id="othello-proj" class="project-item">
+								<a href="{% url 'project_detail' 'othello' %}">
+									<img class="example-image" src="{% static 'img/checkers.png' %}" alt="othello icon">
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-3">
+						<div class="os-animation" data-animation="bounceInRight" data-delay=".2s">
+							<div id="cheers-proj" class="project-item">
+								<a href="{% url 'project_detail' 'Cheers' %}">
+									<img class="example-image" src="{% static 'img/beer.png' %}" alt="Cheers icon">
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-3">
+						<div class="os-animation" data-animation="bounceInLeft" data-delay=".2s">
+							<div id="willcarhart-proj" class="project-item">
+								<a href="{% url 'project_detail' 'willcarh.art' %}">
+									<img class="example-image" src="{% static 'img/internet.png' %}" alt="willcarh.art icon">
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-3">
+						<div class="os-animation" data-animation="bounceInLeft">
+							<div id="chordpanion-proj" class="project-item">
+								<a href="{% url 'project_detail' 'Chordpanion' %}">
+									<img class="example-image" src="{% static 'img/musical-notes.png' %}" alt="Chordpanion icon">
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-3">
+						<div class="os-animation" data-animation="bounceInRight">
+							<div id="sudoku-proj" class="project-item">
+								<a href="{% url 'project_detail' 'sudoku' %}">
+									<img class="example-image" src="{% static 'img/square-with-numbers.png' %}" alt="sudoku icon">
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-3">
+						<div class="os-animation" data-animation="bounceInRight" data-delay=".2s">
+							<div id="smoosh-proj" class="project-item">
+								<a href="{% url 'project_detail' 'smoosh' %}">
+									<img class="example-image" src="{% static 'img/news.png' %}" alt="smoosh icon">
+								</a>
+							</div>
+						</div>
+					</div>
+					<!-- end grid content -->
+				</div>
+			</div>
+			<!-- end grid -->
+
+			<!-- text below lightbox -->
+			<div class="os-animation" data-animation="fadeInUp">
+				<div class="narrow text-center">
+					<div class="col-12">
+						<p class="lead">Not only is coding part of my career, <i>it's my passion.</i> I love starting new side projects and spend a lot of my free time coding. My GitHub always has my most recent code samples, as well as more projects that aren't highlighted here.</p>
+						<a class="btn btn-secondary btn-sm" href="{% url 'project_index' %}">See All Projects</a>
+						<a class="btn btn-color btn-sm" href="https://github.com/wcarhart" target="_blank">
+							View My Github <i class="fab fa-github"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- end of text below lightbox -->
 
 		</div>
-		<!-- end dark background image -->
-	</div>
-	<!-- end passions -->
+		<!-- end projects -->
 
-	<!-- contact -->
-	<div id="contact" class="offset">
-		<footer>
-			<div class="row">
-				<div class="col-md-5">
-					<h2>Will Carhart</h2>
-					<p>Made using Django with ❤️</p>
-					<strong>Contact Info</strong>
-					<p>(650) 388-8642<br>wcarhart@sandiego.edu</p>
-					<a href="https://github.com/wcarhart" target="_blank"><i class="fab fa-github" data-fa-transform="grow-8 up-4"></i></a>
-					<a href="https://stackoverflow.com/users/6246128/wcarhart" target="_blank"><i class="fab fa-stack-overflow" data-fa-transform="grow-8 up-4 right-1"></i></a>
-					<a href="https://www.linkedin.com/in/willcarhart/" target="_blank"><i class="fab fa-linkedin"></i></a>
-				</div>
+		<!-- experience -->
+		<div id="experience" class="offset">
+			<!-- jumbotron -->
+			<div class="jumbotron">
+				<div class="narrow">
 
-				<!-- contact form -->
-				<div class="col-md-7">
-					<h2>Say Hello!</h2>
-					<form id="contact-form" method="post">
-						<div class="messages">
-							<div class="controls">
-						        {% csrf_token %}
-						        <div class="form-group">
-						            {{ form.name }}
-						        </div>
-						        <div class="form-group">
-						            {{ form.email }}
-						        </div>
-						        <div class="form-group">
-						        	{{ form.message }}
-						        </div>
-						        <div id="submit-row" class="row" style="background-color: rgba(0, 0, 0, 0)">
-							        <button type="submit" class="btn btn-outline-light btn-sm" onclick="sendEmail(this);">Say hello!</button>
-							        <div id="waiting-spinner"></div>
+					<div class="os-animation" data-animation="fadeInUp">
+						<h1 class="heading">Experience</h1>
+						<div class="heading-underline"></div>
+					</div>
 
-							        {% if messages %}
-							        <div id="sent-indicator" class="row">
-							        	<p class="lead">Message sent!</p>
-							        	<i class="fas fa-check" data-fa-transform="up-11 right-8"></i>
-							        </div>
-							        {% endif %}
-							    </div>
+					<!-- columns -->
+					<div class="row justify-content-md-center">
+						<div class="col-md-6 col-lg-4">
+							<div class="os-animation" data-animation="fadeInLeft">
+								<div class="experience-column text-center">
+									<img src="{% static 'img/illumina.png' %}" alt="Illumina logo">
+									<h3>Illumina</h3>
+									<p class="lead">Software Engineer, Test Automation</p>
+									<div class="experience-details">
+										<h4><span class="item">Team</span>: Oncology, Clinical Genomics Software</h4>
+										<h4><span class="item">My role</span>: In my current role at Illumina, I write scripts to automate testing of new software components, mostly in Python. In addition, I've written a suite of custom compression algorithms for a few of our genomic data types, compressing them by over 90% on average.</h4>
+										<h4><span class="item">Technologies used</span>: Python, Bash, Docker, Jenkins</h4>
+									</div>
+									<a class="btn btn-color btn-sm" href="https://www.illumina.com/" target="_blank">Visit Website</a>
+								</div>
+							</div>
+						</div>
 
-						        <script>
-								function sendEmail(button)
-								{
-								  	var name = document.getElementById("form_name").value;
-									var email = document.getElementById("form_email").value;
-									var message = document.getElementById("form_message").value;
+						<div class="col-md-6 col-lg-4">
+							<div class="os-animation" data-animation="fadeInUp">
+								<div class="experience-column text-center">
+									<img src="{% static 'img/starlit-software.png' %}" alt="Starlit Software logo">
+									<h3>Starlit Software</h3>
+									<p class="lead">Web Development Intern</p>
+									<div class="experience-details">
+										<h4><span class="item">Team</span>: Web Development</h4>
+										<h4><span class="item">My role</span>: In my previous internship at Starlit, I built HTML5 webpages to supplement existing content for our consulting partners, as well as adding ReactJS code where needed. In addition, I troubleshot our backend Elixir code, when necessary.</h4>
+										<h4><span class="item">Technologies used</span>: HTML, CSS, Javascript, ReactJS, Elixir, Docker</h4>
+									</div>
+									<a class="btn btn-color btn-sm" href="https://www.starlitsoftware.com/" target="_blank">Visit Website</a>
+								</div>
+							</div>
+						</div>
 
-									var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-									var result = re.test(String(email).toLowerCase());
-
-									if (name != "" && result && message != "") {
-										button.disabled = true; 
-										button.innerHTML = "Sending...";
-										document.getElementById("waiting-spinner").innerHTML = "<i id=\"spinner\" class=\"fas fa-circle-notch fa-spin\" data-fa-transform=\"down-8\"></i>";
-										document.getElementById("contact-form").submit()
-									}
-								}
-								</script>
-
-						    </div>
-					    </div>
-				    </form>
-				</div>
-				<!-- end contact form -->
-
-				<hr class="socket">
-				<div class="col-md-12 text-center">
-					&copy; Will Carhart 2019.
+						<div class="col-md-6 col-lg-4">
+							<div class="os-animation" data-animation="fadeInRight">
+								<div class="experience-column text-center">
+									<img src="{% static 'img/qolsys.png' %}" alt="Qolsys logo">
+									<h3>Qolsys</h3>
+									<p class="lead">Software Engineering Intern</p>
+									<div class="experience-details">
+										<h4><span class="item">Team</span>: Home Security</h4>
+										<h4><span class="item">My role</span>: In my previous internship at Qolsys, I architected a suite of Bash scripts to emulate poor networking conditions using <code>netem</code>. This automation setup was used to diagnose networking issues between Qolsys's proprietary home security panels and various routers.</h4>
+										<h4><span class="item">Technologies used</span>: Bash</h4>
+									</div>
+									<a class="btn btn-color btn-sm" href="https://qolsys.com/" target="_blank">Visit Website</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end columns -->
 				</div>
 			</div>
-		</footer>
-	</div>
-	<!-- end contact -->
+			<!-- end jumbotron -->
+		</div>
+		<!-- end experience -->
 
+		<!-- passions -->
+		<div id="passions" class="offset">
+			<!-- dark background image -->
+			<div class="fixed-background">
+				<div class="row dark">
+					<div class="col-12 os-animation" data-animation="fadeInUp">
+						<h1 class="heading">Passions</h1 >
+						<div class="heading-underline"></div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="os-animation" data-animation="fadeInLeft">
+							<h3>Music</h3>
+							<div class="skill">
+								<span class="fa-layers fa-3x">
+									<i class="fas fa-music"></i>
+								</span>
+							</div>
+							<p class="lead">Since starting classical piano in second grade, music has been a big part of my life. Now, I actively play both the piano and ukulele. Some of my favorite artists to play are Jack Johnson, The Beatles, and Dispatch.</p>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="os-animation" data-animation="fadeInUp">
+							<h3>Cooking</h3>
+							<div class="skill">
+								<span class="fa-layers fa-3x">
+									<i class="fas fa-utensils"></i>
+								</span>
+							</div>
+							<p class="lead">I am passionate about learning new things, and one of the ways I explore that passion is by finding new, fun recipes to explore. I love making <i>seemingly</i> difficult dishes from scratch, like sushi or hummus.</p>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="os-animation" data-animation="fadeInRight">
+							<h3>Coding</h3>
+							<div class="skill">
+								<span class="fa-layers fa-3x">
+									<i class="fas fa-code"></i>
+								</span>
+							</div>
+							<p class="lead">In addition to being the foundation of my career, coding is one of my hobbies. I love being able to take an idea from inception to reality. I think of writing software can be just as much of an art form as writing or painting.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="fixed-wrap">
+					<div id="fixed">
+					</div>
+				</div>
+
+			</div>
+			<!-- end dark background image -->
+		</div>
+		<!-- end passions -->
+
+		<!-- contact -->
+		<div id="contact" class="offset">
+			<footer>
+				<div class="row">
+					<div class="col-md-5">
+						<h2>Will Carhart</h2>
+						<p>Made using Django with ❤️</p>
+						<strong>Contact Info</strong>
+						<p>(650) 388-8642<br>wcarhart@sandiego.edu</p>
+						<a href="https://github.com/wcarhart" target="_blank"><i class="fab fa-github" data-fa-transform="grow-8 up-4"></i></a>
+						<a href="https://stackoverflow.com/users/6246128/wcarhart" target="_blank"><i class="fab fa-stack-overflow" data-fa-transform="grow-8 up-4 right-1"></i></a>
+						<a href="https://www.linkedin.com/in/willcarhart/" target="_blank"><i class="fab fa-linkedin"></i></a>
+					</div>
+
+					<!-- contact form -->
+					<div class="col-md-7">
+						<h2>Say Hello!</h2>
+						<form id="contact-form" method="post">
+							<div class="messages">
+								<div class="controls">
+							        {% csrf_token %}
+							        <div class="form-group">
+							            {{ form.name }}
+							        </div>
+							        <div class="form-group">
+							            {{ form.email }}
+							        </div>
+							        <div class="form-group">
+							        	{{ form.message }}
+							        </div>
+							        <div id="submit-row" class="row" style="background-color: rgba(0, 0, 0, 0)">
+								        <button type="submit" class="btn btn-outline-light btn-sm" onclick="sendEmail(this);">Say hello!</button>
+								        <div id="waiting-spinner"></div>
+
+								        {% if messages %}
+								        <div id="sent-indicator" class="row">
+								        	<p class="lead">Message sent!</p>
+								        	<i class="fas fa-check" data-fa-transform="up-11 right-8"></i>
+								        </div>
+								        {% endif %}
+								    </div>
+
+							        <script>
+									function sendEmail(button)
+									{
+									  	var name = document.getElementById("form_name").value;
+										var email = document.getElementById("form_email").value;
+										var message = document.getElementById("form_message").value;
+
+										var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+										var result = re.test(String(email).toLowerCase());
+
+										if (name != "" && result && message != "") {
+											button.disabled = true; 
+											button.innerHTML = "Sending...";
+											document.getElementById("waiting-spinner").innerHTML = "<i id=\"spinner\" class=\"fas fa-circle-notch fa-spin\" data-fa-transform=\"down-8\"></i>";
+											document.getElementById("contact-form").submit()
+										}
+									}
+									</script>
+
+							    </div>
+						    </div>
+					    </form>
+					</div>
+					<!-- end contact form -->
+
+					<hr class="socket">
+					<div class="col-md-12 text-center">
+						&copy; Will Carhart 2019.
+					</div>
+				</div>
+			</footer>
+		</div>
+		<!-- end contact -->
+
+	</div>
 	<!-- script source files -->
 	<script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
 	<script src="{% static 'js/custom.js' %}"></script>
