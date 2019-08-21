@@ -36,6 +36,7 @@ html {
 	position: fixed;
 	z-index: 9999;
 	background: url('willcarhartloading.svg') no-repeat center center rgba(0,0,0,0.25);
+	background-color: var(--lightdark);
 }
 
 body {
