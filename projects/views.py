@@ -4,7 +4,7 @@ from projects.models import Project
 import json
 
 def project_index(request):
-	projects = Project.objects.all()
+	projects = Project.objects.order_by('importance')
 	context = {
 		'projects': projects,
 	}

@@ -10,7 +10,8 @@
 			"cover": "img/shakespeare.png",
 			"demo": "",
 			"color": "#2ECC71",
-			"democontent": "demo/soliloquy.html"
+			"democontent": "demo/soliloquy.html",
+			"importance": 1
 		}
 	},
 	{
@@ -24,7 +25,8 @@
 			"cover": "img/beer.png",
 			"demo": "",
 			"color": "#9B59B6",
-			"democontent": "demo/cheers.html"
+			"democontent": "demo/cheers.html",
+			"importance": 2
 		}
 	},
 	{
@@ -38,7 +40,8 @@
 			"cover": "img/internet.png",
 			"demo": "",
 			"color": "#E74C3C",
-			"democontent": "demo/willcarhart.html"
+			"democontent": "demo/willcarhart.html",
+			"importance": 3
 		}
 	},
 	{
@@ -52,7 +55,8 @@
 			"cover": "img/lurker.png",
 			"demo": "",
 			"color": "#E67E22",
-			"democontent": "demo/lurker.html"
+			"democontent": "demo/lurker.html",
+			"importance": 4
 		}
 	},
 	{
@@ -66,7 +70,8 @@
 			"cover": "img/aerogram.png",
 			"demo": "",
 			"color": "#F1C40F",
-			"democontent": "demo/aerogram.html"
+			"democontent": "demo/aerogram.html",
+			"importance": 5
 		}
 	},
 	{
@@ -80,7 +85,8 @@
 			"cover": "img/lock.png",
 			"demo": "",
 			"color": "#3498DB",
-			"democontent": "demo/locksmith.html"
+			"democontent": "demo/locksmith.html",
+			"importance": 6
 		}
 	},
 	{
@@ -94,7 +100,8 @@
 			"cover": "img/beaver.png",
 			"demo": "",
 			"color": "#1ABC9C",
-			"democontent": "demo/beaver.html"
+			"democontent": "demo/beaver.html",
+			"importance": 7
 		}
 	},
 	{
@@ -108,7 +115,8 @@
 			"cover": "img/news.png",
 			"demo": "",
 			"color": "#34495E",
-			"democontent": "demo/smoosh.html"
+			"democontent": "demo/smoosh.html",
+			"importance": 8
 		}
 	},
 	{
@@ -122,7 +130,8 @@
 			"cover": "img/musical-notes.png",
 			"demo": "",
 			"color": "#2ECC71",
-			"democontent": "demo/chordpanion.html"
+			"democontent": "demo/chordpanion.html",
+			"importance": 9
 		}
 	},
 	{
@@ -136,7 +145,8 @@
 			"cover": "img/checkers.png",
 			"demo": "",
 			"color": "#F1C40F",
-			"democontent": "demo/othello.html"
+			"democontent": "demo/othello.html",
+			"importance": 10
 		}
 	},
 	{
@@ -150,7 +160,8 @@
 			"cover": "img/square-with-numbers.png",
 			"demo": "",
 			"color": "#E67E22",
-			"democontent": "demo/sudoku.html"
+			"democontent": "demo/sudoku.html",
+			"importance": 11
 		}
 	},
 	{
@@ -164,7 +175,8 @@
 			"cover": "img/settings.png",
 			"demo": "",
 			"color": "#34495E",
-			"democontent": "demo/konphig.html"
+			"democontent": "demo/konphig.html",
+			"importance": 12
 		}
 	},
 	{
@@ -178,7 +190,8 @@
 			"cover": "img/checkmark.png",
 			"demo": "",
 			"color": "#9B59B6",
-			"democontent": "demo/cheqit.html"
+			"democontent": "demo/cheqit.html",
+			"importance": 13
 		}
 	},
 	{
@@ -192,7 +205,8 @@
 			"cover": "img/minion.png",
 			"demo": "",
 			"color": "#E74C3C",
-			"democontent": "demo/despicable.html"
+			"democontent": "demo/despicable.html",
+			"importance": 14
 		}
 	},
 	{
@@ -206,7 +220,8 @@
 			"cover": "img/telescope.png",
 			"demo": "",
 			"color": "#1ABC9C",
-			"democontent": "demo/nasa_apod.html"
+			"democontent": "demo/nasa_apod.html",
+			"importance": 15
 		}
 	},
 	{
