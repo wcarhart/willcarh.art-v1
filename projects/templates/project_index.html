@@ -7,7 +7,7 @@
 	<div class="os-animation" data-animation="fadeInUp">
 		<h1>Projects</h1>
 	</div>
-	<div class="os-animation" data-animation="fadeInUp">
+	<!-- <div class="os-animation" data-animation="fadeInUp">
 		<div class="center-me">
 			<div class="btn-group btn-group-toggle project-item" data-toggle="buttons">
 				<label class="btn btn-secondary active">
@@ -29,24 +29,24 @@
 		</div>
 	</div>
 	<script>
-		// $(document).on('change', 'input:radio[id^="option"]', function (event) {
-		// 	if (document.getElementById("option1").checked) {
-		// 		console.log('all')
-		// 	} else if (document.getElementById("option2").checked) {
-		// 		console.log('web')
-		// 		// document.getElementById('tag_web').style.display="none";
-		// 		$('.card-deck .card').sort(function(a,b) {
-		// 			return $(a).find(".card-title").text() > $(b).find(".card-title").text() ? 1 : -1;
-		// 		}).appendTo(".card-deck");
-		// 	} else if (document.getElementById("option3").checked) {
-		// 		console.log('mobile')
-		// 	} else if (document.getElementById("option4").checked) {
-		// 		console.log('cli')
-		// 	} else {
-		// 		console.log('other')
-		// 	}
-		// });
-	</script>
+		$(document).on('change', 'input:radio[id^="option"]', function (event) {
+			if (document.getElementById("option1").checked) {
+				console.log('all')
+			} else if (document.getElementById("option2").checked) {
+				console.log('web')
+				// document.getElementById('tag_web').style.display="none";
+				$('.card-deck .card').sort(function(a,b) {
+					return $(a).find(".card-title").text() > $(b).find(".card-title").text() ? 1 : -1;
+				}).appendTo(".card-deck");
+			} else if (document.getElementById("option3").checked) {
+				console.log('mobile')
+			} else if (document.getElementById("option4").checked) {
+				console.log('cli')
+			} else {
+				console.log('other')
+			}
+		});
+	</script> -->
 	<div class="row">
 		{% for project in projects %}
 		<div class="project-item col-md-4">
