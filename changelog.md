@@ -8,7 +8,29 @@ This is a history of the development to [willcarh.art](https://www.willcarh.art)
 Version numbers follow the format _[major.minor.commit]_. See [`chronicler.py`](https://github.com/wcarhart/willcarh.art/blob/master/chronicler.py) for more details.
 
 ## Unreleased
-There is currently no unreleased content. Track active development progress [here](https://trello.com/b/glDTHpCJ/willcarhart).
+Currently working on filtering logic for blog posts and projects.
+
+Track active development progress [here](https://trello.com/b/glDTHpCJ/willcarhart).
+
+## [0.2.28] 2019-09-10 (PR #14)
+### Functionality ADDED
+ - added media preview for Twitter, iMessage, etc.
+ - added loading icon for site
+ - added improved animations to homepage
+
+### Functionality UPDATED
+ - updated blog URLs to be case insensitive
+ - updated project URLs to be case insensitive
+
+### Content UPDATED
+ - updated Stack Overflow links
+
+### Bugfix
+ - fixed project ordering bug
+ - fixed HTML background on larger screen sizes
+ - fixed button highlighting issues
+ - fixed long loading times for some project and blog pages
+ - fixed oversized titles on mobile
 
 ## [0.2.0] 2019-08-20 (PR #13)
 ### Functionality ADDED

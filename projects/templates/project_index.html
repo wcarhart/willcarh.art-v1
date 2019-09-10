@@ -7,12 +7,52 @@
 	<div class="os-animation" data-animation="fadeInUp">
 		<h1>Projects</h1>
 	</div>
+	<!-- <div class="os-animation" data-animation="fadeInUp">
+		<div class="center-me">
+			<div class="btn-group btn-group-toggle project-item" data-toggle="buttons">
+				<label class="btn btn-secondary active">
+					<input type="radio" name="options" id="option1" autocomplete="off" checked>All
+				</label>
+				<label class="btn btn-secondary">
+					<input type="radio" name="options" id="option2" autocomplete="off">Web
+				</label>
+				<label class="btn btn-secondary">
+					<input type="radio" name="options" id="option3" autocomplete="off">Mobile
+				</label>
+				<label class="btn btn-secondary">
+					<input type="radio" name="options" id="option4" autocomplete="off">CLI
+				</label>
+				<label class="btn btn-secondary">
+					<input type="radio" name="options" id="option5" autocomplete="off">Other
+				</label>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(document).on('change', 'input:radio[id^="option"]', function (event) {
+			if (document.getElementById("option1").checked) {
+				console.log('all')
+			} else if (document.getElementById("option2").checked) {
+				console.log('web')
+				// document.getElementById('tag_web').style.display="none";
+				$('.card-deck .card').sort(function(a,b) {
+					return $(a).find(".card-title").text() > $(b).find(".card-title").text() ? 1 : -1;
+				}).appendTo(".card-deck");
+			} else if (document.getElementById("option3").checked) {
+				console.log('mobile')
+			} else if (document.getElementById("option4").checked) {
+				console.log('cli')
+			} else {
+				console.log('other')
+			}
+		});
+	</script> -->
 	<div class="row">
 		{% for project in projects %}
 		<div class="project-item col-md-4">
 			{% with forloop.counter|mod:3 as proj_index %}
 			<div class="os-animation" data-animation="fadeInUp" data-delay="{{ proj_index|multiply:0.1 }}s">
-				<div class="card mb-2" onclick="location.href='{% url 'project_detail' project.title %}';" style="cursor:pointer;">
+				<div class="card mb-2" id="{{ project.tags }}" onclick="location.href='{% url 'project_detail' project.title|urlify %}';" style="cursor:pointer;">
 					<img class="card-img-top" src="{% static project.cover %}" style="background-color: {{ project.color }};">
 					<div class="card-body">
 						<h5 class="card-title">{{ project.title }}</h5>

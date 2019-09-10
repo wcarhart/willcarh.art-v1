@@ -2,6 +2,11 @@
 {% load static %}
 
 {% block page_content %}
+<meta property="og:title" content="{{ post.title }}" />
+<meta property="og:image" content="{% static post.cover %}" />
+<meta property="og:description" content="{{ post.blurb }}">
+<meta property="og:type" content="article" />
+<meta name="twitter:card" value="{{ post.blurb }}">
 <div class="container blog-container">
 	<div class="os-animation" data-animation="fadeInUp">
 		<div class="narrow article">

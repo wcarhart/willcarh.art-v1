@@ -26,6 +26,18 @@
 /*uncomment this line for debugging*/
 /*{ outline: solid 0.25rem hsla(210, 100%, 100%, 0.5); }*/
 
+html {
+	height:100%;
+}
+
+#loadingicon {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 9999;
+	background: url('willcarhartloading.svg') no-repeat center center;
+	background-color: rgba(0,0,0,0);
+}
 
 body {
 	overflow-x: hidden;
@@ -197,9 +209,36 @@ img.example-image {
 .row.no-padding [class*=col-] {
 	padding: 0;
 }
-#nodec-proj a {
-	text-decoration: none!important;
+#proj-header {
+	transition: transform .4s ease;
+}
+#proj-header a {
+	text-decoration: none;
 	color: var(--dark);
+}
+#proj-header:hover {
+	transform: translate(1rem);
+	text-decoration: underline!important;
+}
+#proj-header:hover > a {
+	text-decoration: underline!important;
+}
+#proj-header .fa-long-arrow-alt-right {
+	opacity: 0;
+	transition: opacity .4s linear;
+}
+#proj-header:hover > .fa-long-arrow-alt-right {
+	opacity: 1;
+}
+#proj-center {
+	display: inline-block;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+.fa-long-arrow-alt-right {
+	color: var(--dark)!important;
+	font-size: 1.6rem;
 }
 .project-item img:hover {
 	transform: scale(1.3);

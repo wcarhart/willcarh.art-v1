@@ -13,7 +13,7 @@ def blog_index(request):
 def blog_detail(request, title):
 	post_title = title.replace('--', '%20').replace('-', ' ').replace('%20', ' ')
 	try:
-		post = Post.objects.get(title=post_title)
+		post = Post.objects.get(title__iexact=post_title)
 	except Post.DoesNotExist:
 		raise Http404
 

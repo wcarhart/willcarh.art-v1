@@ -15,4 +15,8 @@ def resolve(_, name):
 @register.filter(name='mod')
 def mod(dividend, divisor):
 	return (dividend + 2) % divisor
+
+@register.filter(name='urlify')
+def urlify(title):
+	return '-'.join(title.replace('-', '--').split()).lower()
 	

@@ -10,6 +10,8 @@ class Project(models.Model):
 	demo = models.FilePathField(path='/img', default='', null=True, blank=True)
 	color = models.CharField(max_length=10, default='', null=True, blank=True)
 	democontent = models.FilePathField(path='/demo', default='', null=True, blank=True)
+	importance = models.IntegerField(default=0, blank=True, null=True)
+	tags = models.TextField(default='', null=True, blank=True)
 
 	def __str__(self):
 		return str(self.title)

@@ -26,6 +26,19 @@
 /*uncomment this line for debugging*/
 /*{ outline: solid 0.25rem hsla(210, 100%, 100%, 0.5); }*/
 
+html {
+	height:100%;
+}
+
+#loadingicon {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 1;
+	background: url('willcarhartloading.svg') no-repeat center center;
+	background-color: rgba(0,0,0,0);
+}
+
 body {
 	overflow-x: hidden;
 	font-family: 'Lato', sans-serif;
@@ -41,6 +54,7 @@ body {
 
 /*-- navigation --*/
 .navbar {
+	z-index: 9999;
 	padding: .7rem 1rem;
 	text-transform: uppercase;
 	font-size: .9rem;
@@ -121,8 +135,7 @@ body {
 	margin-bottom: 0.5rem;
 }
 .blog-item a:active,
-.blog-item a:hover,
-.blog-item a:focus {
+.blog-item a:hover {
 	border-color: var(--blogdark)!important;
 	background-color: var(--blogdark)!important;
 }
@@ -205,8 +218,7 @@ a {
 	color: var(--main);
 }
 a:hover,
-a:active,
-a:focus {
+a:active {
 	text-decoration: none;
 	color: var(--maindark);
 }
@@ -221,8 +233,7 @@ a:focus {
 	color: var(--dark);
 }
 .credits a:hover,
-.credits a:active,
-.credits a:focus {
+.credits a:active {
 	color: var(--dark);
 	text-decoration: none;
 }
@@ -232,5 +243,8 @@ a:focus {
 @media(max-width: 767px) {
 	.narrow {
 		width: 95%;
+	}
+	h1.heading {
+		font-size: 2rem;
 	}
 }
