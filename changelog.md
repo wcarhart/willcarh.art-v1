@@ -12,7 +12,7 @@ Currently working on filtering logic for blog posts and projects.
 
 Track active development progress [here](https://trello.com/b/glDTHpCJ/willcarhart).
 
-## [0.2.x] 2019-09-10 (PR #14)
+## [0.2.28] 2019-09-10 (PR #14)
 ### Functionality ADDED
  - added media preview for Twitter, iMessage, etc.
  - added loading icon for site
