@@ -1,3 +1,6 @@
+# This repository is archived.
+This is v1 of willcarh.art. It is a monolithic Django application and was a first version of my website. It was a great first attempt, but has become difficult to maintain and support. This repository has been archived for historical purposes. Please refer to the current repository for the latest version of willcarh.art: https://github.com/wcarhart/willcarh.art
+
 # [willcarh.art](https://www.willcarh.art/)
 
 [![willcarh.art demo](static/readme_demo.png)](https://www.willcarh.art/)
